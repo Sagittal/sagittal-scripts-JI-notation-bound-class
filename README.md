@@ -1,2 +1,2 @@
-# sagittal-scripts-JI-notation-bound-class
+# sagittal-scripts-ji-notation-bound-class
 analyzes the bound classes of the Sagittal JI notation

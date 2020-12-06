@@ -5,7 +5,7 @@ import {BoundClass, JiNotationBoundClass, JI_NOTATION_BOUND_CLASSES} from "@sagi
 import {analyzeJiNotationBoundClass} from "../../../../../src/boundClass"
 import {computeHistories} from "../../../../../src/histories"
 import {formatRankAnalyses} from "../../../../../src/io/terminal/rank"
-import {onlyRunInCi} from "../../../../helpers/onlyRunInCi"
+import {onlyRunInCi} from "../../../../helpers/shared/onlyRunInCi"
 
 describe("formatRankAnalyses", (): void => {
     it("gives the correct answer", (): void => {

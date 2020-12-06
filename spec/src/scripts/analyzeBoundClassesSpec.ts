@@ -1,6 +1,6 @@
 import {Filename, Io, readLines} from "@sagittal/general"
-import {onlyRunInCi} from "../../helpers/onlyRunInCi"
-import {runScriptAndGetConsoleOutput} from "../../helpers/scripts/runScriptAndGetConsoleOutput"
+import {onlyRunInCi} from "../../helpers/shared/onlyRunInCi"
+import {runScriptAndGetConsoleOutput} from "../../helpers/shared/scripts/runScriptAndGetConsoleOutput"
 
 describe("analyze-ji-notation-bound-classes", (): void => {
     it("returns the same output for both the terminal and the image as the snapshot", (): void => {

@@ -4,7 +4,7 @@ import {BoundType} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../../../src/boundClass"
 import {computeJiNotationBoundClassAnalysesOutput} from "../../../../../src/io/terminal/boundClasses"
 import {RANKS} from "../../../../../src/ranks"
-import {jiNotationBoundClassAnalysisFixture} from "../../../../helpers/fixtures"
+import {jiNotationBoundClassAnalysisFixture} from "../../../../helpers/src/fixtures"
 
 describe("computeJiNotationBoundClassAnalysesOutput", (): void => {
     it("colors the rows correctly, according to their best rank", (): void => {

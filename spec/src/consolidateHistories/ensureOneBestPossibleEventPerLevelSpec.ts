@@ -1,7 +1,7 @@
 import {JiNotationLevelId} from "@sagittal/system"
 import {BoundHistoryConsolidation} from "../../../src/consolidateHistories"
 import {ensureOneBestPossibleEventPerJiNotationLevel} from "../../../src/consolidateHistories/ensureOneBestPossibleEventPerLevel"
-import {boundEventConsolidationFixture} from "../../helpers/fixtures"
+import {boundEventConsolidationFixture} from "../../helpers/src/fixtures"
 
 describe("ensureOneBestPossibleEventPerJiNotationLevel", (): void => {
     it("throws an error if a bound class history consolidation has more than one event in a single JI notation level which is considered to be the one which is a member of the best possible bound class history", (): void => {

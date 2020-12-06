@@ -1,16 +1,10 @@
 import {Count, Decimal, Rank} from "@sagittal/general"
 import {BoundType, JiNotationLevelId} from "@sagittal/system"
 import {updateJiNotationLevelAnalysis} from "../../../src/boundClass/levels"
-import {
-    jiNotationLevelsBestCumulativeHistoryRanks,
-    jiNotationLevelsBestHistoryRanks,
-} from "../../../src/globals"
+import {jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks} from "../../../src/globals"
 import {BoundHistoryAnalysis} from "../../../src/history"
 import {RANKS} from "../../../src/ranks"
-import {
-    boundEventAnalysisFixture,
-    boundHistoryAnalysisFixture,
-} from "../../helpers/fixtures"
+import {boundEventAnalysisFixture, boundHistoryAnalysisFixture} from "../../helpers/src/fixtures"
 
 describe("updateJiNotationLevelAnalysis", (): void => {
     describe("jiNotationLevelsBestHistoryRanks", (): void => {

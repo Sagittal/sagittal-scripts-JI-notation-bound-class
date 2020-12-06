@@ -2,7 +2,7 @@ import {APOTOME, Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon}
 import {BoundType, HIGH_EDA, JiNotationBound, JiNotationLevelId, ULTRA_EDA} from "@sagittal/system"
 import {BoundEvent, BoundHistory} from "../../../src/histories"
 import {computeExtendedHistories} from "../../../src/histories/extendedHistories"
-import {jiNotationBoundClassFixture} from "../../helpers/fixtures"
+import {jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
 
 describe("computeExtendedHistories", (): void => {
     let boundHistory: BoundHistory

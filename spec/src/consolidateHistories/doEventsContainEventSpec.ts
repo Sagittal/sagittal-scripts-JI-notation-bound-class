@@ -3,7 +3,7 @@ import {BoundType, JiNotationBound, JiNotationLevelId} from "@sagittal/system"
 import {isBoundEventContained} from "../../../src/consolidateHistories/doEventsContainEvent"
 import {BoundEventAnalysis} from "../../../src/history"
 import {RANKS} from "../../../src/ranks"
-import {boundEventAnalysisFixture} from "../../helpers/fixtures"
+import {boundEventAnalysisFixture} from "../../helpers/src/fixtures"
 
 describe("isBoundEventContained", (): void => {
     it("returns true when the bound class events contain an event which has the same name and the same JI notation level            ", (): void => {

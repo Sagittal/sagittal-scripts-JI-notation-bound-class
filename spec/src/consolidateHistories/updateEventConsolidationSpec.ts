@@ -8,7 +8,7 @@ import {
     boundEventAnalysisFixture,
     boundEventConsolidationFixture,
     boundHistoryAnalysisFixture,
-} from "../../helpers/fixtures"
+} from "../../helpers/src/fixtures"
 
 describe("updateEventConsolidation", (): void => {
     let boundHistoryAnalysis: BoundHistoryAnalysis

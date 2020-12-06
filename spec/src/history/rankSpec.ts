@@ -2,7 +2,7 @@ import {BoundType} from "@sagittal/system"
 import {BoundEventAnalysis} from "../../../src/history"
 import {computeRank} from "../../../src/history/rank"
 import {RANKS} from "../../../src/ranks"
-import {boundEventAnalysisFixture} from "../../helpers/fixtures"
+import {boundEventAnalysisFixture} from "../../helpers/src/fixtures"
 
 describe("computeRank", (): void => {
     it("returns the worst rank of any of the bound class events in the bound class history", (): void => {

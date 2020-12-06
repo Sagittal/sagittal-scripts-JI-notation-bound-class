@@ -15,19 +15,12 @@ import {
     Sum,
     UNISON,
 } from "@sagittal/general"
-import {
-    BoundType,
-    Ina,
-    JiNotationBound,
-    JiNotationBoundClass,
-    JiNotationLevelId,
-    Tinas,
-} from "@sagittal/system"
-import {JiNotationBoundClassAnalysis} from "../../src/boundClass"
-import {BoundEventConsolidation} from "../../src/consolidateHistories/types"
-import {BoundEvent, BoundHistory} from "../../src/histories"
-import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../src/history"
-import {RANKS} from "../../src/ranks"
+import {BoundType, Ina, JiNotationBound, JiNotationBoundClass, JiNotationLevelId, Tinas} from "@sagittal/system"
+import {JiNotationBoundClassAnalysis} from "../../../src/boundClass"
+import {BoundEventConsolidation} from "../../../src/consolidateHistories/types"
+import {BoundEvent, BoundHistory} from "../../../src/histories"
+import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../src/history"
+import {RANKS} from "../../../src/ranks"
 
 const boundEventFixture: BoundEvent = {
     pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,

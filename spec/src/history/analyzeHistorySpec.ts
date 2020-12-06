@@ -16,11 +16,7 @@ import {computeInitialPosition} from "../../../src/boundClass/initialPosition"
 import {BoundHistory} from "../../../src/histories"
 import {analyzeHistory} from "../../../src/history"
 import {RANKS} from "../../../src/ranks"
-import {
-    boundEventAnalysisFixture,
-    boundEventFixture,
-    jiNotationBoundClassFixture,
-} from "../../helpers/fixtures"
+import {boundEventAnalysisFixture, boundEventFixture, jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
 
 describe("analyzeHistory", (): void => {
     const actualJiNotationBoundPitch = {

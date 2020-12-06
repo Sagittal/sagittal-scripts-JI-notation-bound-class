@@ -10,7 +10,7 @@ import {
     ULTRA_EDA,
 } from "@sagittal/system"
 import {computeHistories} from "../../../src/histories"
-import {jiNotationBoundClassFixture} from "../../helpers/fixtures"
+import {jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
 
 describe("computeHistories", (): void => {
     it("given a JI notation bound class, returns an array of all of its possible histories", (): void => {

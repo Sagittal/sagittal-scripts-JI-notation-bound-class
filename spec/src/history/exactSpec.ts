@@ -1,6 +1,6 @@
 import {BoundEventAnalysis} from "../../../src/history"
 import {computeExact} from "../../../src/history/exact"
-import {boundEventAnalysisFixture} from "../../helpers/fixtures"
+import {boundEventAnalysisFixture} from "../../helpers/src/fixtures"
 
 describe("computeExact", (): void => {
     it("returns true if every event's position is the same as the actual bound position", (): void => {

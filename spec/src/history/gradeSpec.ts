@@ -2,7 +2,7 @@ import {BoundType, JiNotationLevelId} from "@sagittal/system"
 import {BoundEventAnalysis} from "../../../src/history"
 import {computeGrade} from "../../../src/history/grade"
 import {RANKS} from "../../../src/ranks"
-import {boundEventAnalysisFixture} from "../../helpers/fixtures"
+import {boundEventAnalysisFixture} from "../../helpers/src/fixtures"
 
 describe("computeGrade", (): void => {
     it("grades histories with worse ranks worse", (): void => {

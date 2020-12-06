@@ -1,7 +1,7 @@
 import {Abs, Cents, Sum} from "@sagittal/general"
 import {BoundEventAnalysis} from "../../../src/history"
 import {computeBoundHistoryTotalDistance} from "../../../src/history/historyTotalDistance"
-import {boundEventAnalysisFixture} from "../../helpers/fixtures"
+import {boundEventAnalysisFixture} from "../../helpers/src/fixtures"
 
 describe("computeBoundHistoryTotalDistance", (): void => {
     it("sums up the distances of all the bound class events in the bound class history (they are already all positive)              ", (): void => {

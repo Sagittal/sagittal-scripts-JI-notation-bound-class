@@ -3,10 +3,7 @@ import {BoundClassId, BoundType, JiNotationBoundClass} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../../../src/boundClass"
 import {formatJiNotationBoundClass} from "../../../../../src/io"
 import {RANKS} from "../../../../../src/ranks"
-import {
-    jiNotationBoundClassAnalysisFixture,
-    jiNotationBoundClassFixture,
-} from "../../../../helpers/fixtures"
+import {jiNotationBoundClassAnalysisFixture, jiNotationBoundClassFixture} from "../../../../helpers/src/fixtures"
 
 describe("formatJiNotationBoundClass", (): void => {
     it("returns a string which is a multi-line, properly indented rendition of the JI notation bound class analysis, as well as identifying information for the JI notation bound", (): void => {

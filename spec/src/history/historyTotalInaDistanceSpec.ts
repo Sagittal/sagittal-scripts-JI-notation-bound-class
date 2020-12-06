@@ -2,7 +2,7 @@ import {Multiplier, Sum} from "@sagittal/general"
 import {Ina} from "@sagittal/system"
 import {BoundEventAnalysis} from "../../../src/history"
 import {computeBoundHistoryTotalInaDistance} from "../../../src/history/historyTotalInaDistance"
-import {boundEventAnalysisFixture} from "../../helpers/fixtures"
+import {boundEventAnalysisFixture} from "../../helpers/src/fixtures"
 
 describe("computeBoundHistoryTotalInaDistance", (): void => {
     it("sums up the ina-distances of all the bound class events in the bound class history (they are already all positive)           ", (): void => {

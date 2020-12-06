@@ -16,7 +16,7 @@ import {
     boundHistoryAnalysisFixture,
     jiNotationBoundClassAnalysisFixture,
     jiNotationBoundClassFixture,
-} from "../../../../helpers/fixtures"
+} from "../../../../helpers/src/fixtures"
 
 describe("computeJiNotationBoundClassRow", (): void => {
     it("a summarized version to be formatted in a list with all the other bounds; returns a string of the bound id, identifying symbol, actual bound cents, whether it has a possible bound class history, the error in tinas, and the ranks at each JI notation level of the best possible bound class history, separated by tabs in a single line, and makes it the correct color", (): void => {

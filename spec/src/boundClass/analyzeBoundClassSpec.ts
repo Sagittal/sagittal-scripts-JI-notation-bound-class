@@ -29,7 +29,7 @@ import * as ranks from "../../../src/boundClass/ranks"
 import {BoundHistory} from "../../../src/histories"
 import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../src/history"
 import {RANKS} from "../../../src/ranks"
-import {jiNotationBoundClassFixture} from "../../helpers/fixtures"
+import {jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
 
 describe("analyzeJiNotationBoundClass", (): void => {
     const notBestHistory: BoundHistory = [

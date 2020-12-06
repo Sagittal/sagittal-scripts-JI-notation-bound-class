@@ -3,10 +3,7 @@ import {BoundType, EXTREME_EDA, HIGH_EDA, Ina, JiNotationLevelId, ULTRA_EDA} fro
 import {BoundHistory} from "../../../../src/histories"
 import {analyzeBoundEvents} from "../../../../src/history/events"
 import {RANKS} from "../../../../src/ranks"
-import {
-    boundEventAnalysisFixture,
-    boundEventFixture,
-} from "../../../helpers/fixtures"
+import {boundEventAnalysisFixture, boundEventFixture} from "../../../helpers/src/fixtures"
 
 describe("analyzeBoundEvents", (): void => {
     it("adds some analysis properties to each event: rank, distance, and exact", (): void => {

@@ -1,4 +1,14 @@
-import {Cents, CommaMean, computePitchExpectation, Decimal, HALF_SCALER, Monzo, Name, PitchExpectation, Scamon} from "@sagittal/general"
+import {
+    Cents,
+    CommaMean,
+    computePitchExpectation,
+    Decimal,
+    HALF_SCALER,
+    Monzo,
+    Name,
+    PitchExpectation,
+    Scamon,
+} from "@sagittal/general"
 import {JiNotationLevelId} from "@sagittal/system"
 import {computeJiNotationLevelCommaMeans} from "../../../src/histories/levelCommaMeans"
 

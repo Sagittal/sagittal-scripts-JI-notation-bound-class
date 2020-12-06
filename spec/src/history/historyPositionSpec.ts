@@ -2,7 +2,7 @@ import {APOTOME, Scamon} from "@sagittal/general"
 import {EXTREME_EDA, HIGH_EDA, ULTRA_EDA} from "@sagittal/system"
 import {BoundHistory} from "../../../src/histories"
 import {computeBoundHistoryPosition} from "../../../src/history/historyPosition"
-import {boundEventFixture} from "../../helpers/fixtures"
+import {boundEventFixture} from "../../helpers/src/fixtures"
 
 describe("computeBoundHistoryPosition", (): void => {
     it("returns the position of the bound class history's final bound class event", (): void => {

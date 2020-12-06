@@ -2,10 +2,7 @@ import {Abs, Cents, Formatted, Multiplier} from "@sagittal/general"
 import {Ina, JiNotationLevelId} from "@sagittal/system"
 import {BoundHistoryAnalysis} from "../../../../../src/history"
 import {extractJiNotationLevelDistances} from "../../../../../src/io/terminal/boundClasses/levelDistances"
-import {
-    boundEventAnalysisFixture,
-    boundHistoryAnalysisFixture,
-} from "../../../../helpers/fixtures"
+import {boundEventAnalysisFixture, boundHistoryAnalysisFixture} from "../../../../helpers/src/fixtures"
 
 describe("extractJiNotationLevelDistances", (): void => {
     it("returns an array of the distances of each event (from the previous bound class event)", (): void => {

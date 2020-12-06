@@ -1,7 +1,7 @@
 import {Abs, Cents, computePitchFromCents} from "@sagittal/general"
 import {BoundEvent} from "../../../../src/histories"
 import {computeBoundEventDistance} from "../../../../src/history/events/eventDistance"
-import {boundEventFixture} from "../../../helpers/fixtures"
+import {boundEventFixture} from "../../../helpers/src/fixtures"
 
 describe("computeBoundEventDistance", (): void => {
     it("returns the difference in position between the bound class event and the previous bound class event in the bound class history          ", (): void => {

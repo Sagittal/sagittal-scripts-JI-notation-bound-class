@@ -1,9 +1,6 @@
 import {Count, Decimal, Rank, Row} from "@sagittal/general"
 import {BoundType, JiNotationLevelId} from "@sagittal/system"
-import {
-    jiNotationLevelsBestCumulativeHistoryRanks,
-    jiNotationLevelsBestHistoryRanks,
-} from "../../../../../src/globals"
+import {jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks} from "../../../../../src/globals"
 import {computeJiNotationLevelAnalysisRows} from "../../../../../src/io/terminal/level/levelAnalysisRows"
 import {RANKS} from "../../../../../src/ranks"
 

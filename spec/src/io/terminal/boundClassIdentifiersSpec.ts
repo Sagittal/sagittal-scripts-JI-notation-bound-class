@@ -40,7 +40,7 @@ import {
 } from "@sagittal/system"
 import {extractJiNotationBoundClassIdentifiers} from "../../../../src/io/terminal/boundClassIdentifiers"
 import {JiNotationBoundClassIdentifiers} from "../../../../src/io/terminal/types"
-import {jiNotationBoundClassFixture} from "../../../helpers/fixtures"
+import {jiNotationBoundClassFixture} from "../../../helpers/src/fixtures"
 
 describe("extractJiNotationBoundIdentifiers", (): void => {
     const jiNotationBoundClass: JiNotationBoundClass = {

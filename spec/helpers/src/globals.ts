@@ -6,7 +6,7 @@ import {
     jiNotationLevelsBestHistoryRanks,
     rankBoundClassIndices,
     rankCounts,
-} from "../../src/globals"
+} from "../../../src/globals"
 
 afterEach((): void => {
     cleanObject(jiNotationLevelsBestHistoryRanks)

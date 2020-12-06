@@ -5,7 +5,7 @@ import {BoundEventConsolidation} from "../../../src/consolidateHistories/types"
 import {BoundEvent} from "../../../src/histories"
 import {BoundEventAnalysis} from "../../../src/history"
 import {RANKS} from "../../../src/ranks"
-import {boundEventAnalysisFixture} from "../../helpers/fixtures"
+import {boundEventAnalysisFixture} from "../../helpers/src/fixtures"
 
 describe("computeInitialEventConsolidation", (): void => {
     let actual: BoundEventConsolidation

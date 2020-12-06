@@ -1,7 +1,7 @@
 import {Cents, computePitchFromCents, HALF_SCALER, Monzo, Scamon} from "@sagittal/general"
 import {JiNotationBoundClass, JiNotationLevelId} from "@sagittal/system"
 import {computeInitialPosition} from "../../../src/boundClass/initialPosition"
-import {jiNotationBoundClassFixture} from "../../helpers/fixtures"
+import {jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
 
 describe("computeInitialPosition", (): void => {
     it("returns the mean of the bounded commas at the introducing JI notation level", (): void => {

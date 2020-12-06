@@ -10,7 +10,7 @@ import {
 } from "@sagittal/system"
 import {BoundEvent, BoundHistory} from "../../../src/histories"
 import {computeExtendedJiNotationLevelBoundHistories} from "../../../src/histories/extendedLevelHistories"
-import {jiNotationBoundClassFixture} from "../../helpers/fixtures"
+import {jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
 
 describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
     it("given the histories for a bound up to the current JI notation level, returns the histories extended for all possible events at this JI notation level", (): void => {

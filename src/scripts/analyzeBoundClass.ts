@@ -1,11 +1,10 @@
-import {Filename, Index, Io, isUndefined, LogTarget, parseInteger, saveLog, setupScriptAndIo} from "@sagittal/general"
+import {Filename, Index, Io, isUndefined, LogTarget, parseInteger, program, saveLog, setupScriptAndIo} from "@sagittal/general"
 import {BoundClass, JI_NOTATION_BOUND_CLASS_ENTRIES} from "@sagittal/system"
-import {program} from "commander"
 import {analyzeJiNotationBoundClass} from "../boundClass"
 import {computeHistories} from "../histories"
 import {formatJiNotationBoundClass} from "../io"
 
-setupScriptAndIo("jiNotationBoundClass" as Filename, [LogTarget.FINAL])
+setupScriptAndIo("analyzeBoundClass" as Filename, [LogTarget.FINAL])
 
 const boundClassIndex = program.args[0]
 

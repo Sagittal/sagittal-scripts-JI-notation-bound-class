@@ -3,7 +3,7 @@ import {analyzeJiNotationBoundClasses} from "../analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../boundClass"
 import {computeJiNotationBoundClassesImage, computeJiNotationBoundClassesOutput} from "../io"
 
-setupScriptAndIo("jiNotationBoundClass" as Filename, [LogTarget.FINAL])
+setupScriptAndIo("analyzeBoundClasses" as Filename, [LogTarget.FINAL])
 
 const jiNotationBoundClassAnalyses: JiNotationBoundClassAnalysis[] = analyzeJiNotationBoundClasses()
 

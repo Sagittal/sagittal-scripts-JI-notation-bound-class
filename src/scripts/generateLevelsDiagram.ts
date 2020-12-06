@@ -1,7 +1,7 @@
 import {Filename, Io, LogTarget, saveLog, setupScriptAndIo} from "@sagittal/general"
 import {computeLevelsDiagram} from "../io"
 
-setupScriptAndIo("jiNotationBoundClass" as Filename, [LogTarget.FINAL])
+setupScriptAndIo("generateLevelsDiagram" as Filename, [LogTarget.FINAL])
 
 const imageOutput: Io = computeLevelsDiagram()
 

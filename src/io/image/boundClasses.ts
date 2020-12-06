@@ -17,7 +17,7 @@ const computeJiNotationBoundClassesImage = (jiNotationBoundClassAnalysis: JiNota
         fs.existsSync("dist") || fs.mkdirSync("dist")
         fs.existsSync(`dist/jiNotationBoundClass`) || fs.mkdirSync(`dist/jiNotationBoundClass`)
         fs.copyFileSync(
-            "assets/fonts/BravuraSagittalUpdate_v10.otf",
+            "assets/fonts/BravuraSagittalUpdate_v10.otf",   // TODO: this and levelsDiagram will need fixing
             "dist/jiNotationBoundClass/BravuraSagittalUpdate_v10.otf",
         )
     }

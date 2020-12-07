@@ -11,7 +11,9 @@ import {addParentSvg} from "../image/parentSvg"
 
 const generateLevelsDiagram = (): void => {
     fs.existsSync("dist") || fs.mkdirSync("dist")
-    fs.copyFileSync("../../bravura/BravuraSagittalUpdate_v10.otf", "dist/BravuraSagittalUpdate_v10.otf")
+    if (!process.env.TEST_MODE) {
+        fs.copyFileSync("../../bravura/BravuraSagittalUpdate_v10.otf", "dist/BravuraSagittalUpdate_v10.otf")
+    }
 
     let elements: Io[] = [] as Io[]
 

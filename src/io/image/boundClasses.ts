@@ -14,8 +14,9 @@ import {visualizeSizeCategoryBounds} from "./sizeCategoryBounds"
 
 const generateJiNotationBoundClassesImage = (jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis[]): void => {
     fs.existsSync("dist") || fs.mkdirSync("dist")
-    // TODO: Okay... well of course this (and in levels diagram) won't work in CI though...
-    fs.copyFileSync("../../bravura/BravuraSagittalUpdate_v10.otf", "dist/BravuraSagittalUpdate_v10.otf")
+    if (!process.env.TEST_MODE) {
+        fs.copyFileSync("../../bravura/BravuraSagittalUpdate_v10.otf", "dist/BravuraSagittalUpdate_v10.otf")
+    }
 
     let elements: Io[] = [] as Io[]
 

@@ -1,4 +1,4 @@
-import {BLANK, Io, ioSettings, join} from "@sagittal/general"
+import {BLANK, Io, join} from "@sagittal/general"
 import * as fs from "fs"
 import {JiNotationBoundClassAnalysis} from "../../boundClass"
 import {visualizeCents} from "./cents"
@@ -12,15 +12,9 @@ import {visualizeJiNotationLevels} from "./levels"
 import {addParentSvg} from "./parentSvg"
 import {visualizeSizeCategoryBounds} from "./sizeCategoryBounds"
 
-const computeJiNotationBoundClassesImage = (jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis[]): Io => {
-    if (!ioSettings.noWrite) {
-        fs.existsSync("dist") || fs.mkdirSync("dist")
-        fs.existsSync(`dist/jiNotationBoundClass`) || fs.mkdirSync(`dist/jiNotationBoundClass`)
-        fs.copyFileSync(
-            "assets/fonts/BravuraSagittalUpdate_v10.otf",   // TODO: this and levelsDiagram will need fixing
-            "dist/jiNotationBoundClass/BravuraSagittalUpdate_v10.otf",
-        )
-    }
+const generateJiNotationBoundClassesImage = (jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis[]): void => {
+    fs.existsSync("dist") || fs.mkdirSync("dist")
+    fs.copyFileSync("../../bravura/BravuraSagittalUpdate_v10.otf", "dist/BravuraSagittalUpdate_v10.otf")
 
     let elements: Io[] = [] as Io[]
 
@@ -47,9 +41,11 @@ const computeJiNotationBoundClassesImage = (jiNotationBoundClassAnalysis: JiNota
 
     elements = elements.concat("</svg>\n" as Io)
 
-    return join(elements, BLANK) as Io
+    const imageOutput = join(elements, BLANK) as Io
+
+    fs.writeFileSync("dist/jiNotationBoundClassesImage.svg", imageOutput)
 }
 
 export {
-    computeJiNotationBoundClassesImage,
+    generateJiNotationBoundClassesImage,
 }

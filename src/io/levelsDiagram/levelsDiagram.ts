@@ -1,6 +1,6 @@
 /* tslint:disable:no-reaching-imports */
 
-import {BLANK, Io, ioSettings, join} from "@sagittal/general"
+import {BLANK, Io, join} from "@sagittal/general"
 import * as fs from "fs"
 import {visualizeCents} from "../image/cents"
 import {addFont} from "../image/font"
@@ -9,15 +9,9 @@ import {visualizeJiNotationLevelCommaClasses} from "../image/levelCommaClasses"
 import {visualizeJiNotationLevels} from "../image/levels"
 import {addParentSvg} from "../image/parentSvg"
 
-const computeLevelsDiagram = (): Io => {
-    if (!ioSettings.noWrite) {
-        fs.existsSync("dist") || fs.mkdirSync("dist")
-        fs.existsSync(`dist/jiNotationBoundClass`) || fs.mkdirSync(`dist/jiNotationBoundClass`)
-        fs.copyFileSync(
-            "assets/fonts/BravuraSagittalUpdate_v10.otf",
-            "dist/jiNotationBoundClass/BravuraSagittalUpdate_v10.otf",
-        )
-    }
+const generateLevelsDiagram = (): void => {
+    fs.existsSync("dist") || fs.mkdirSync("dist")
+    fs.copyFileSync("../../bravura/BravuraSagittalUpdate_v10.otf", "dist/BravuraSagittalUpdate_v10.otf")
 
     let elements: Io[] = [] as Io[]
 
@@ -32,9 +26,11 @@ const computeLevelsDiagram = (): Io => {
 
     elements = elements.concat("</svg>\n" as Io)
 
-    return join(elements, BLANK) as Io
+    const imageOutput = join(elements, BLANK) as Io
+
+    fs.writeFileSync("dist/levelsDiagram.svg", imageOutput)
 }
 
 export {
-    computeLevelsDiagram,
+    generateLevelsDiagram,
 }

@@ -1,1 +1,1 @@
-export {computeLevelsDiagram} from "./levelsDiagram"
+export {generateLevelsDiagram} from "./levelsDiagram"

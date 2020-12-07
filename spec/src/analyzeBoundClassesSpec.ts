@@ -1,4 +1,4 @@
-import {Name} from "@sagittal/general"
+import {Name, onlyRunInCi} from "@sagittal/general"
 import {
     BoundType,
     JiNotationBound,
@@ -9,7 +9,6 @@ import {
 import {analyzeJiNotationBoundClasses} from "../../src/analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../../src/boundClass"
 import {BoundEventAnalysis} from "../../src/history"
-import {onlyRunInCi} from "../helpers/shared/onlyRunInCi"
 
 describe("analyzeJiNotationBoundClasses", (): void => {
     it("returns the same bound types as in the actual JI notation (with the Extreme level being the current highest)              ", (): void => {

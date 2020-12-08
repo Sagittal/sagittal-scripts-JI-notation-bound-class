@@ -1,13 +1,13 @@
-import {Decimal, increment, Index, Rank} from "@sagittal/general"
-import {BoundClass, BoundType} from "@sagittal/system"
-import {rankBoundClassIndices, rankCounts} from "../globals"
+import {Decimal, increment, Rank} from "@sagittal/general"
+import {BoundClassId, BoundType} from "@sagittal/system"
+import {rankBoundClassIds, rankCounts} from "../globals"
 
 const updateRankAnalysis = (
     bestRank: Decimal<{integer: true}> & Rank<BoundType>,
-    boundClassIndex: Index<BoundClass>,
+    boundClassId: BoundClassId,
 ): void => {
     rankCounts[bestRank] = increment(rankCounts[bestRank])
-    rankBoundClassIndices[bestRank].push(boundClassIndex)
+    rankBoundClassIds[bestRank].push(boundClassId)
 }
 
 export {

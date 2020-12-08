@@ -8,7 +8,7 @@ import {jiNotationBoundClassAnalysisFixture} from "../../../../helpers/src/fixtu
 
 describe("computeJiNotationBoundClassAnalysesOutput", (): void => {
     it("colors the rows correctly, according to their best rank", (): void => {
-        const jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis[] = [
+        const jiNotationBoundClassAnalyses: JiNotationBoundClassAnalysis[] = [
             {...jiNotationBoundClassAnalysisFixture, bestRank: RANKS[BoundType.INA_MIDPOINT]},
             {...jiNotationBoundClassAnalysisFixture, bestRank: RANKS[BoundType.SIZE_CATEGORY_BOUND]},
             {...jiNotationBoundClassAnalysisFixture, bestRank: RANKS[BoundType.COMMA_MEAN]},
@@ -16,7 +16,7 @@ describe("computeJiNotationBoundClassAnalysesOutput", (): void => {
 
         spyOn(table, "formatTable")
 
-        computeJiNotationBoundClassAnalysesOutput(jiNotationBoundClassAnalysis)
+        computeJiNotationBoundClassAnalysesOutput(jiNotationBoundClassAnalyses)
 
         expect(table.formatTable).toHaveBeenCalledWith(
             jasmine.anything(),

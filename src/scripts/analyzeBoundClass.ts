@@ -1,35 +1,23 @@
-import {Filename, Index, Io, isUndefined, LogTarget, parseInteger, program, saveLog, setupScriptAndIo} from "@sagittal/general"
-import {BoundClass, JI_NOTATION_BOUND_CLASS_ENTRIES} from "@sagittal/system"
+import {Filename, Io, isUndefined, LogTarget, program, saveLog, setupScriptAndIo} from "@sagittal/general"
+import {BoundClassId, JI_NOTATION_BOUND_CLASSES} from "@sagittal/system"
 import {analyzeJiNotationBoundClass} from "../boundClass"
 import {computeHistories} from "../histories"
 import {formatJiNotationBoundClass} from "../io"
 
 setupScriptAndIo("analyzeBoundClass" as Filename, [LogTarget.FINAL])
 
-const boundClassIndex = program.args[0]
+const boundClassId = program.args[0] as BoundClassId
+if (isUndefined(boundClassId)) throw new Error(`No bound class ID provided.`)
 
-// TODO: POST-NOTATION-GENERATION: IDS VS INDICES
-//  Stop using bound class index
-//  May want to consider having this thing not care about bound class *index* and just rework output to go by
-//  The bound id; only reason I can think *not* to do that is that it might assume some of the things it's verifying?
-//  Except not really, because we're not really moving the bounds by amounts greater than *minas*
-if (isUndefined(boundClassIndex)) {
-    throw new Error(`No bound class index provided.`)
-}
-
-const [boundClassId, jiNotationBoundClass] = JI_NOTATION_BOUND_CLASS_ENTRIES[parseInteger(boundClassIndex)]
+const jiNotationBoundClass = JI_NOTATION_BOUND_CLASSES[boundClassId]
 
 if (jiNotationBoundClass) {
     const histories = computeHistories(jiNotationBoundClass)
-    const jiNotationBoundClassAnalysis = analyzeJiNotationBoundClass(
-        histories,
-        jiNotationBoundClass,
-        parseInteger(boundClassIndex) as Index<BoundClass>,
-    )
+    const jiNotationBoundClassAnalysis = analyzeJiNotationBoundClass(histories, [boundClassId, jiNotationBoundClass])
 
     const jiNotationBoundOutput: Io =
         formatJiNotationBoundClass(jiNotationBoundClassAnalysis, [boundClassId, jiNotationBoundClass])
     saveLog(jiNotationBoundOutput, LogTarget.FINAL)
 } else {
-    throw new Error(`Could not find JI notation bound class with index ${boundClassIndex}`)
+    throw new Error(`Could not find JI notation bound class with ID ${boundClassId}. Possible IDs are: ${Object.keys(JI_NOTATION_BOUND_CLASSES)}`)
 }

@@ -1,10 +1,10 @@
 import {cleanObject, setAllPropertiesOfObjectOnAnother} from "@sagittal/general"
 import {
-    INITIAL_RANK_BOUND_INDICES,
+    INITIAL_RANK_BOUND_IDS,
     INITIAL_RANK_COUNTS,
     jiNotationLevelsBestCumulativeHistoryRanks,
     jiNotationLevelsBestHistoryRanks,
-    rankBoundClassIndices,
+    rankBoundClassIds,
     rankCounts,
 } from "../../../src/globals"
 
@@ -14,7 +14,7 @@ afterEach((): void => {
 
     setAllPropertiesOfObjectOnAnother({objectToChange: rankCounts, objectWithProperties: INITIAL_RANK_COUNTS})
     setAllPropertiesOfObjectOnAnother({
-        objectToChange: rankBoundClassIndices,
-        objectWithProperties: INITIAL_RANK_BOUND_INDICES,
+        objectToChange: rankBoundClassIds,
+        objectWithProperties: INITIAL_RANK_BOUND_IDS,
     })
 })

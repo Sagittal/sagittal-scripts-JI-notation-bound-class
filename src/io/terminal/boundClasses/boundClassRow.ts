@@ -1,5 +1,5 @@
-import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Index, Row} from "@sagittal/general"
-import {alignAscii, BoundClass, JiNotationBoundClassEntry} from "@sagittal/system"
+import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Row} from "@sagittal/general"
+import {alignAscii, BoundClassId, JiNotationBoundClassEntry} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
 import {extractJiNotationLevelDistances} from "./levelDistances"
@@ -9,7 +9,6 @@ import {formatMinaName} from "./minaName"
 const computeJiNotationBoundClassRow = (
     jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis,
     jiNotationBoundClassEntry: JiNotationBoundClassEntry,
-    boundClassIndex: Index<BoundClass>,
 ): Row<{of: JiNotationBoundClassAnalysis}> => {
     let jiNotationBoundClassRow: Row<{of: JiNotationBoundClassAnalysis}>
     const jiNotationBoundClassIdentifiers = extractJiNotationBoundClassIdentifiers(jiNotationBoundClassEntry)
@@ -51,8 +50,10 @@ const computeJiNotationBoundClassRow = (
         bestPossibleBoundHistoryExtremeInaDistance,
     ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis, {ina: true})
 
+    const boundClassId = jiNotationBoundClassEntry[0]
+
     jiNotationBoundClassRow = [
-        formatIntegerDecimal(boundClassIndex, {align: true}),
+        boundClassId,
         formatMinaName(lesserBoundedMinaName),
         formatMinaName(greaterBoundedMinaName),
         alignAscii(extremeLevelLesserBoundedCommaClass),

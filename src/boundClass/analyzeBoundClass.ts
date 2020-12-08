@@ -1,5 +1,5 @@
-import {count, Index, isUndefined, Multiplier, subtractPitch} from "@sagittal/general"
-import {BoundClass, JiNotationBoundClass, Tinas, TINA_CENTS} from "@sagittal/system"
+import {count, isUndefined, Multiplier, subtractPitch} from "@sagittal/general"
+import {JiNotationBoundClassEntry, Tinas, TINA_CENTS} from "@sagittal/system"
 import {consolidateBoundHistories} from "../consolidateHistories"
 import {BoundHistory} from "../histories"
 import {analyzeHistory, BoundHistoryAnalysis} from "../history"
@@ -11,8 +11,7 @@ import {JiNotationBoundClassAnalysis} from "./types"
 
 const analyzeJiNotationBoundClass = (
     boundHistories: BoundHistory[],
-    jiNotationBoundClass: JiNotationBoundClass,
-    boundClassIndex: Index<BoundClass>,
+    [boundClassId, jiNotationBoundClass]: JiNotationBoundClassEntry,
 ): JiNotationBoundClassAnalysis => {
     const initialPosition = computeInitialPosition(jiNotationBoundClass)
     const boundHistoryAnalyses = boundHistories
@@ -35,7 +34,7 @@ const analyzeJiNotationBoundClass = (
     const initialPositionTinaDistance =
         subtractPitch(jiNotationBoundClass.pitch, initialPosition) / TINA_CENTS as Multiplier<Tinas>
 
-    updateRankAnalysis(bestRank, boundClassIndex)
+    updateRankAnalysis(bestRank, boundClassId)
     updateJiNotationLevelAnalysis(bestPossibleBoundHistoryAnalysis)
 
     const boundHistoryConsolidation =

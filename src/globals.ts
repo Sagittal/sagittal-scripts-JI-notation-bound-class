@@ -1,5 +1,5 @@
-import {Count, Decimal, Index, Rank, RecordKey} from "@sagittal/general"
-import {BoundClass, BoundType, JiNotationLevelId} from "@sagittal/system"
+import {Count, Decimal, Rank, RecordKey} from "@sagittal/general"
+import {BoundClassId, BoundType, JiNotationLevelId} from "@sagittal/system"
 import {RANKS} from "./ranks"
 
 const jiNotationLevelsBestHistoryRanks:
@@ -20,7 +20,7 @@ const INITIAL_RANK_COUNTS = {
     [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 0 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
 }
 
-const INITIAL_RANK_BOUND_INDICES = {
+const INITIAL_RANK_BOUND_IDS = {
     [RANKS[BoundType.INA_MIDPOINT]]: [],
     [RANKS[BoundType.COMMA_MEAN]]: [],
     [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: [],
@@ -30,15 +30,15 @@ const rankCounts: Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>,
     Count<Decimal<{integer: true}> & Rank<BoundType>>> =
     JSON.parse(JSON.stringify(INITIAL_RANK_COUNTS))
 
-const rankBoundClassIndices:
-    Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>, Array<Index<BoundClass>>> =
-    JSON.parse(JSON.stringify(INITIAL_RANK_BOUND_INDICES))
+const rankBoundClassIds:
+    Record<RecordKey<Decimal<{integer: true}> & Rank<BoundType>>, Array<BoundClassId>> =
+    JSON.parse(JSON.stringify(INITIAL_RANK_BOUND_IDS))
 
 export {
     jiNotationLevelsBestHistoryRanks,
     jiNotationLevelsBestCumulativeHistoryRanks,
-    rankBoundClassIndices,
+    rankBoundClassIds,
     rankCounts,
     INITIAL_RANK_COUNTS,
-    INITIAL_RANK_BOUND_INDICES,
+    INITIAL_RANK_BOUND_IDS,
 }

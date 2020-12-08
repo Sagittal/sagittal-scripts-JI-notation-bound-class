@@ -25,7 +25,6 @@ describe("computeJiNotationBoundClassRow", (): void => {
             pitch: computePitchFromCents(5.447635 as Cents),
         }
         const boundClassId = BoundClassId.MINA_10
-        const boundClassIndex = 10 as Index<BoundClass>
         const jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis = {
             ...jiNotationBoundClassAnalysisFixture,
             bestPossibleBoundHistoryAnalysis: {
@@ -64,11 +63,10 @@ describe("computeJiNotationBoundClassRow", (): void => {
         const actual = computeJiNotationBoundClassRow(
             jiNotationBoundClassAnalysis,
             [boundClassId, jiNotationBoundClass],
-            boundClassIndex,
         )
 
         const expected = [
-            " 10    ",          // Bound class index
+            "mina10",           // Bound class ID
             " 10",              // Lesser bounded mina name
             " 11",              // Greater bounded mina name
             "   ,,|( ",         // Extreme lesser bounded comma class

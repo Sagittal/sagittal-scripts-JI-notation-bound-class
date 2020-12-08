@@ -1,19 +1,6 @@
+import {Abs, APOTOME, Cents, Count, Grade, HALF_SCALER, Monzo, Multiplier, Name, Scamon, Sum} from "@sagittal/general"
 import {
-    Abs,
-    APOTOME,
-    Cents,
-    Count,
-    Grade,
-    HALF_SCALER,
-    Index,
-    Monzo,
-    Multiplier,
-    Name,
-    Scamon,
-    Sum,
-} from "@sagittal/general"
-import {
-    BoundClass,
+    BoundClassId,
     BoundType,
     EXTREME_EDA,
     Ina,
@@ -105,7 +92,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
         jiNotationLevels: [JiNotationLevelId.ULTRA, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
         boundType: BoundType.INA_MIDPOINT,
     }
-    const boundClassIndex = 47 as Index<BoundClass>
+    const boundClassId = BoundClassId.MINA_47
     const expectedBestBoundHistoryBoundEventAnalyses: BoundEventAnalysis[] = [
         {
             jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -164,7 +151,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
     }
 
     it("returns an analysis of the JI notation bound class using its histories, including a consolidation of said bound histories, and its best possible bound class history, and the difference between the bound and its initial position", (): void => {
-        const actual = analyzeJiNotationBoundClass(histories, jiNotationBoundClass, boundClassIndex)
+        const actual = analyzeJiNotationBoundClass(histories, [boundClassId, jiNotationBoundClass])
 
         const expected = {
             bestRank: RANKS[BoundType.COMMA_MEAN],
@@ -259,16 +246,16 @@ describe("analyzeJiNotationBoundClass", (): void => {
     it("updates the rank analysis", (): void => {
         spyOn(ranks, "updateRankAnalysis")
 
-        analyzeJiNotationBoundClass(histories, jiNotationBoundClass, boundClassIndex)
+        analyzeJiNotationBoundClass(histories, [boundClassId, jiNotationBoundClass])
 
         const expectedBestHistoryRank = RANKS[BoundType.COMMA_MEAN]
-        expect(ranks.updateRankAnalysis).toHaveBeenCalledWith(expectedBestHistoryRank, boundClassIndex)
+        expect(ranks.updateRankAnalysis).toHaveBeenCalledWith(expectedBestHistoryRank, boundClassId)
     })
 
     it("updates the JI notation level analysis", (): void => {
         spyOn(jiNotationLevels, "updateJiNotationLevelAnalysis")
 
-        analyzeJiNotationBoundClass(histories, jiNotationBoundClass, boundClassIndex)
+        analyzeJiNotationBoundClass(histories, [boundClassId, jiNotationBoundClass])
 
         expect(jiNotationLevels.updateJiNotationLevelAnalysis)
             .toHaveBeenCalledWith(expectedBestPossibleBoundHistoryAnalysis)

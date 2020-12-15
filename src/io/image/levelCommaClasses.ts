@@ -15,6 +15,10 @@ import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
 import {DOT_SIZE, MINA_OFFSET, SAGITTAL_OFFSET} from "./sizes"
 import {computeX} from "./x"
 
+// TODO: use vectorize from @sagittal/general so that the user doesn't have to have the Bravura Text font installed to
+//  See the Sagittal symbols
+//  Then change readme to say you need to install bravura text bb
+
 const visualizeJiNotationLevelCommaClasses = (): Io[] => {
     const jiNotationLevelCommaClassElements: Io[] = [] as Io[]
 

@@ -1,5 +1,5 @@
 import {ColorMethod, Count, Row} from "@sagittal/general"
-import * as table from "@sagittal/general/dist/io/table/table"
+import * as table from "@sagittal/general/dist/cjs/io/table/table"
 import {BoundType} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../../../src/boundClass"
 import {computeJiNotationBoundClassAnalysesOutput} from "../../../../../src/io/terminal/boundClasses"

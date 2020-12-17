@@ -1,5 +1,5 @@
 import {ColorMethod, Count, Row} from "@sagittal/general"
-import * as table from "@sagittal/general/dist/cjs/io/table/table"
+import * as table from "@sagittal/general/dist/cjs/node/scripts/table/table"
 import {BoundType} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../../../src/boundClass"
 import {computeJiNotationBoundClassAnalysesOutput} from "../../../../../src/io/terminal/boundClasses"
@@ -14,11 +14,11 @@ describe("computeJiNotationBoundClassAnalysesOutput", (): void => {
             {...jiNotationBoundClassAnalysisFixture, bestRank: RANKS[BoundType.COMMA_MEAN]},
         ]
 
-        spyOn(table, "formatTable")
+        spyOn(table, "formatTableFromScript")
 
         computeJiNotationBoundClassAnalysesOutput(jiNotationBoundClassAnalyses)
 
-        expect(table.formatTable).toHaveBeenCalledWith(
+        expect(table.formatTableFromScript).toHaveBeenCalledWith(
             jasmine.anything(),
             {
                 colors: [

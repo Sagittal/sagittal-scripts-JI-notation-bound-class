@@ -1,4 +1,4 @@
-import {ColorMethod, Count, formatTable, Io, Row, sumTexts, Table} from "@sagittal/general"
+import {ColorMethod, Count, formatTableFromScript, Io, Row, sumTexts, Table} from "@sagittal/general"
 import {JI_NOTATION_BOUND_CLASS_ENTRIES} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {RANK_COLOR_METHODS} from "../rankColors"
@@ -25,7 +25,7 @@ const computeJiNotationBoundClassAnalysesOutput = (
         },
     )
 
-    return sumTexts(JI_NOTATION_BOUND_CLASS_ANALYSES_TABLE_TITLE, formatTable(table, {colors, headerRowCount}))
+    return sumTexts(JI_NOTATION_BOUND_CLASS_ANALYSES_TABLE_TITLE, formatTableFromScript(table, {colors, headerRowCount}))
 }
 
 export {

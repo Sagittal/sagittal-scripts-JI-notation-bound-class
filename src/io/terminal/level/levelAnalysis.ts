@@ -1,4 +1,4 @@
-import {formatTable, Io} from "@sagittal/general"
+import {formatTableFromScript, Io} from "@sagittal/general"
 import {JiNotationLevelId} from "@sagittal/system"
 import {computeJiNotationLevelAnalysisHeaderRow} from "./levelAnalysisHeaderRow"
 import {computeJiNotationLevelAnalysisRowColors} from "./levelAnalysisRowColors"
@@ -15,7 +15,7 @@ const formatJiNotationLevelAnalysis = (jiNotationLevel: JiNotationLevelId): Io =
         ...jiNotationLevelAnalysisRows,
     ]
 
-    return formatTable(jiNotationLevelAnalysisTable, {colors: jiNotationLevelAnalysisRowColors})
+    return formatTableFromScript(jiNotationLevelAnalysisTable, {colors: jiNotationLevelAnalysisRowColors})
 }
 
 export {

@@ -1,4 +1,4 @@
-import {JiNotationBoundClassEntry, JiNotationLevelId, JI_NOTATION_BOUND_CLASS_ENTRIES} from "@sagittal/system"
+import {JI_NOTATION_BOUND_CLASS_ENTRIES, JiNotationBoundClassEntry, JiNotationLevelId} from "@sagittal/system"
 import {computeBoundedCommaClassPositions} from "../../boundedPositions"
 import {computePositionCommaClassId} from "./positionCommaClassId"
 import {BoundedCommaClassIdPairs} from "./types"

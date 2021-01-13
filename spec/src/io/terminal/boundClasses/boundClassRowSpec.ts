@@ -1,13 +1,5 @@
-import {Abs, Cents, computePitchFromCents, Index, Multiplier, Row, Sum} from "@sagittal/general"
-import {
-    BoundClass,
-    BoundClassId,
-    BoundType,
-    Ina,
-    JiNotationBoundClass,
-    JiNotationLevelId,
-    Tinas,
-} from "@sagittal/system"
+import {Abs, Cents, computePitchFromCents, Multiplier, Row, Sum} from "@sagittal/general"
+import {BoundClassId, BoundType, Ina, JiNotationBoundClass, JiNotationLevelId, Tinas} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../../../src/boundClass"
 import {computeJiNotationBoundClassRow} from "../../../../../src/io/terminal/boundClasses/boundClassRow"
 import {RANKS} from "../../../../../src/ranks"

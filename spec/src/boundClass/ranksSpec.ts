@@ -1,5 +1,5 @@
-import {Count, Decimal, deepClone, Index, Rank} from "@sagittal/general"
-import {BoundClass, BoundClassId, BoundType} from "@sagittal/system"
+import {Count, Decimal, deepClone, Rank} from "@sagittal/general"
+import {BoundClassId, BoundType} from "@sagittal/system"
 import {updateRankAnalysis} from "../../../src/boundClass/ranks"
 import {rankBoundClassIds, rankCounts} from "../../../src/globals"
 import {RANKS} from "../../../src/ranks"

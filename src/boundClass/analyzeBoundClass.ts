@@ -1,5 +1,5 @@
 import {count, isUndefined, Multiplier, subtractPitch} from "@sagittal/general"
-import {JiNotationBoundClassEntry, Tinas, TINA_CENTS} from "@sagittal/system"
+import {JiNotationBoundClassEntry, TINA_CENTS, Tinas} from "@sagittal/system"
 import {consolidateBoundHistories} from "../consolidateHistories"
 import {BoundHistory} from "../histories"
 import {analyzeHistory, BoundHistoryAnalysis} from "../history"

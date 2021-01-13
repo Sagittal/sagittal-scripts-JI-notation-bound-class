@@ -1,5 +1,5 @@
 import {Scamon} from "@sagittal/general"
-import {CommaClassId, getCommaClass, JiNotationLevelId, JI_NOTATION_LEVELS_COMMA_CLASS_IDS} from "@sagittal/system"
+import {CommaClassId, getCommaClass, JI_NOTATION_LEVELS_COMMA_CLASS_IDS, JiNotationLevelId} from "@sagittal/system"
 import {computeNeighborPositions} from "./neighborPositions"
 import {BoundedCommaClassPositions} from "./types"
 

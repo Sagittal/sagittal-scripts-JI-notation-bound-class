@@ -1,5 +1,5 @@
 import {isCloseTo, Multiplier, Scamon, subtractPitch} from "@sagittal/general"
-import {JiNotationBoundClass, Tinas, TINA_CENTS} from "@sagittal/system"
+import {JiNotationBoundClass, TINA_CENTS, Tinas} from "@sagittal/system"
 import {BoundHistory} from "../histories"
 import {analyzeBoundEvents} from "./events"
 import {computeExact} from "./exact"

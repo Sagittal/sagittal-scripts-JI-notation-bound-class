@@ -2,9 +2,9 @@ import {CommaMean} from "@sagittal/general"
 import {
     BoundType,
     InaMidpoint,
+    JI_NOTATION_LEVELS,
     JiNotationBound,
     JiNotationLevelId,
-    JI_NOTATION_LEVELS,
     SizeCategoryBound,
 } from "@sagittal/system"
 import {computeInaMidpoints} from "./inaMidpoints"

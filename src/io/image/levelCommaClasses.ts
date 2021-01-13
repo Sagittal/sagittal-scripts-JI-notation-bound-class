@@ -7,8 +7,8 @@ import {
     getCommaClass,
     getMinaName,
     getRepresentativeSagittal,
-    JiNotationLevelId,
     JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
+    JiNotationLevelId,
 } from "@sagittal/system"
 import {formatMinaName} from "../terminal"
 import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"

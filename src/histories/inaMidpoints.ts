@@ -2,9 +2,9 @@ import {APOTOME, isScamonGreater, Maybe, Name, Quotient, Scamon} from "@sagittal
 import {
     HALF_APOTOME,
     InaMidpoint,
-    JiNotationLevelId,
-    JI_NOTATION_LEVELS,
     JI_NOTATION_LEVEL_EDAS,
+    JI_NOTATION_LEVELS,
+    JiNotationLevelId,
 } from "@sagittal/system"
 
 const computeInaMidpoints = (jiNotationLevel: JiNotationLevelId): InaMidpoint[] => {

@@ -25,7 +25,10 @@ const computeJiNotationBoundClassAnalysesOutput = (
         },
     )
 
-    return sumTexts(JI_NOTATION_BOUND_CLASS_ANALYSES_TABLE_TITLE, formatTableFromScript(table, {colors, headerRowCount}))
+    return sumTexts(JI_NOTATION_BOUND_CLASS_ANALYSES_TABLE_TITLE, formatTableFromScript(table, {
+        colors,
+        headerRowCount,
+    }))
 }
 
 export {

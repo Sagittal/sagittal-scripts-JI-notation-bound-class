@@ -11,7 +11,7 @@ import {
     Scamon,
     Sum,
 } from "@sagittal/general"
-import {BoundType, EXTREME_EDA, Ina, JiNotationBoundClass, JiNotationLevelId, Tinas, TINA_CENTS} from "@sagittal/system"
+import {BoundType, EXTREME_EDA, Ina, JiNotationBoundClass, JiNotationLevelId, TINA_CENTS, Tinas} from "@sagittal/system"
 import {computeInitialPosition} from "../../../src/boundClass/initialPosition"
 import {BoundHistory} from "../../../src/histories"
 import {analyzeHistory} from "../../../src/history"

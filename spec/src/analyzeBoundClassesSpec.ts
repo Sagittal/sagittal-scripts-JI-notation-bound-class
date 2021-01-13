@@ -1,10 +1,10 @@
 import {Name, onlyRunInCi} from "@sagittal/general"
 import {
     BoundType,
+    JI_NOTATION_BOUND_CLASSES,
     JiNotationBound,
     JiNotationBoundClass,
     JiNotationLevelId,
-    JI_NOTATION_BOUND_CLASSES,
 } from "@sagittal/system"
 import {analyzeJiNotationBoundClasses} from "../../src/analyzeBoundClasses"
 import {JiNotationBoundClassAnalysis} from "../../src/boundClass"

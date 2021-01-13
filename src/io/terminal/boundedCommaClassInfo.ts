@@ -10,8 +10,8 @@ import {
     getMinaName,
     getRepresentativeSagittal,
     getSmallestSymbolSubsetId,
-    JiNotationLevelId,
     JI_NOTATION_BOUND_CLASSES,
+    JiNotationLevelId,
 } from "@sagittal/system"
 import {computeInaDistance} from "../../history"
 import {BoundedCommaClassInfo} from "./types"

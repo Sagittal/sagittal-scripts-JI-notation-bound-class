@@ -1,5 +1,5 @@
 import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Row} from "@sagittal/general"
-import {alignAscii, BoundClassId, JiNotationBoundClassEntry} from "@sagittal/system"
+import {alignAscii, JiNotationBoundClassEntry} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
 import {extractJiNotationLevelDistances} from "./levelDistances"

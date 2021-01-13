@@ -1,4 +1,4 @@
-import {JiNotationBoundClassEntry, JI_NOTATION_BOUND_CLASS_ENTRIES} from "@sagittal/system"
+import {JI_NOTATION_BOUND_CLASS_ENTRIES, JiNotationBoundClassEntry} from "@sagittal/system"
 import {analyzeJiNotationBoundClass, JiNotationBoundClassAnalysis} from "./boundClass"
 import {computeHistories} from "./histories"
 

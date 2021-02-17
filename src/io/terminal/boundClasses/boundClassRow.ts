@@ -1,5 +1,5 @@
 import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Row} from "@sagittal/general"
-import {alignAscii, JiNotationBoundClassEntry} from "@sagittal/system"
+import {alignSagitype, JiNotationBoundClassEntry} from "@sagittal/system"
 import {JiNotationBoundClassAnalysis} from "../../../boundClass"
 import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
 import {extractJiNotationLevelDistances} from "./levelDistances"
@@ -56,8 +56,8 @@ const computeJiNotationBoundClassRow = (
         boundClassId,
         formatMinaName(lesserBoundedMinaName),
         formatMinaName(greaterBoundedMinaName),
-        alignAscii(extremeLevelLesserBoundedCommaClass),
-        alignAscii(extremeLevelGreaterBoundedCommaClass),
+        alignSagitype(extremeLevelLesserBoundedCommaClass),
+        alignSagitype(extremeLevelGreaterBoundedCommaClass),
         mediumLevelRank,
         highLevelRank,
         ultraLevelRank,

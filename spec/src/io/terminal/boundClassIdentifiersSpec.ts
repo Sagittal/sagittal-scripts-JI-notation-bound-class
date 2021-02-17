@@ -21,7 +21,7 @@ import {
 } from "@sagittal/general"
 import {
     ApotomeSlope,
-    Ascii,
+    Sagitype,
     Ate,
     BoundClassId,
     BoundType,
@@ -56,8 +56,8 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
             extractJiNotationBoundClassIdentifiers([boundClassId, jiNotationBoundClass])
 
         const expected: JiNotationBoundClassIdentifiers = {
-            extremeLevelLesserBoundedCommaClass: ".)/|" as Ascii,
-            extremeLevelGreaterBoundedCommaClass: "'/|" as Ascii,
+            extremeLevelLesserBoundedCommaClass: ".)/|" as Sagitype,
+            extremeLevelGreaterBoundedCommaClass: "'/|" as Sagitype,
             cents: 23.116419 as Cents as Cents,
             boundedCommaClassInfoPairs: {
                 boundClassId,
@@ -67,7 +67,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / ULTRINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
-                            ascii: ".)/|" as Ascii,
+                            sagitype: ".)/|" as Sagitype,
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
@@ -102,7 +102,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / ULTRINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
-                            ascii: "'/|" as Ascii,
+                            sagitype: "'/|" as Sagitype,
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
@@ -138,7 +138,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / MINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
-                            ascii: ".)/|" as Ascii,
+                            sagitype: ".)/|" as Sagitype,
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
@@ -172,7 +172,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / MINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
-                            ascii: "'/|" as Ascii,
+                            sagitype: "'/|" as Sagitype,
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
@@ -208,7 +208,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         distance: 23.1164196495597 - 22.9305875372457 as Abs<Cents>,
                         inaDistance: (23.1164196495597 - 22.9305875372457) / TINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
-                            ascii: ".)/|" as Ascii,
+                            sagitype: ".)/|" as Sagitype,
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },
@@ -242,7 +242,7 @@ describe("extractJiNotationBoundIdentifiers", (): void => {
                         distance: 23.46001038464900 - 23.1164196495597 as Abs<Cents>,
                         inaDistance: (23.46001038464900 - 23.1164196495597) / TINA_CENTS as Multiplier<Ina>,
                         representativeSagittal: {
-                            ascii: "'/|" as Ascii,
+                            sagitype: "'/|" as Sagitype,
                             unicode: "" as Unicode,
                             smallestSymbolSubsetId: SymbolSubsetId.HERCULEAN,
                         },

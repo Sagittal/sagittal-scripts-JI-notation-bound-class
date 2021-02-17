@@ -3,7 +3,7 @@ import {
     analyzeComma,
     BoundClassId,
     CommaClassId,
-    computeSagittalAscii,
+    computeSagittalSagitype,
     computeSagittalUnicode,
     getCommaClass,
     getIntroducingJiNotationLevel,
@@ -25,7 +25,7 @@ const computeBoundedCommaClassInfo = (
     const commaAnalysis = analyzeComma(commaClass.pitch)
 
     const sagittal = getRepresentativeSagittal(commaClassId)
-    const ascii = computeSagittalAscii(sagittal)
+    const sagitype = computeSagittalSagitype(sagittal)
     const unicode = computeSagittalUnicode(sagittal)
 
     const introducingJiNotationLevel = getIntroducingJiNotationLevel(commaClassId)
@@ -42,7 +42,7 @@ const computeBoundedCommaClassInfo = (
     return {
         id: commaClassId,
         representativeSagittal: {
-            ascii,
+            sagitype,
             unicode,
             smallestSymbolSubsetId,
         },

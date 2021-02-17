@@ -2,7 +2,7 @@ import {add, DEFAULT_PRECISION, Io, Px, round, subtract} from "@sagittal/general
 import {
     analyzeComma,
     CommaClassId,
-    computeSagittalAscii,
+    computeSagittalSagitype,
     computeSagittalUnicode,
     getCommaClass,
     getMinaName,
@@ -40,21 +40,21 @@ const visualizeJiNotationLevelCommaClasses = (): Io[] => {
             const minaName = getMinaName(jiNotationLevelCommaClassId)
             const commaAnalysis = analyzeComma(getCommaClass(jiNotationLevelCommaClassId).pitch)
             const representativeSagittal = getRepresentativeSagittal(jiNotationLevelCommaClassId)
-            const ascii = computeSagittalAscii(representativeSagittal)
+            const sagitype = computeSagittalSagitype(representativeSagittal)
             const unicode = computeSagittalUnicode(representativeSagittal)
 
             const positionX: Px = computeX(commaAnalysis.pitch)
 
-            const adjustedUnicode = ascii === "/|~" ?
+            const adjustedUnicode = sagitype === "/|~" ?
                 unicode + "         " :
-                ascii === ",,(|(" ?
+                sagitype === ",,(|(" ?
                     "         " + unicode :
                     unicode
 
             jiNotationLevelCommaClassElements.push(
                 `  <circle stroke="black" cx="${positionX}" cy="${dotY}" r="${DOT_SIZE}" />\n` as Io,
             )
-            jiNotationLevelCommaClassElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${sagittalY}" font-size="10px" font-family="Helvetica">${ascii}</text>\n` as Io) // So they can be searched by ASCII
+            jiNotationLevelCommaClassElements.push(`  <text fill="white" text-anchor="middle" x="${positionX}" y="${sagittalY}" font-size="10px" font-family="Helvetica">${sagitype}</text>\n` as Io) // So they can be searched by Sagitype
             jiNotationLevelCommaClassElements.push(`  <text fill="black" text-anchor="middle" x="${positionX}" y="${sagittalY}" font-size="40px" font-family="Bravura">${adjustedUnicode}</text>\n` as Io)
 
             if (jiNotationLevel === JiNotationLevelId.EXTREME) {

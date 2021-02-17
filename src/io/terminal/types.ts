@@ -1,6 +1,6 @@
 import {Abs, Cents, Maybe, Multiplier, Name} from "@sagittal/general"
 import {
-    Ascii,
+    Sagitype,
     BoundClassId,
     CommaAnalysis,
     CommaClassId,
@@ -25,7 +25,7 @@ interface BoundedCommaClassInfo {
     id: CommaClassId,
     commaAnalysis: CommaAnalysis,
     representativeSagittal: {
-        ascii: Ascii,
+        sagitype: Sagitype,
         unicode: Unicode,
         smallestSymbolSubsetId: SymbolSubsetId,
     }
@@ -43,8 +43,8 @@ type BoundedCommaClassInfoPairs =
 
 interface JiNotationBoundClassIdentifiers {
     boundedCommaClassInfoPairs: BoundedCommaClassInfoPairs,
-    extremeLevelGreaterBoundedCommaClass: Ascii,
-    extremeLevelLesserBoundedCommaClass: Ascii,
+    extremeLevelGreaterBoundedCommaClass: Sagitype,
+    extremeLevelLesserBoundedCommaClass: Sagitype,
     greaterBoundedMinaName: Maybe<Name<Minas>>,
     lesserBoundedMinaName: Maybe<Name<Minas>>,
     cents: Cents,

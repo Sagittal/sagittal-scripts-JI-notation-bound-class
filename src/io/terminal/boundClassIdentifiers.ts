@@ -1,8 +1,8 @@
 import {computeCentsFromPitch, isUndefined} from "@sagittal/general"
 import {
-    BLANK_ASCII,
+    BLANK_SAGITYPE,
     CommaClassId,
-    computeSagittalAscii,
+    computeSagittalSagitype,
     getCommaClass,
     getMinaName,
     getRepresentativeSagittal,
@@ -31,8 +31,8 @@ const extractJiNotationBoundClassIdentifiers = (
     const extremeLevelLesserBoundedCommaClass = !isUndefined(extremeLevelLesserBoundedCommaClassId) &&
         getCommaClass(extremeLevelLesserBoundedCommaClassId)
     const formattedExtremeLevelLesserBoundedCommaClass = extremeLevelLesserBoundedCommaClass ?
-        computeSagittalAscii(getRepresentativeSagittal(extremeLevelLesserBoundedCommaClassId as CommaClassId)) :
-        BLANK_ASCII
+        computeSagittalSagitype(getRepresentativeSagittal(extremeLevelLesserBoundedCommaClassId as CommaClassId)) :
+        BLANK_SAGITYPE
     const lesserBoundedMinaName = extremeLevelLesserBoundedCommaClass ?
         getMinaName(extremeLevelLesserBoundedCommaClassId as CommaClassId) :
         undefined
@@ -40,8 +40,8 @@ const extractJiNotationBoundClassIdentifiers = (
     const extremeLevelGreaterBoundedCommaClass = !isUndefined(extremeLevelGreaterBoundedCommaClassId) &&
         getCommaClass(extremeLevelGreaterBoundedCommaClassId)
     const formattedExtremeLevelGreaterBoundedCommaClass = extremeLevelGreaterBoundedCommaClass ?
-        computeSagittalAscii(getRepresentativeSagittal(extremeLevelGreaterBoundedCommaClassId as CommaClassId)) :
-        BLANK_ASCII
+        computeSagittalSagitype(getRepresentativeSagittal(extremeLevelGreaterBoundedCommaClassId as CommaClassId)) :
+        BLANK_SAGITYPE
     const greaterBoundedMinaName = extremeLevelGreaterBoundedCommaClass ?
         getMinaName(extremeLevelGreaterBoundedCommaClassId as CommaClassId) :
         undefined

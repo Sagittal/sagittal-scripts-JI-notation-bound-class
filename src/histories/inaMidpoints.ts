@@ -1,4 +1,4 @@
-import {APOTOME, isScamonGreater, Maybe, Name, Quotient, Scamon} from "@sagittal/general"
+import {APOTOME, isSpevGreater, Maybe, Name, Quotient, Spev} from "@sagittal/general"
 import {
     HALF_APOTOME,
     InaMidpoint,
@@ -13,11 +13,11 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevelId): InaMidpoint[] 
     const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<InaMidpoint> => {
         const midpoint = degree + 0.5
         const pitch = {
-            monzo: APOTOME.monzo,
+            pev: APOTOME.pev,
             scaler: [midpoint, eda as number] as Quotient,
-        } as Scamon<{rational: false}>
+        } as Spev<{rational: false}>
 
-        if (isScamonGreater(pitch, HALF_APOTOME)) {
+        if (isSpevGreater(pitch, HALF_APOTOME)) {
             return undefined
         }
 

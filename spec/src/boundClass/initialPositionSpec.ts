@@ -1,4 +1,4 @@
-import {Cents, computePitchFromCents, HALF_SCALER, Monzo, Scamon} from "@sagittal/general"
+import {Cents, computePitchFromCents, HALF_SCALER, Pev, Spev} from "@sagittal/general"
 import {JiNotationBoundClass, JiNotationLevelId} from "@sagittal/system"
 import {computeInitialPosition} from "../../../src/boundClass/initialPosition"
 import {jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
@@ -18,9 +18,9 @@ describe("computeInitialPosition", (): void => {
             //   [ -14   6   0   0   0   0   0   0   1 ⟩       ~|\
             // + [  -8   8  -2                         ⟩      //|
             // / 2 =
-            monzo: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
+            pev: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
             scaler: HALF_SCALER,
-        } as Scamon<{rational: false}>
+        } as Spev<{rational: false}>
         expect(actual).toEqual(expected)
     })
 })

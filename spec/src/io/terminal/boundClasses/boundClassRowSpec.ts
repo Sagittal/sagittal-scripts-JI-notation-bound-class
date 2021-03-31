@@ -73,8 +73,8 @@ describe("computeJiNotationBoundClassRow", (): void => {
             "  0.333",          // Best possible bound class history Ultra distance
             "  0.022",          // Best possible bound class history Extreme distance
             "  0.355",          // Best possible bound class history total distance
-            "",                 // Best possible bound class history Medium ina distance  (medina)
-            "",                 // Best possible bound class history High ina distance    (highina)
+            "",                 // Best possible bound class history Medium ina distance  (athina)
+            "",                 // Best possible bound class history High ina distance    (hina)
             "  0.682",          // Best possible bound class history Ultra ina distance   (ultrina)
             "  0.157",          // Best possible bound class history Extreme ina distance (mina)
             "  0.839",          // Best possible bound class history total ina distance

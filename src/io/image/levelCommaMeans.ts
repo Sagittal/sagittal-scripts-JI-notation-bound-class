@@ -1,5 +1,5 @@
 import {BLANK, CommaMean, DEFAULT_PRECISION, Io, Px, round, subtract} from "@sagittal/general"
-import {Sagitype, computeAccidentalUnicode, JiNotationLevelId, parseSagitype} from "@sagittal/system"
+import {computeAccidentalUnicode, JiNotationLevelId, parseSagitype, Sagitype} from "@sagittal/system"
 import {JI_NOTATION_LEVELS_COMMA_MEANS} from "../../histories"
 import {JI_NOTATION_LEVEL_CENTERS} from "./levelHeights"
 import {COMMA_MEAN_HEX_COLOR} from "./rankColors"

@@ -1,4 +1,4 @@
-import {APOTOME, HALF_SCALER, Name, Scamon} from "@sagittal/general"
+import {APOTOME, HALF_SCALER, Name, Spev} from "@sagittal/general"
 import {
     BoundType,
     EXTREME_EDA,
@@ -19,18 +19,18 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
             boundType: BoundType.INA_MIDPOINT,
             name: "1.5°21" as Name<JiNotationBound>,
             pitch: {
-                monzo: APOTOME.monzo,
+                pev: APOTOME.pev,
                 scaler: [1.5, MEDIUM_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
         }
         const historyPriorEventB: BoundEvent = {
             jiNotationLevel: JiNotationLevelId.MEDIUM,
             boundType: BoundType.COMMA_MEAN,
             name: "|( )|(" as Name<JiNotationBound>,
             pitch: {
-                monzo: [],
+                pev: [],
                 scaler: HALF_SCALER,
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
         }
         const histories: BoundHistory[] = [
             [historyPriorEventA],
@@ -40,9 +40,9 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             ...jiNotationBoundClassFixture,
             pitch: {
-                monzo: APOTOME.monzo,
+                pev: APOTOME.pev,
                 scaler: [16.5, EXTREME_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.HIGH, JiNotationLevelId.ULTRA],
         }
 
@@ -56,7 +56,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "2.5°47" as Name<JiNotationBound>,
-                    pitch: {monzo: APOTOME.monzo, scaler: [2.5, HIGH_EDA]} as Scamon<{rational: false}>,
+                    pitch: {pev: APOTOME.pev, scaler: [2.5, HIGH_EDA]} as Spev<{rational: false}>,
                 },
             ],
             [
@@ -65,7 +65,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "3.5°47" as Name<JiNotationBound>,
-                    pitch: {monzo: APOTOME.monzo, scaler: [3.5, HIGH_EDA]} as Scamon<{rational: false}>,
+                    pitch: {pev: APOTOME.pev, scaler: [3.5, HIGH_EDA]} as Spev<{rational: false}>,
                 },
             ],
             [
@@ -74,7 +74,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( ~|" as Name<JiNotationBound>,
-                    pitch: {monzo: [3, 1, 1, -1, 0, 0, -1], scaler: HALF_SCALER} as Scamon<{rational: false}>,
+                    pitch: {pev: [3, 1, 1, -1, 0, 0, -1], scaler: HALF_SCALER} as Spev<{rational: false}>,
                 },
             ],
             [
@@ -83,7 +83,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "2.5°47" as Name<JiNotationBound>,
-                    pitch: {monzo: APOTOME.monzo, scaler: [2.5, HIGH_EDA]} as Scamon<{rational: false}>,
+                    pitch: {pev: APOTOME.pev, scaler: [2.5, HIGH_EDA]} as Spev<{rational: false}>,
                 },
             ],
             [
@@ -92,7 +92,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "3.5°47" as Name<JiNotationBound>,
-                    pitch: {monzo: APOTOME.monzo, scaler: [3.5, HIGH_EDA]} as Scamon<{rational: false}>,
+                    pitch: {pev: APOTOME.pev, scaler: [3.5, HIGH_EDA]} as Spev<{rational: false}>,
                 },
             ],
             [
@@ -101,7 +101,7 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( ~|" as Name<JiNotationBound>,
-                    pitch: {monzo: [3, 1, 1, -1, 0, 0, -1], scaler: HALF_SCALER} as Scamon<{rational: false}>,
+                    pitch: {pev: [3, 1, 1, -1, 0, 0, -1], scaler: HALF_SCALER} as Spev<{rational: false}>,
                 },
             ],
         ]

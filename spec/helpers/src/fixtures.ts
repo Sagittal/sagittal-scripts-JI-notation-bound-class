@@ -3,15 +3,15 @@ import {
     Cents,
     Count,
     Decimal,
-    EMPTY_MONZO,
+    EMPTY_PEV,
     Grade,
     HALF_SCALER,
-    IRRATIONAL_SCAMON_BASE_MONZO,
+    IRRATIONAL_SPEV_BASE_PEV,
     Multiplier,
     Name,
     Quotient,
     Rank,
-    Scamon,
+    Spev,
     Sum,
     UNISON,
 } from "@sagittal/general"
@@ -23,7 +23,7 @@ import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../src/history"
 import {RANKS} from "../../../src/ranks"
 
 const boundEventFixture: BoundEvent = {
-    pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,
+    pitch: {pev: IRRATIONAL_SPEV_BASE_PEV, scaler: HALF_SCALER} as Spev<{rational: false}>,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevelId,
     name: "" as Name<JiNotationBound>,
@@ -39,7 +39,7 @@ const boundEventAnalysisFixture: BoundEventAnalysis = {
 
 const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
-    pitch: {monzo: IRRATIONAL_SCAMON_BASE_MONZO, scaler: HALF_SCALER} as Scamon<{rational: false}>,
+    pitch: {pev: IRRATIONAL_SPEV_BASE_PEV, scaler: HALF_SCALER} as Spev<{rational: false}>,
     rank: 0 as Decimal<{integer: true}> & Rank<BoundType>,
     grade: 0 as Grade<BoundHistory>,
     totalDistance: 0 as Sum<Abs<Cents>>,
@@ -63,9 +63,9 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
 const jiNotationBoundClassFixture: JiNotationBoundClass = {
     jiNotationLevels: [],
     pitch: {
-        monzo: EMPTY_MONZO,
+        pev: EMPTY_PEV,
         scaler: [1, 1] as Quotient,
-    } as Scamon<{rational: false}>,
+    } as Spev<{rational: false}>,
     boundType: BoundType.INA_MIDPOINT,
     name: "" as Name<JiNotationBound>,
 }

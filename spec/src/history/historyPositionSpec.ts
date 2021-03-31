@@ -1,4 +1,4 @@
-import {APOTOME, Scamon} from "@sagittal/general"
+import {APOTOME, Spev} from "@sagittal/general"
 import {EXTREME_EDA, HIGH_EDA, ULTRA_EDA} from "@sagittal/system"
 import {BoundHistory} from "../../../src/histories"
 import {computeBoundHistoryPosition} from "../../../src/history/historyPosition"
@@ -10,32 +10,32 @@ describe("computeBoundHistoryPosition", (): void => {
             {
                 ...boundEventFixture,
                 pitch: {
-                    monzo: APOTOME.monzo,
+                    pev: APOTOME.pev,
                     scaler: [27.5, HIGH_EDA],
-                } as Scamon<{rational: false}>,    // Not yet...
+                } as Spev<{rational: false}>,    // Not yet...
             },
             {
                 ...boundEventFixture,
                 pitch: {
-                    monzo: APOTOME.monzo,
+                    pev: APOTOME.pev,
                     scaler: [33.5, ULTRA_EDA],
-                } as Scamon<{rational: false}>,    // Almost there...
+                } as Spev<{rational: false}>,    // Almost there...
             },
             {
                 ...boundEventFixture,
                 pitch: {
-                    monzo: APOTOME.monzo,
+                    pev: APOTOME.pev,
                     scaler: [135.5, EXTREME_EDA],
-                } as Scamon<{rational: false}>,    // Final event
+                } as Spev<{rational: false}>,    // Final event
             },
         ]
 
         const actual = computeBoundHistoryPosition(boundHistory)
 
         const expected = {
-            monzo: APOTOME.monzo,
+            pev: APOTOME.pev,
             scaler: [135.5, EXTREME_EDA],
-        } as Scamon<{rational: false}>
+        } as Spev<{rational: false}>
         expect(actual).toEqual(expected)
     })
 })

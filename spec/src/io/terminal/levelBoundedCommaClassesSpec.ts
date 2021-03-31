@@ -1,4 +1,4 @@
-import {APOTOME, CommaMean, HALF_SCALER, Monzo, Name, Scamon} from "@sagittal/general"
+import {APOTOME, CommaMean, HALF_SCALER, Pev, Name, Spev} from "@sagittal/general"
 import {
     BoundClassId,
     BoundType,
@@ -15,9 +15,9 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
     it("returns, given a JI notation bound class, for each of its JI levels, an array of the pair of comma class positions it bounds at that JI notation level", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
-                monzo: APOTOME.monzo,
+                pev: APOTOME.pev,
                 scaler: [175.5, INSANE_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "175.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
@@ -38,9 +38,9 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
     it("works for the final JI notation bound class", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
-                monzo: APOTOME.monzo as Monzo<{rational: true}>,
+                pev: APOTOME.pev as Pev<{rational: true}>,
                 scaler: [404.5, INSANE_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "404.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
@@ -61,9 +61,9 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
     it("works for the first JI notation bound class", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
-                monzo: APOTOME.monzo,
+                pev: APOTOME.pev,
                 scaler: [1.5, INSANE_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "1.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
@@ -83,9 +83,9 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
     it("works for the bound class between the two commas which are extremely close together", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
-                monzo: [-4, -1, -1, 0, 0, 1, 0, 1] as Monzo<{rational: true}>,
+                pev: [-4, -1, -1, 0, 0, 1, 0, 1] as Pev<{rational: true}>,
                 scaler: HALF_SCALER,
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             jiNotationLevels: [JiNotationLevelId.ULTRA, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: ")/| ,.|)" as Name<CommaMean>,
             boundType: BoundType.COMMA_MEAN,

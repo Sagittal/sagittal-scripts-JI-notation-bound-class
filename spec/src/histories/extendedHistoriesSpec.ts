@@ -1,4 +1,4 @@
-import {APOTOME, Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon} from "@sagittal/general"
+import {APOTOME, Cents, computePitchFromCents, HALF_SCALER, Pev, Name, Spev} from "@sagittal/general"
 import {BoundType, HIGH_EDA, JiNotationBound, JiNotationLevelId, ULTRA_EDA} from "@sagittal/system"
 import {BoundEvent, BoundHistory} from "../../../src/histories"
 import {computeExtendedHistories} from "../../../src/histories/extendedHistories"
@@ -11,7 +11,7 @@ describe("computeExtendedHistories", (): void => {
         jiNotationLevel: JiNotationLevelId.HIGH,
         boundType: BoundType.INA_MIDPOINT,
         name: "16.5°47" as Name<JiNotationBound>,
-        pitch: {monzo: APOTOME.monzo, scaler: [16.5, HIGH_EDA]} as Scamon<{rational: false}>,
+        pitch: {pev: APOTOME.pev, scaler: [16.5, HIGH_EDA]} as Spev<{rational: false}>,
     }
 
     beforeEach((): void => {
@@ -36,7 +36,7 @@ describe("computeExtendedHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "23.5°58" as Name<JiNotationBound>,
-                    pitch: {monzo: APOTOME.monzo, scaler: [23.5, ULTRA_EDA]} as Scamon<{rational: false}>,
+                    pitch: {pev: APOTOME.pev, scaler: [23.5, ULTRA_EDA]} as Spev<{rational: false}>,
                 },
             ],
             [
@@ -46,9 +46,9 @@ describe("computeExtendedHistories", (): void => {
                     boundType: BoundType.COMMA_MEAN,
                     name: "'//| )//|" as Name<JiNotationBound>,
                     pitch: {
-                        monzo: [4, -3, -1, 0, 0, 2, 0, -1] as Monzo<{rational: true}>,
+                        pev: [4, -3, -1, 0, 0, 2, 0, -1] as Pev<{rational: true}>,
                         scaler: HALF_SCALER,
-                    } as Scamon<{rational: false}>,
+                    } as Spev<{rational: false}>,
                 },
             ],
             [
@@ -58,9 +58,9 @@ describe("computeExtendedHistories", (): void => {
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "S|M" as Name<JiNotationBound>,
                     pitch: {
-                        monzo: [8, -5] as Monzo<{rational: true}>,
+                        pev: [8, -5] as Pev<{rational: true}>,
                         scaler: HALF_SCALER,
-                    } as Scamon<{rational: false}>,
+                    } as Spev<{rational: false}>,
                 },
             ],
         ]

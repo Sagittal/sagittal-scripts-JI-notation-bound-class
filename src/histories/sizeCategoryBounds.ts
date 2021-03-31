@@ -1,4 +1,4 @@
-import {areScamonsEqual} from "@sagittal/general"
+import {areSpevsEqual} from "@sagittal/general"
 import {HALF_APOTOME, SIZE_CATEGORY_BOUNDS, SizeCategoryBound} from "@sagittal/system"
 
 const computeSizeCategoryBoundsUpToHalfApotome = (): SizeCategoryBound[] =>
@@ -6,7 +6,7 @@ const computeSizeCategoryBoundsUpToHalfApotome = (): SizeCategoryBound[] =>
         0,
         SIZE_CATEGORY_BOUNDS.findIndex(
             (sizeCategoryBound: SizeCategoryBound): boolean =>
-                areScamonsEqual(sizeCategoryBound.pitch, HALF_APOTOME),
+                areSpevsEqual(sizeCategoryBound.pitch, HALF_APOTOME),
         ) + 1,
     )
 

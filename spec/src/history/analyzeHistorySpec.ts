@@ -1,14 +1,14 @@
 import {
     Abs,
-    addScamons,
+    addSpevs,
     APOTOME,
     Cents,
     computePitchFromCents,
-    IRRATIONAL_SCAMON_BASE_MONZO,
+    IRRATIONAL_SPEV_BASE_PEV,
     Multiplier,
     multiply,
     Quotient,
-    Scamon,
+    Spev,
     Sum,
 } from "@sagittal/general"
 import {BoundType, EXTREME_EDA, Ina, JiNotationBoundClass, JiNotationLevelId, TINA_CENTS, Tinas} from "@sagittal/system"
@@ -20,21 +20,21 @@ import {boundEventAnalysisFixture, boundEventFixture, jiNotationBoundClassFixtur
 
 describe("analyzeHistory", (): void => {
     const actualJiNotationBoundPitch = {
-        monzo: APOTOME.monzo,
+        pev: APOTOME.pev,
         scaler: [25.5, EXTREME_EDA],
-    } as Scamon<{rational: false}>
+    } as Spev<{rational: false}>
     let boundHistory: BoundHistory
-    let pitch: Scamon<{rational: false}>
+    let pitch: Spev<{rational: false}>
     let jiNotationBoundClass: JiNotationBoundClass
     let initialPosition
 
     it("returns its bound class history but with its event augmented with analysis properties, and computes the final position of the bound class history, and its distance from the initial position, and its overall distance the JI notation bound class moved across all the bound class events", (): void => {
-        pitch = addScamons(
+        pitch = addSpevs(
             actualJiNotationBoundPitch,
             {
-                monzo: IRRATIONAL_SCAMON_BASE_MONZO,
+                pev: IRRATIONAL_SPEV_BASE_PEV,
                 scaler: [1, 2400] as Quotient,  // 2^(1/2400) = 0.5¢
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
         )
         boundHistory = [
             {
@@ -122,7 +122,7 @@ describe("analyzeHistory", (): void => {
     describe(`when the bound class history's position does not match the actual JI notation bound class position, returns the bound class history plus false for the possible property and the error in tinas`, (): void => {
         it("works when the position is greater than the actual JI notation bound class position by less than a tina              ", (): void => {
             const expectedTinaError = 2 / 5 as Multiplier<Tinas>
-            pitch = addScamons(
+            pitch = addSpevs(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
@@ -153,7 +153,7 @@ describe("analyzeHistory", (): void => {
 
         it("works when the position is greater than the actual JI notation bound class position by more than a tina             ", (): void => {
             const expectedTinaError = 5 / 2 as Multiplier<Tinas>
-            pitch = addScamons(
+            pitch = addSpevs(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
@@ -186,7 +186,7 @@ describe("analyzeHistory", (): void => {
 
         it("works when the position is below the actual JI notation bound class position by less than a tina                       ", (): void => {
             const expectedTinaError = -2 / 5 as Multiplier<Tinas>
-            pitch = addScamons(
+            pitch = addSpevs(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
@@ -219,7 +219,7 @@ describe("analyzeHistory", (): void => {
 
         it("works when the position is below the actual JI notation bound class position by more than a tina                       ", (): void => {
             const expectedTinaError = -5 / 2 as Multiplier<Tinas>
-            pitch = addScamons(
+            pitch = addSpevs(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )

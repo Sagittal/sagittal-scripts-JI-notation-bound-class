@@ -1,4 +1,4 @@
-import {Abs, APOTOME, Cents, Count, Grade, HALF_SCALER, Monzo, Multiplier, Name, Scamon, Sum} from "@sagittal/general"
+import {Abs, APOTOME, Cents, Count, Grade, HALF_SCALER, Pev, Multiplier, Name, Spev, Sum} from "@sagittal/general"
 import {
     BoundClassId,
     BoundType,
@@ -25,27 +25,27 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
-                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
+                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
                 scaler: HALF_SCALER,
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
         },
         {
             jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
-                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
+                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
                 scaler: HALF_SCALER,
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
         },
         {
             jiNotationLevel: JiNotationLevelId.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<JiNotationBound>,
             pitch: {
-                monzo: APOTOME.monzo,
+                pev: APOTOME.pev,
                 scaler: [164.5, INSANE_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             // This one gets rank 4
         },
     ]
@@ -55,27 +55,27 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
-                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
+                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
                 scaler: HALF_SCALER,
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
         },
         {
             jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "47.5°233" as Name<JiNotationBound>,
             pitch: {
-                monzo: APOTOME.monzo,
+                pev: APOTOME.pev,
                 scaler: [47.5, EXTREME_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
         },
         {
             jiNotationLevel: JiNotationLevelId.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<JiNotationBound>,
             pitch: {
-                monzo: APOTOME.monzo,
+                pev: APOTOME.pev,
                 scaler: [164.5, INSANE_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             // This one gets rank 1
         },
     ]
@@ -86,9 +86,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
     const jiNotationBoundClass: JiNotationBoundClass = {
         ...jiNotationBoundClassFixture,
         pitch: {
-            monzo: APOTOME.monzo,
+            pev: APOTOME.pev,
             scaler: [164.5, INSANE_EDA],
-        } as Scamon<{rational: false}>,
+        } as Spev<{rational: false}>,
         jiNotationLevels: [JiNotationLevelId.ULTRA, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
         boundType: BoundType.INA_MIDPOINT,
     }
@@ -99,9 +99,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
-                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
+                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
                 scaler: HALF_SCALER,
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             rank: RANKS[BoundType.COMMA_MEAN],
             distance: 0 as Abs<Cents>,
             inaDistance: 0 as Multiplier<Ina>,
@@ -112,9 +112,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.INA_MIDPOINT,
             name: "47.5°233" as Name<JiNotationBound>,
             pitch: {
-                monzo: APOTOME.monzo,
+                pev: APOTOME.pev,
                 scaler: [47.5, EXTREME_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             rank: RANKS[BoundType.INA_MIDPOINT],
             distance: 0.019171116563747148 as Abs<Cents>,
             inaDistance: 0.03929163848648158 as Multiplier<Ina>,
@@ -125,9 +125,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<JiNotationBound>,
             pitch: {
-                monzo: APOTOME.monzo,
+                pev: APOTOME.pev,
                 scaler: [164.5, INSANE_EDA],
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             rank: RANKS[BoundType.INA_MIDPOINT],
             distance: 0.05970819482401879 as Abs<Cents>,
             inaDistance: 0.4248927038637779 as Multiplier<Ina>,
@@ -137,9 +137,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
     const expectedBestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis = {
         boundEventAnalyses: expectedBestBoundHistoryBoundEventAnalyses,
         pitch: {
-            monzo: APOTOME.monzo,
+            pev: APOTOME.pev,
             scaler: [164.5, INSANE_EDA],
-        } as Scamon<{rational: false}>,
+        } as Spev<{rational: false}>,
         rank: RANKS[BoundType.COMMA_MEAN],
         grade: 131 as Grade<BoundHistory>,
         possible: true,
@@ -156,9 +156,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
         const expected = {
             bestRank: RANKS[BoundType.COMMA_MEAN],
             initialPosition: {
-                monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
+                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
                 scaler: HALF_SCALER,
-            } as Scamon<{rational: false}>,
+            } as Spev<{rational: false}>,
             initialPositionTinaDistance: -0.5613173198962725 as Multiplier<Tinas>,
             possibleBoundHistoryCount: 2 as Count<BoundHistoryAnalysis>,
             bestPossibleBoundHistoryAnalysis: expectedBestPossibleBoundHistoryAnalysis,
@@ -171,9 +171,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: ".)/| '/|" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
+                            pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
                             scaler: HALF_SCALER,
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: false,
@@ -191,9 +191,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: ".)/| '/|" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: [-17, 11, -2, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
+                            pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
                             scaler: HALF_SCALER,
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: false,
                         exact: false,
@@ -208,9 +208,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         boundType: BoundType.INA_MIDPOINT,
                         name: "47.5°233" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: APOTOME.monzo,
+                            pev: APOTOME.pev,
                             scaler: [47.5, EXTREME_EDA],
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: false,
@@ -227,9 +227,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         boundType: BoundType.INA_MIDPOINT,
                         name: "164.5°809" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: APOTOME.monzo,
+                            pev: APOTOME.pev,
                             scaler: [164.5, INSANE_EDA],
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: true,

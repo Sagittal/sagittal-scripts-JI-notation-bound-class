@@ -1,6 +1,6 @@
-import {Maybe, NumericProperties, Scamon} from "@sagittal/general"
+import {Maybe, NumericProperties, Spev} from "@sagittal/general"
 
-type NeighborPositions<T extends NumericProperties = {}> = [Maybe<Scamon<T>>, Maybe<Scamon<T>>]
+type NeighborPositions<T extends NumericProperties = {}> = [Maybe<Spev<T>>, Maybe<Spev<T>>]
 
 type BoundedCommaClassPositions = NeighborPositions<{rational: true}>
 

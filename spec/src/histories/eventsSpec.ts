@@ -1,4 +1,4 @@
-import {APOTOME, Cents, computePitchFromCents, HALF_SCALER, Monzo, Name, Scamon} from "@sagittal/general"
+import {APOTOME, Cents, computePitchFromCents, HALF_SCALER, Pev, Name, Spev} from "@sagittal/general"
 import {BoundType, HIGH_EDA, JiNotationBound, JiNotationLevelId, ULTRA_EDA} from "@sagittal/system"
 import {BoundedCommaClassPositions, computeBoundedCommaClassPositions} from "../../../src/boundedPositions"
 import {BoundEvent} from "../../../src/histories"
@@ -28,7 +28,7 @@ describe("computeBoundEvents", (): void => {
                         jiNotationLevel: JiNotationLevelId.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "2.5°58" as Name<JiNotationBound>,
-                        pitch: {monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA]} as Scamon<{rational: false}>,
+                        pitch: {pev: APOTOME.pev, scaler: [2.5, ULTRA_EDA]} as Spev<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -47,7 +47,7 @@ describe("computeBoundEvents", (): void => {
                         jiNotationLevel: JiNotationLevelId.ULTRA,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "2.5°58" as Name<JiNotationBound>,
-                        pitch: {monzo: APOTOME.monzo, scaler: [2.5, ULTRA_EDA]} as Scamon<{rational: false}>,
+                        pitch: {pev: APOTOME.pev, scaler: [2.5, ULTRA_EDA]} as Spev<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -65,13 +65,13 @@ describe("computeBoundEvents", (): void => {
                         jiNotationLevel: JiNotationLevelId.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "11.5°47" as Name<JiNotationBound>,
-                        pitch: {monzo: APOTOME.monzo, scaler: [11.5, HIGH_EDA]} as Scamon<{rational: false}>,
+                        pitch: {pev: APOTOME.pev, scaler: [11.5, HIGH_EDA]} as Spev<{rational: false}>,
                     },
                     {
                         jiNotationLevel: JiNotationLevelId.HIGH,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "12.5°47" as Name<JiNotationBound>,
-                        pitch: {monzo: APOTOME.monzo, scaler: [12.5, HIGH_EDA]} as Scamon<{rational: false}>,
+                        pitch: {pev: APOTOME.pev, scaler: [12.5, HIGH_EDA]} as Spev<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -107,9 +107,9 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: "/| |)" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: [2, 2, -1, -1],
+                            pev: [2, 2, -1, -1],
                             scaler: HALF_SCALER,
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -128,9 +128,9 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: ")/| |)" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: [-7, 5, -1, -1, 0, 0, 0, 1],
+                            pev: [-7, 5, -1, -1, 0, 0, 0, 1],
                             scaler: HALF_SCALER,
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -149,9 +149,9 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: ".|) |)" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: [27, -12, -1, -2],
+                            pev: [27, -12, -1, -2],
                             scaler: HALF_SCALER,
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -170,9 +170,9 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: "`.|) ,,|)" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: [-10, 4, -1, 1, 2, -1],
+                            pev: [-10, 4, -1, 1, 2, -1],
                             scaler: HALF_SCALER,
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -196,9 +196,9 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: "|) )|)" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: [3, -1, 0, -2, 0, 0, 0, 1],
+                            pev: [3, -1, 0, -2, 0, 0, 0, 1],
                             scaler: HALF_SCALER,
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -223,9 +223,9 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.SIZE_CATEGORY_BOUND,
                         name: "C|S" as Name<JiNotationBound>,
                         pitch: {
-                            monzo: [27, -17] as Monzo<{rational: true}>,
+                            pev: [27, -17] as Pev<{rational: true}>,
                             scaler: HALF_SCALER,
-                        } as Scamon<{rational: false}>,
+                        } as Spev<{rational: false}>,
                     },
                 ]
                 expect(actual).toEqual(expected)

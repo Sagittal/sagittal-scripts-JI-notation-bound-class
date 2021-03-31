@@ -1,10 +1,10 @@
-import {Name, Scamon} from "@sagittal/general"
+import {Name, Spev} from "@sagittal/general"
 import {BoundType, JiNotationBound, JiNotationLevelId} from "@sagittal/system"
 
 interface BoundEvent {
     jiNotationLevel: JiNotationLevelId,
     name: Name<JiNotationBound>,
-    pitch: Scamon,
+    pitch: Spev,
     boundType: BoundType,
 }
 

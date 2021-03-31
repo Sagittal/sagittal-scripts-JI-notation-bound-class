@@ -1,7 +1,7 @@
-import {finalElement, Scamon} from "@sagittal/general"
+import {finalElement, Spev} from "@sagittal/general"
 import {BoundHistory} from "../histories"
 
-const computeBoundHistoryPosition = (boundHistory: BoundHistory): Scamon =>
+const computeBoundHistoryPosition = (boundHistory: BoundHistory): Spev =>
     finalElement(boundHistory).pitch
 
 export {

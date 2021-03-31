@@ -1,14 +1,14 @@
-import {computeIrrationalDecimalFromScamon, NumericProperties, Scamon} from "@sagittal/general"
+import {computeIrrationalDecimalFromSpev, NumericProperties, Spev} from "@sagittal/general"
 import {computeNeighborPositionIndices} from "./neighborPositionIndices"
 import {NeighborPositions} from "./types"
 
 const computeNeighborPositions = <T extends NumericProperties>(
-    position: Scamon,
-    targetPositions: Array<Scamon<T>>,
+    position: Spev,
+    targetPositions: Array<Spev<T>>,
 ): NeighborPositions => {
     const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] = computeNeighborPositionIndices(
-        computeIrrationalDecimalFromScamon(position),
-        targetPositions.map(computeIrrationalDecimalFromScamon),
+        computeIrrationalDecimalFromSpev(position),
+        targetPositions.map(computeIrrationalDecimalFromSpev),
     )
 
     return [

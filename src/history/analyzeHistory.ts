@@ -1,4 +1,4 @@
-import {isCloseTo, Multiplier, Scamon, subtractPitch} from "@sagittal/general"
+import {isCloseTo, Multiplier, Spev, subtractPitch} from "@sagittal/general"
 import {JiNotationBoundClass, TINA_CENTS, Tinas} from "@sagittal/system"
 import {BoundHistory} from "../histories"
 import {analyzeBoundEvents} from "./events"
@@ -13,7 +13,7 @@ import {BoundHistoryAnalysis} from "./types"
 const analyzeHistory = (
     boundHistory: BoundHistory,
     {pitch}: JiNotationBoundClass,
-    initialPosition: Scamon,
+    initialPosition: Spev,
 ): BoundHistoryAnalysis => {
     const position = computeBoundHistoryPosition(boundHistory)
 

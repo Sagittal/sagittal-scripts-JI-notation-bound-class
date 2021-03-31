@@ -1,12 +1,12 @@
-import {Monzo, Scamon} from "@sagittal/general"
+import {Pev, Spev} from "@sagittal/general"
 import {CommaClassId} from "@sagittal/system"
 import {computePositionCommaClassId} from "../../../../src/io/terminal/positionCommaClassId"
 
 describe("computePositionCommaClassId", (): void => {
     it("given a position, returns the JI Notation comma class ID at that position", (): void => {
         const position = {
-            monzo: [-9, 3, 0, 0, 0, 0, 0, 1] as Monzo<{rational: true}>,
-        } as Scamon<{rational: true}>
+            pev: [-9, 3, 0, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
+        } as Spev<{rational: true}>
 
         const actual = computePositionCommaClassId(position)
 

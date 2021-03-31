@@ -1,4 +1,4 @@
-import {CommaMean, computeRationalScamonGeometricMean, indexOfFinalElement, Name} from "@sagittal/general"
+import {CommaMean, computeRationalSpevGeometricMean, indexOfFinalElement, Name} from "@sagittal/general"
 import {
     CommaClassId,
     computeSagittalSagitype,
@@ -27,7 +27,7 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevelId): C
             ].join(" ") as Name<CommaMean>
 
             return {
-                pitch: computeRationalScamonGeometricMean(commaClass.pitch, nextCommaClass.pitch),
+                pitch: computeRationalSpevGeometricMean(commaClass.pitch, nextCommaClass.pitch),
                 name,
             }
         })

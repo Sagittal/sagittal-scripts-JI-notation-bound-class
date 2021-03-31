@@ -1,4 +1,4 @@
-import {Cents, Comma, computePitchFromCents, Monzo} from "@sagittal/general"
+import {Cents, Comma, computePitchFromCents, Pev} from "@sagittal/general"
 import {JiNotationLevelId} from "@sagittal/system"
 import {computeBoundedCommaClassPositions} from "../../../src/boundedPositions"
 
@@ -10,8 +10,8 @@ describe("computeBoundedCommaClassPositions", (): void => {
         const actual = computeBoundedCommaClassPositions(position, jiNotationLevel)
 
         const expected = [
-            {monzo: [10, -6, 1, -1] as Monzo<{rational: true}>} as Comma,           //  |(      ~5.757802¢
-            {monzo: [7, -4, 0, 1, -1] as Monzo<{rational: true}>} as Comma,         // )|(      ~9.687960¢
+            {pev: [10, -6, 1, -1] as Pev<{rational: true}>} as Comma,           //  |(      ~5.757802¢
+            {pev: [7, -4, 0, 1, -1] as Pev<{rational: true}>} as Comma,         // )|(      ~9.687960¢
         ]
 
         expect(actual).toEqual(expected)
@@ -24,7 +24,7 @@ describe("computeBoundedCommaClassPositions", (): void => {
         const actual = computeBoundedCommaClassPositions(position, jiNotationLevel)
 
         const expected = [
-            {monzo: [-3, 4, 1, -2] as Monzo<{rational: true}>} as Comma,            // )/|\     ~56.481904¢
+            {pev: [-3, 4, 1, -2] as Pev<{rational: true}>} as Comma,            // )/|\     ~56.481904¢
             undefined,
         ]
         expect(actual).toEqual(expected)

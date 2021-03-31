@@ -1,4 +1,4 @@
-import {BLANK, isScamonGreater, isScamonLesser, Name} from "@sagittal/general"
+import {BLANK, isSpevGreater, isSpevLesser, Name} from "@sagittal/general"
 import {BoundType, JiNotationBound, JiNotationLevelId} from "@sagittal/system"
 import {BoundedCommaClassPositions} from "../boundedPositions"
 import {JI_NOTATION_BOUNDS_BY_TYPE} from "./bounds"
@@ -15,8 +15,8 @@ const computeBoundEvents = (
 
     levelBounds.forEach(({pitch, name = BLANK as Name<JiNotationBound>}: JiNotationBound): void => {
         if (
-            (!lesserBoundedCommaClassPosition || isScamonGreater(pitch, lesserBoundedCommaClassPosition)) &&
-            (!greaterBoundedCommaClassPosition || isScamonLesser(pitch, greaterBoundedCommaClassPosition))
+            (!lesserBoundedCommaClassPosition || isSpevGreater(pitch, lesserBoundedCommaClassPosition)) &&
+            (!greaterBoundedCommaClassPosition || isSpevLesser(pitch, greaterBoundedCommaClassPosition))
         ) {
             boundEvent.push({jiNotationLevel, boundType, name, pitch})
         }

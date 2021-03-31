@@ -1,4 +1,4 @@
-import {APOTOME, Name, Scamon} from "@sagittal/general"
+import {APOTOME, Name, Spev} from "@sagittal/general"
 import {BoundType, JiNotationBound, ULTRA_EDA} from "@sagittal/system"
 import {computeInitialEventConsolidation} from "../../../src/consolidateHistories/initialEventConsolidation"
 import {BoundEventConsolidation} from "../../../src/consolidateHistories/types"
@@ -14,7 +14,7 @@ describe("computeInitialEventConsolidation", (): void => {
         boundType: BoundType.INA_MIDPOINT,
         name: "12.5°58" as Name<JiNotationBound>,
         rank: RANKS[BoundType.COMMA_MEAN],
-        pitch: {monzo: APOTOME.monzo, scaler: [12.5, ULTRA_EDA]} as Scamon<{rational: false}>,
+        pitch: {pev: APOTOME.pev, scaler: [12.5, ULTRA_EDA]} as Spev<{rational: false}>,
     }
 
     beforeEach((): void => {

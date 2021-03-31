@@ -1,5 +1,5 @@
 import {Cents, computePitchFromCents, Multiplier} from "@sagittal/general"
-import {HIGHINA_CENTS, Ina, JiNotationLevelId} from "@sagittal/system"
+import {HINA_CENTS, Ina, JiNotationLevelId} from "@sagittal/system"
 import {computeBoundEventInaDistance} from "../../../../src/history/events/eventInaDistance"
 import {boundEventFixture} from "../../../helpers/src/fixtures"
 
@@ -21,7 +21,7 @@ describe("computeBoundEventInaDistance", (): void => {
 
         const actual = computeBoundEventInaDistance(boundEvent, index, boundHistory)
 
-        const expected = 2 / HIGHINA_CENTS as Multiplier<Ina>
+        const expected = 2 / HINA_CENTS as Multiplier<Ina>
         expect(actual).toBeCloseToTyped(expected)
     })
 })

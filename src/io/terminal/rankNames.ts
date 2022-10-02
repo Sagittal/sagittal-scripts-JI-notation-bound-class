@@ -1,5 +1,3 @@
-// tslint:disable:max-line-length
-
 import {Decimal, Formatted, Rank, RecordKey} from "@sagittal/general"
 import {BoundType} from "@sagittal/system"
 import {RANKS} from "../../ranks"

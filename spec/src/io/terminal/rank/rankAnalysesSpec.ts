@@ -1,5 +1,3 @@
-// tslint:disable max-line-length
-
 import {onlyRunInCi} from "@sagittal/general"
 import {BoundClassId, JI_NOTATION_BOUND_CLASS_ENTRIES, JiNotationBoundClass} from "@sagittal/system"
 import {analyzeJiNotationBoundClass} from "../../../../../src/boundClass"

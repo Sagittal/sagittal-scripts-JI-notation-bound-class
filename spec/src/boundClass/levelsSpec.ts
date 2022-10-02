@@ -124,7 +124,6 @@ describe("updateJiNotationLevelAnalysis", (): void => {
             )
                 .toBe(1 as Count<Decimal<{integer: true}> & Rank<BoundType>>)
             expect(
-                // tslint:disable-next-line max-line-length
                 jiNotationLevelsBestCumulativeHistoryRanks[JiNotationLevelId.EXTREME][RANKS[BoundType.SIZE_CATEGORY_BOUND]],
             )
                 .toBe(1 as Count<Decimal<{integer: true}> & Rank<BoundType>>)

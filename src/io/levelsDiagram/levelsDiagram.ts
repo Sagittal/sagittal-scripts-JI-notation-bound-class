@@ -1,5 +1,3 @@
-/* tslint:disable:no-reaching-imports */
-
 import {BLANK, Io, join} from "@sagittal/general"
 import * as fs from "fs"
 import {visualizeCents} from "../image/cents"

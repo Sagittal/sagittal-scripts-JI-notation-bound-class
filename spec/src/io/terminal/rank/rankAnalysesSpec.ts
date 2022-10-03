@@ -1,4 +1,4 @@
-import {onlyRunInCi} from "@sagittal/general"
+import {slowTestOnlyRunInFullSuite} from "@sagittal/general"
 import {BoundClassId, JI_NOTATION_BOUND_CLASS_ENTRIES, JiNotationBoundClass} from "@sagittal/system"
 import {analyzeJiNotationBoundClass} from "../../../../../src/boundClass"
 import {computeHistories} from "../../../../../src/histories"
@@ -6,7 +6,7 @@ import {formatRankAnalyses} from "../../../../../src/io/terminal/rank"
 
 describe("formatRankAnalyses", (): void => {
     it("gives the correct answer", (): void => {
-        onlyRunInCi()
+        slowTestOnlyRunInFullSuite()
 
         JI_NOTATION_BOUND_CLASS_ENTRIES.map(([boundClassId, jiNotationBoundClass]: [BoundClassId, JiNotationBoundClass]): void => {
             const histories = computeHistories(jiNotationBoundClass)

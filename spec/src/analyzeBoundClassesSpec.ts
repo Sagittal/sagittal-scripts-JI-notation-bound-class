@@ -1,4 +1,4 @@
-import {Name, onlyRunInCi} from "@sagittal/general"
+import {Name, slowTestOnlyRunInFullSuite} from "@sagittal/general"
 import {
     BoundType,
     JI_NOTATION_BOUND_CLASSES,
@@ -12,7 +12,7 @@ import {BoundEventAnalysis} from "../../src/history"
 
 describe("analyzeJiNotationBoundClasses", (): void => {
     it("returns the same bound types as in the actual JI notation (with the Extreme level being the current highest)              ", (): void => {
-        onlyRunInCi()
+        slowTestOnlyRunInFullSuite()
 
         const actual = analyzeJiNotationBoundClasses()
             .map((jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis): BoundType => {
@@ -33,7 +33,7 @@ describe("analyzeJiNotationBoundClasses", (): void => {
     })
 
     it("returns the same bound names as in the actual JI notation (with the Insane level being the current highest)               ", (): void => {
-        onlyRunInCi()
+        slowTestOnlyRunInFullSuite()
 
         const actual = analyzeJiNotationBoundClasses()
             .map((jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis): Name<JiNotationBound> => {

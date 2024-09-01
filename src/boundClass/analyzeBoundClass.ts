@@ -1,4 +1,4 @@
-import {count, isUndefined, Multiplier, subtractPitch} from "@sagittal/general"
+import {count, isUndefined, Multiplier, subtractPitch, stringify} from "@sagittal/general"
 import {JiNotationBoundClassEntry, TINA_CENTS, Tinas} from "@sagittal/system"
 import {consolidateBoundHistories} from "../consolidateHistories"
 import {BoundHistory} from "../histories"
@@ -25,7 +25,7 @@ const analyzeJiNotationBoundClass = (
     const bestPossibleBoundHistoryAnalysis =
         computeBestPossibleBoundHistoryAnalysis(possibleBoundHistories)
     if (isUndefined(bestPossibleBoundHistoryAnalysis)) {
-        throw new Error(`Unable to find a best possible bound class history for bound class ${jiNotationBoundClass}`)
+        throw new Error(`Unable to find a best possible bound class history for bound class ${stringify(jiNotationBoundClass)}`)
     }
     const bestRank = bestPossibleBoundHistoryAnalysis.rank
     const bestPossibleBoundHistoryTotalDistance = bestPossibleBoundHistoryAnalysis.totalDistance

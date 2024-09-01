@@ -20,7 +20,7 @@ const extractJiNotationBoundClassIdentifiers = (
         (boundedCommaClassIdPairs: BoundedCommaClassIdPairs): boolean => {
             return boundedCommaClassIdPairs.boundClassId === boundClassId
         })
-    if (!boundedCommaClassIdPair) throw new Error(`Could not find bounded comma class ID pair for bound with ID ${boundClassId}`)
+    if (!boundedCommaClassIdPair) throw new Error(`Could not find bounded comma class ID pair for bound with ID ${stringify(boundClassId)}`)
 
     const boundedCommaClassInfoPairs: BoundedCommaClassInfoPairs =
         computeBoundedCommaClassInfoPairs(boundedCommaClassIdPair)

@@ -1,16 +1,21 @@
-import {BLANK, Io, join} from "@sagittal/general"
+import { BLANK, Io, join } from "@sagittal/general"
 import * as fs from "fs"
-import {visualizeCents} from "../image/cents"
-import {addFont} from "../image/font"
-import {visualizeJiNotationLevelBoundClasses} from "../image/levelBoundClasses"
-import {visualizeJiNotationLevelCommaClasses} from "../image/levelCommaClasses"
-import {visualizeJiNotationLevels} from "../image/levels"
-import {addParentSvg} from "../image/parentSvg"
+import {
+    visualizeCents,
+    addFont,
+    visualizeJiNotationLevelBoundClasses,
+    visualizeJiNotationLevelCommaClasses,
+    visualizeJiNotationLevels,
+    addParentSvg,
+} from "../image"
 
 const generateLevelsDiagram = (): void => {
     fs.existsSync("dist") || fs.mkdirSync("dist")
     if (!process.env.TEST_MODE) {
-        fs.copyFileSync("../../bravura/BravuraSagittalUpdate_v10.otf", "dist/BravuraSagittalUpdate_v10.otf")
+        fs.copyFileSync(
+            "../../bravura/BravuraSagittalUpdate_v10.otf",
+            "dist/BravuraSagittalUpdate_v10.otf",
+        )
     }
 
     let elements: Io[] = [] as Io[]
@@ -31,6 +36,4 @@ const generateLevelsDiagram = (): void => {
     fs.writeFileSync("dist/levelsDiagram.svg", imageOutput)
 }
 
-export {
-    generateLevelsDiagram,
-}
+export { generateLevelsDiagram }

@@ -8,6 +8,7 @@ describe("computeSizeCategoryBoundsUpToHalfApotome", (): void => {
             (sizeCategoryBound: SizeCategoryBound): ScaledVector => sizeCategoryBound.pitch,
         )
 
+        // @ts-ignore
         expect(maxScaledVector(...actual) as ScaledVector).toEqualScaledVector(HALF_APOTOME)
     })
 })

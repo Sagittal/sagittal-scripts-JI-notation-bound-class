@@ -1,22 +1,30 @@
-import {Spev} from "@sagittal/general"
-import {CommaClassId, getCommaClass, JI_NOTATION_LEVELS_COMMA_CLASS_IDS, JiNotationLevelId} from "@sagittal/system"
-import {computeNeighborPositions} from "./neighborPositions"
-import {BoundedCommaClassPositions} from "./types"
+import { ScaledVector } from "@sagittal/general"
+import {
+    CommaClassId,
+    getCommaClass,
+    JI_NOTATION_LEVELS_COMMA_CLASS_IDS,
+    JiNotationLevelId,
+} from "@sagittal/system"
+import { computeNeighborPositions } from "./neighborPositions"
+import { BoundedCommaClassPositions } from "./types"
 
 const computeBoundedCommaClassPositions = (
-    position: Spev,
+    position: ScaledVector,
     jiNotationLevel: JiNotationLevelId,
 ): BoundedCommaClassPositions => {
-    const jiNotationLevelCommaClassIds: CommaClassId[] = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]
+    const jiNotationLevelCommaClassIds: CommaClassId[] =
+        JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]
 
-    const jiNotationLevelCommaClassPositions: Spev[] = jiNotationLevelCommaClassIds
-        .map((jiNotationLevelCommaClassId: CommaClassId): Spev => {
+    const jiNotationLevelCommaClassPositions: ScaledVector[] = jiNotationLevelCommaClassIds.map(
+        (jiNotationLevelCommaClassId: CommaClassId): ScaledVector => {
             return getCommaClass(jiNotationLevelCommaClassId).pitch
-        })
+        },
+    )
 
-    return computeNeighborPositions(position, jiNotationLevelCommaClassPositions) as BoundedCommaClassPositions
+    return computeNeighborPositions(
+        position,
+        jiNotationLevelCommaClassPositions,
+    ) as BoundedCommaClassPositions
 }
 
-export {
-    computeBoundedCommaClassPositions,
-}
+export { computeBoundedCommaClassPositions }

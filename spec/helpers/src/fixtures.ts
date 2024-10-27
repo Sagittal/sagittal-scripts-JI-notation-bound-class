@@ -3,27 +3,36 @@ import {
     Cents,
     Count,
     Decimal,
-    EMPTY_PEV,
+    EMPTY_VECTOR,
     Grade,
     HALF_SCALER,
-    IRRATIONAL_SPEV_BASE_PEV,
+    IRRATIONAL_SCALED_VECTOR_BASE_VECTOR,
     Multiplier,
     Name,
     Quotient,
     Rank,
-    Spev,
+    ScaledVector,
     Sum,
     UNISON,
 } from "@sagittal/general"
-import {BoundType, Ina, JiNotationBound, JiNotationBoundClass, JiNotationLevelId, Tinas} from "@sagittal/system"
-import {JiNotationBoundClassAnalysis} from "../../../src/boundClass"
-import {BoundEventConsolidation} from "../../../src/consolidateHistories/types"
-import {BoundEvent, BoundHistory} from "../../../src/histories"
-import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../src/history"
-import {RANKS} from "../../../src/ranks"
+import {
+    BoundType,
+    Ina,
+    JiNotationBound,
+    JiNotationBoundClass,
+    JiNotationLevelId,
+    Tinas,
+} from "@sagittal/system"
+import { JiNotationBoundClassAnalysis } from "../../../src/boundClass"
+import { BoundEventConsolidation } from "../../../src/consolidateHistories/types"
+import { BoundEvent, BoundHistory } from "../../../src/histories"
+import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../src/history"
+import { RANKS } from "../../../src/ranks"
 
 const boundEventFixture: BoundEvent = {
-    pitch: {pev: IRRATIONAL_SPEV_BASE_PEV, scaler: HALF_SCALER} as Spev<{rational: false}>,
+    pitch: { vector: IRRATIONAL_SCALED_VECTOR_BASE_VECTOR, scaler: HALF_SCALER } as ScaledVector<{
+        rational: false
+    }>,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevelId,
     name: "" as Name<JiNotationBound>,
@@ -33,14 +42,16 @@ const boundEventAnalysisFixture: BoundEventAnalysis = {
     ...boundEventFixture,
     distance: 0 as Abs<Cents>,
     inaDistance: 0 as Multiplier<Ina>,
-    rank: 0 as Decimal<{integer: true}> & Rank<BoundType>,
+    rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     exact: false,
 }
 
 const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
-    pitch: {pev: IRRATIONAL_SPEV_BASE_PEV, scaler: HALF_SCALER} as Spev<{rational: false}>,
-    rank: 0 as Decimal<{integer: true}> & Rank<BoundType>,
+    pitch: { vector: IRRATIONAL_SCALED_VECTOR_BASE_VECTOR, scaler: HALF_SCALER } as ScaledVector<{
+        rational: false
+    }>,
+    rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     grade: 0 as Grade<BoundHistory>,
     totalDistance: 0 as Sum<Abs<Cents>>,
     exact: false,
@@ -54,8 +65,8 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
     ...boundEventFixture,
     isPossibleBoundHistoryMember: false,
     isBestPossibleBoundHistoryMember: false,
-    rankOfBestRankedMemberHistory: 0 as Decimal<{integer: true}> & Rank<BoundType>,
-    rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<{integer: true}> & Rank<BoundType>,
+    rankOfBestRankedMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
     nextBoundEvents: [] as Array<Name<JiNotationBound>>,
     exact: false,
 }
@@ -63,9 +74,9 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
 const jiNotationBoundClassFixture: JiNotationBoundClass = {
     jiNotationLevels: [],
     pitch: {
-        pev: EMPTY_PEV,
+        vector: EMPTY_VECTOR,
         scaler: [1, 1] as Quotient,
-    } as Spev<{rational: false}>,
+    } as ScaledVector<{ rational: false }>,
     boundType: BoundType.INA_MIDPOINT,
     name: "" as Name<JiNotationBound>,
 }

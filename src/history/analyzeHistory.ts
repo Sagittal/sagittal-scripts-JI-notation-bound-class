@@ -1,19 +1,19 @@
-import {isCloseTo, Multiplier, Spev, subtractPitch} from "@sagittal/general"
-import {JiNotationBoundClass, TINA_CENTS, Tinas} from "@sagittal/system"
-import {BoundHistory} from "../histories"
-import {analyzeBoundEvents} from "./events"
-import {computeExact} from "./exact"
-import {computeGrade} from "./grade"
-import {computeBoundHistoryPosition} from "./historyPosition"
-import {computeBoundHistoryTotalDistance} from "./historyTotalDistance"
-import {computeBoundHistoryTotalInaDistance} from "./historyTotalInaDistance"
-import {computeRank} from "./rank"
-import {BoundHistoryAnalysis} from "./types"
+import { isCloseTo, Multiplier, ScaledVector, subtractPitch } from "@sagittal/general"
+import { JiNotationBoundClass, TINA_CENTS, Tinas } from "@sagittal/system"
+import { BoundHistory } from "../histories"
+import { analyzeBoundEvents } from "./events"
+import { computeExact } from "./exact"
+import { computeGrade } from "./grade"
+import { computeBoundHistoryPosition } from "./historyPosition"
+import { computeBoundHistoryTotalDistance } from "./historyTotalDistance"
+import { computeBoundHistoryTotalInaDistance } from "./historyTotalInaDistance"
+import { computeRank } from "./rank"
+import { BoundHistoryAnalysis } from "./types"
 
 const analyzeHistory = (
     boundHistory: BoundHistory,
-    {pitch}: JiNotationBoundClass,
-    initialPosition: Spev,
+    { pitch }: JiNotationBoundClass,
+    initialPosition: ScaledVector,
 ): BoundHistoryAnalysis => {
     const position = computeBoundHistoryPosition(boundHistory)
 
@@ -27,13 +27,13 @@ const analyzeHistory = (
     const positionError = subtractPitch(position, pitch)
     const possible = isCloseTo(positionError, 0)
 
-    let tinaError = positionError / TINA_CENTS as Multiplier<Tinas>
+    let tinaError = (positionError / TINA_CENTS) as Multiplier<Tinas>
     if (isCloseTo(tinaError, 0 as Multiplier<Tinas>)) {
         tinaError = 0 as Multiplier<Tinas>
     }
 
     const initialPositionDistance = subtractPitch(position, initialPosition)
-    const initialPositionTinaDistance = initialPositionDistance / TINA_CENTS as Multiplier<Tinas>
+    const initialPositionTinaDistance = (initialPositionDistance / TINA_CENTS) as Multiplier<Tinas>
 
     return {
         boundEventAnalyses: boundEventAnalyses,
@@ -49,6 +49,4 @@ const analyzeHistory = (
     }
 }
 
-export {
-    analyzeHistory,
-}
+export { analyzeHistory }

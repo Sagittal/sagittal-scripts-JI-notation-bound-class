@@ -1,15 +1,20 @@
-import {computeIrrationalDecimalFromSpev, NumericProperties, Spev} from "@sagittal/general"
-import {computeNeighborPositionIndices} from "./neighborPositionIndices"
-import {NeighborPositions} from "./types"
+import {
+    computeIrrationalDecimalFromScaledVector,
+    NumericProperties,
+    ScaledVector,
+} from "@sagittal/general"
+import { computeNeighborPositionIndices } from "./neighborPositionIndices"
+import { NeighborPositions } from "./types"
 
 const computeNeighborPositions = <T extends NumericProperties>(
-    position: Spev,
-    targetPositions: Array<Spev<T>>,
+    position: ScaledVector,
+    targetPositions: Array<ScaledVector<T>>,
 ): NeighborPositions => {
-    const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] = computeNeighborPositionIndices(
-        computeIrrationalDecimalFromSpev(position),
-        targetPositions.map(computeIrrationalDecimalFromSpev),
-    )
+    const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] =
+        computeNeighborPositionIndices(
+            computeIrrationalDecimalFromScaledVector(position),
+            targetPositions.map(computeIrrationalDecimalFromScaledVector),
+        )
 
     return [
         targetPositions[lesserNeighborPositionIndex],
@@ -17,6 +22,4 @@ const computeNeighborPositions = <T extends NumericProperties>(
     ]
 }
 
-export {
-    computeNeighborPositions,
-}
+export { computeNeighborPositions }

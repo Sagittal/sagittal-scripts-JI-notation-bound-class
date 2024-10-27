@@ -1,8 +1,8 @@
-import {BLANK, isSpevGreater, isSpevLesser, Name} from "@sagittal/general"
-import {BoundType, JiNotationBound, JiNotationLevelId} from "@sagittal/system"
-import {BoundedCommaClassPositions} from "../boundedPositions"
-import {JI_NOTATION_BOUNDS_BY_TYPE} from "./bounds"
-import {BoundEvent} from "./types"
+import { BLANK, isScaledVectorGreater, isScaledVectorLesser, Name } from "@sagittal/general"
+import { BoundType, JiNotationBound, JiNotationLevelId } from "@sagittal/system"
+import { BoundedCommaClassPositions } from "../boundedPositions"
+import { JI_NOTATION_BOUNDS_BY_TYPE } from "./bounds"
+import { BoundEvent } from "./types"
 
 const computeBoundEvents = (
     jiNotationLevel: JiNotationLevelId,
@@ -13,18 +13,20 @@ const computeBoundEvents = (
 
     const levelBounds = JI_NOTATION_BOUNDS_BY_TYPE[boundType][jiNotationLevel]
 
-    levelBounds.forEach(({pitch, name = BLANK as Name<JiNotationBound>}: JiNotationBound): void => {
-        if (
-            (!lesserBoundedCommaClassPosition || isSpevGreater(pitch, lesserBoundedCommaClassPosition)) &&
-            (!greaterBoundedCommaClassPosition || isSpevLesser(pitch, greaterBoundedCommaClassPosition))
-        ) {
-            boundEvent.push({jiNotationLevel, boundType, name, pitch})
-        }
-    })
+    levelBounds.forEach(
+        ({ pitch, name = BLANK as Name<JiNotationBound> }: JiNotationBound): void => {
+            if (
+                (!lesserBoundedCommaClassPosition ||
+                    isScaledVectorGreater(pitch, lesserBoundedCommaClassPosition)) &&
+                (!greaterBoundedCommaClassPosition ||
+                    isScaledVectorLesser(pitch, greaterBoundedCommaClassPosition))
+            ) {
+                boundEvent.push({ jiNotationLevel, boundType, name, pitch })
+            }
+        },
+    )
 
     return boundEvent
 }
 
-export {
-    computeBoundEvents,
-}
+export { computeBoundEvents }

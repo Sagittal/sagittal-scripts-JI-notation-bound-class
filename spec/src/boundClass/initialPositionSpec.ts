@@ -1,7 +1,7 @@
-import {Cents, computePitchFromCents, HALF_SCALER, Pev, Spev} from "@sagittal/general"
-import {JiNotationBoundClass, JiNotationLevelId} from "@sagittal/system"
-import {computeInitialPosition} from "../../../src/boundClass/initialPosition"
-import {jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
+import { Cents, computePitchFromCents, HALF_SCALER, Vector, ScaledVector } from "@sagittal/general"
+import { JiNotationBoundClass, JiNotationLevelId } from "@sagittal/system"
+import { computeInitialPosition } from "../../../src/boundClass/initialPosition"
+import { jiNotationBoundClassFixture } from "../../helpers/src/fixtures"
 
 describe("computeInitialPosition", (): void => {
     it("returns the mean of the bounded commas at the introducing JI notation level", (): void => {
@@ -18,9 +18,9 @@ describe("computeInitialPosition", (): void => {
             //   [ -14   6   0   0   0   0   0   0   1 ⟩       ~|\
             // + [  -8   8  -2                         ⟩      //|
             // / 2 =
-            pev: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
+            vector: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
             scaler: HALF_SCALER,
-        } as Spev<{rational: false}>
+        } as ScaledVector<{ rational: false }>
         expect(actual).toEqual(expected)
     })
 })

@@ -1,4 +1,11 @@
-import {APOTOME, isSpevGreater, Maybe, Name, Quotient, Spev} from "@sagittal/general"
+import {
+    APOTOME,
+    isScaledVectorGreater,
+    Maybe,
+    Name,
+    Quotient,
+    ScaledVector,
+} from "@sagittal/general"
 import {
     HALF_APOTOME,
     InaMidpoint,
@@ -13,22 +20,22 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevelId): InaMidpoint[] 
     const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<InaMidpoint> => {
         const midpoint = degree + 0.5
         const pitch = {
-            pev: APOTOME.pev,
+            vector: APOTOME.vector,
             scaler: [midpoint, eda as number] as Quotient,
-        } as Spev<{rational: false}>
+        } as ScaledVector<{ rational: false }>
 
-        if (isSpevGreater(pitch, HALF_APOTOME)) {
+        if (isScaledVectorGreater(pitch, HALF_APOTOME)) {
             return undefined
         }
 
         const name: Name<InaMidpoint> = `${midpoint}°${eda}` as Name<InaMidpoint>
 
-        return {name, pitch}
+        return { name, pitch }
     })
 
-    return inaMidpoints.filter((inaMidpoint: Maybe<InaMidpoint>): boolean => !!inaMidpoint) as InaMidpoint[]
+    return inaMidpoints.filter(
+        (inaMidpoint: Maybe<InaMidpoint>): boolean => !!inaMidpoint,
+    ) as InaMidpoint[]
 }
 
-export {
-    computeInaMidpoints,
-}
+export { computeInaMidpoints }

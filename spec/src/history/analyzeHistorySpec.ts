@@ -1,41 +1,50 @@
 import {
     Abs,
-    addSpevs,
+    addScaledVectors,
     APOTOME,
     Cents,
     computePitchFromCents,
-    IRRATIONAL_SPEV_BASE_PEV,
+    IRRATIONAL_SCALED_VECTOR_BASE_VECTOR,
     Multiplier,
     multiply,
     Quotient,
-    Spev,
+    ScaledVector,
     Sum,
 } from "@sagittal/general"
-import {BoundType, EXTREME_EDA, Ina, JiNotationBoundClass, JiNotationLevelId, TINA_CENTS, Tinas} from "@sagittal/system"
-import {computeInitialPosition} from "../../../src/boundClass/initialPosition"
-import {BoundHistory} from "../../../src/histories"
-import {analyzeHistory} from "../../../src/history"
-import {RANKS} from "../../../src/ranks"
-import {boundEventAnalysisFixture, boundEventFixture, jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
+import {
+    BoundType,
+    EXTREME_EDA,
+    Ina,
+    JiNotationBoundClass,
+    JiNotationLevelId,
+    TINA_CENTS,
+    Tinas,
+} from "@sagittal/system"
+import { computeInitialPosition } from "../../../src/boundClass/initialPosition"
+import { BoundHistory } from "../../../src/histories"
+import { analyzeHistory } from "../../../src/history"
+import { RANKS } from "../../../src/ranks"
+import {
+    boundEventAnalysisFixture,
+    boundEventFixture,
+    jiNotationBoundClassFixture,
+} from "../../helpers/src/fixtures"
 
 describe("analyzeHistory", (): void => {
     const actualJiNotationBoundPitch = {
-        pev: APOTOME.pev,
+        vector: APOTOME.vector,
         scaler: [25.5, EXTREME_EDA],
-    } as Spev<{rational: false}>
+    } as ScaledVector<{ rational: false }>
     let boundHistory: BoundHistory
-    let pitch: Spev<{rational: false}>
+    let pitch: ScaledVector<{ rational: false }>
     let jiNotationBoundClass: JiNotationBoundClass
     let initialPosition
 
     it("returns its bound class history but with its event augmented with analysis properties, and computes the final position of the bound class history, and its distance from the initial position, and its overall distance the JI notation bound class moved across all the bound class events", (): void => {
-        pitch = addSpevs(
-            actualJiNotationBoundPitch,
-            {
-                pev: IRRATIONAL_SPEV_BASE_PEV,
-                scaler: [1, 2400] as Quotient,  // 2^(1/2400) = 0.5¢
-            } as Spev<{rational: false}>,
-        )
+        pitch = addScaledVectors(actualJiNotationBoundPitch, {
+            vector: IRRATIONAL_SCALED_VECTOR_BASE_VECTOR,
+            scaler: [1, 2400] as Quotient, // 2^(1/2400) = 0.5¢
+        } as ScaledVector<{ rational: false }>)
         boundHistory = [
             {
                 ...boundEventFixture,
@@ -84,8 +93,7 @@ describe("analyzeHistory", (): void => {
         expect(actual.pitch).toEqual(pitch)
         expect(actual.rank).toBe(RANKS[BoundType.SIZE_CATEGORY_BOUND])
         expect(actual.totalDistance).toBe(0 as Sum<Abs<Cents>>)
-        expect(actual.initialPositionTinaDistance)
-            .toBeCloseToTyped(3.710191 as Multiplier<Tinas>)
+        expect(actual.initialPositionTinaDistance).toBeCloseToTyped(3.710191 as Multiplier<Tinas>)
     })
 
     describe("when the bound class history's position matches the actual JI notation bound class position                    ", (): void => {
@@ -121,8 +129,8 @@ describe("analyzeHistory", (): void => {
 
     describe(`when the bound class history's position does not match the actual JI notation bound class position, returns the bound class history plus false for the possible property and the error in tinas`, (): void => {
         it("works when the position is greater than the actual JI notation bound class position by less than a tina              ", (): void => {
-            const expectedTinaError = 2 / 5 as Multiplier<Tinas>
-            pitch = addSpevs(
+            const expectedTinaError = (2 / 5) as Multiplier<Tinas>
+            pitch = addScaledVectors(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
@@ -152,16 +160,15 @@ describe("analyzeHistory", (): void => {
         })
 
         it("works when the position is greater than the actual JI notation bound class position by more than a tina             ", (): void => {
-            const expectedTinaError = 5 / 2 as Multiplier<Tinas>
-            pitch = addSpevs(
+            const expectedTinaError = (5 / 2) as Multiplier<Tinas>
+            pitch = addScaledVectors(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
             boundHistory = [
                 {
                     ...boundEventFixture,
-                    boundType:
-                    BoundType.INA_MIDPOINT,
+                    boundType: BoundType.INA_MIDPOINT,
                     pitch,
                 },
                 {
@@ -185,8 +192,8 @@ describe("analyzeHistory", (): void => {
         })
 
         it("works when the position is below the actual JI notation bound class position by less than a tina                       ", (): void => {
-            const expectedTinaError = -2 / 5 as Multiplier<Tinas>
-            pitch = addSpevs(
+            const expectedTinaError = (-2 / 5) as Multiplier<Tinas>
+            pitch = addScaledVectors(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )
@@ -218,8 +225,8 @@ describe("analyzeHistory", (): void => {
         })
 
         it("works when the position is below the actual JI notation bound class position by more than a tina                       ", (): void => {
-            const expectedTinaError = -5 / 2 as Multiplier<Tinas>
-            pitch = addSpevs(
+            const expectedTinaError = (-5 / 2) as Multiplier<Tinas>
+            pitch = addScaledVectors(
                 actualJiNotationBoundPitch,
                 computePitchFromCents(multiply(TINA_CENTS, expectedTinaError)),
             )

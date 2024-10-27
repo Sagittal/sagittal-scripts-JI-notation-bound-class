@@ -1,4 +1,16 @@
-import {Abs, APOTOME, Cents, Count, Grade, HALF_SCALER, Pev, Multiplier, Name, Spev, Sum} from "@sagittal/general"
+import {
+    Abs,
+    APOTOME,
+    Cents,
+    Count,
+    Grade,
+    HALF_SCALER,
+    Vector,
+    Multiplier,
+    Name,
+    ScaledVector,
+    Sum,
+} from "@sagittal/general"
 import {
     BoundClassId,
     BoundType,
@@ -10,13 +22,13 @@ import {
     JiNotationLevelId,
     Tinas,
 } from "@sagittal/system"
-import {analyzeJiNotationBoundClass} from "../../../src/boundClass"
+import { analyzeJiNotationBoundClass } from "../../../src/boundClass"
 import * as jiNotationLevels from "../../../src/boundClass/levels"
 import * as ranks from "../../../src/boundClass/ranks"
-import {BoundHistory} from "../../../src/histories"
-import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../src/history"
-import {RANKS} from "../../../src/ranks"
-import {jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
+import { BoundHistory } from "../../../src/histories"
+import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../src/history"
+import { RANKS } from "../../../src/ranks"
+import { jiNotationBoundClassFixture } from "../../helpers/src/fixtures"
 
 describe("analyzeJiNotationBoundClass", (): void => {
     const notBestHistory: BoundHistory = [
@@ -25,27 +37,27 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
-                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
+                vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
                 scaler: HALF_SCALER,
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
         },
         {
             jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
-                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
+                vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
                 scaler: HALF_SCALER,
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
         },
         {
             jiNotationLevel: JiNotationLevelId.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<JiNotationBound>,
             pitch: {
-                pev: APOTOME.pev,
+                vector: APOTOME.vector,
                 scaler: [164.5, INSANE_EDA],
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
             // This one gets rank 4
         },
     ]
@@ -55,41 +67,42 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
-                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
+                vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
                 scaler: HALF_SCALER,
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
         },
         {
             jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "47.5°233" as Name<JiNotationBound>,
             pitch: {
-                pev: APOTOME.pev,
+                vector: APOTOME.vector,
                 scaler: [47.5, EXTREME_EDA],
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
         },
         {
             jiNotationLevel: JiNotationLevelId.INSANE,
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<JiNotationBound>,
             pitch: {
-                pev: APOTOME.pev,
+                vector: APOTOME.vector,
                 scaler: [164.5, INSANE_EDA],
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
             // This one gets rank 1
         },
     ]
-    const histories: BoundHistory[] = [
-        notBestHistory,
-        bestHistory,
-    ]
+    const histories: BoundHistory[] = [notBestHistory, bestHistory]
     const jiNotationBoundClass: JiNotationBoundClass = {
         ...jiNotationBoundClassFixture,
         pitch: {
-            pev: APOTOME.pev,
+            vector: APOTOME.vector,
             scaler: [164.5, INSANE_EDA],
-        } as Spev<{rational: false}>,
-        jiNotationLevels: [JiNotationLevelId.ULTRA, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
+        } as ScaledVector<{ rational: false }>,
+        jiNotationLevels: [
+            JiNotationLevelId.ULTRA,
+            JiNotationLevelId.EXTREME,
+            JiNotationLevelId.INSANE,
+        ],
         boundType: BoundType.INA_MIDPOINT,
     }
     const boundClassId = BoundClassId.MINA_47
@@ -99,9 +112,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.COMMA_MEAN,
             name: ".)/| '/|" as Name<JiNotationBound>,
             pitch: {
-                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
+                vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
                 scaler: HALF_SCALER,
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
             rank: RANKS[BoundType.COMMA_MEAN],
             distance: 0 as Abs<Cents>,
             inaDistance: 0 as Multiplier<Ina>,
@@ -112,9 +125,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.INA_MIDPOINT,
             name: "47.5°233" as Name<JiNotationBound>,
             pitch: {
-                pev: APOTOME.pev,
+                vector: APOTOME.vector,
                 scaler: [47.5, EXTREME_EDA],
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
             rank: RANKS[BoundType.INA_MIDPOINT],
             distance: 0.019171116563747148 as Abs<Cents>,
             inaDistance: 0.03929163848648158 as Multiplier<Ina>,
@@ -125,9 +138,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
             boundType: BoundType.INA_MIDPOINT,
             name: "164.5°809" as Name<JiNotationBound>,
             pitch: {
-                pev: APOTOME.pev,
+                vector: APOTOME.vector,
                 scaler: [164.5, INSANE_EDA],
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
             rank: RANKS[BoundType.INA_MIDPOINT],
             distance: 0.05970819482401879 as Abs<Cents>,
             inaDistance: 0.4248927038637779 as Multiplier<Ina>,
@@ -137,9 +150,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
     const expectedBestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis = {
         boundEventAnalyses: expectedBestBoundHistoryBoundEventAnalyses,
         pitch: {
-            pev: APOTOME.pev,
+            vector: APOTOME.vector,
             scaler: [164.5, INSANE_EDA],
-        } as Spev<{rational: false}>,
+        } as ScaledVector<{ rational: false }>,
         rank: RANKS[BoundType.COMMA_MEAN],
         grade: 131 as Grade<BoundHistory>,
         possible: true,
@@ -156,9 +169,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
         const expected = {
             bestRank: RANKS[BoundType.COMMA_MEAN],
             initialPosition: {
-                pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
+                vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
                 scaler: HALF_SCALER,
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
             initialPositionTinaDistance: -0.5613173198962725 as Multiplier<Tinas>,
             possibleBoundHistoryCount: 2 as Count<BoundHistoryAnalysis>,
             bestPossibleBoundHistoryAnalysis: expectedBestPossibleBoundHistoryAnalysis,
@@ -171,18 +184,15 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: ".)/| '/|" as Name<JiNotationBound>,
                         pitch: {
-                            pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
+                            vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
                             scaler: HALF_SCALER,
-                        } as Spev<{rational: false}>,
+                        } as ScaledVector<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.COMMA_MEAN],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundEvents: [
-                            ".)/| '/|",
-                            "47.5°233",
-                        ] as Array<Name<JiNotationBound>>,
+                        nextBoundEvents: [".)/| '/|", "47.5°233"] as Array<Name<JiNotationBound>>,
                     },
                 ],
                 [JiNotationLevelId.EXTREME]: [
@@ -191,34 +201,30 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         boundType: BoundType.COMMA_MEAN,
                         name: ".)/| '/|" as Name<JiNotationBound>,
                         pitch: {
-                            pev: [-17, 11, -2, 0, 0, 0, 0, 1] as Pev<{rational: true}>,
+                            vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
                             scaler: HALF_SCALER,
-                        } as Spev<{rational: false}>,
+                        } as ScaledVector<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: false,
                         exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.COMMA_MEAN],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundEvents: [
-                            "164.5°809",
-                        ] as Array<Name<JiNotationBound>>,
+                        nextBoundEvents: ["164.5°809"] as Array<Name<JiNotationBound>>,
                     },
                     {
                         jiNotationLevel: JiNotationLevelId.EXTREME,
                         boundType: BoundType.INA_MIDPOINT,
                         name: "47.5°233" as Name<JiNotationBound>,
                         pitch: {
-                            pev: APOTOME.pev,
+                            vector: APOTOME.vector,
                             scaler: [47.5, EXTREME_EDA],
-                        } as Spev<{rational: false}>,
+                        } as ScaledVector<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.INA_MIDPOINT],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundEvents: [
-                            "164.5°809",
-                        ] as Array<Name<JiNotationBound>>,
+                        nextBoundEvents: ["164.5°809"] as Array<Name<JiNotationBound>>,
                     },
                 ],
                 [JiNotationLevelId.INSANE]: [
@@ -227,9 +233,9 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         boundType: BoundType.INA_MIDPOINT,
                         name: "164.5°809" as Name<JiNotationBound>,
                         pitch: {
-                            pev: APOTOME.pev,
+                            vector: APOTOME.vector,
                             scaler: [164.5, INSANE_EDA],
-                        } as Spev<{rational: false}>,
+                        } as ScaledVector<{ rational: false }>,
                         isPossibleBoundHistoryMember: true,
                         isBestPossibleBoundHistoryMember: true,
                         exact: true,
@@ -257,7 +263,8 @@ describe("analyzeJiNotationBoundClass", (): void => {
 
         analyzeJiNotationBoundClass(histories, [boundClassId, jiNotationBoundClass])
 
-        expect(jiNotationLevels.updateJiNotationLevelAnalysis)
-            .toHaveBeenCalledWith(expectedBestPossibleBoundHistoryAnalysis)
+        expect(jiNotationLevels.updateJiNotationLevelAnalysis).toHaveBeenCalledWith(
+            expectedBestPossibleBoundHistoryAnalysis,
+        )
     })
 })

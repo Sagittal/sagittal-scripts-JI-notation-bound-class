@@ -1,9 +1,12 @@
-import {Cents, computePitchFromCents, NEWLINE} from "@sagittal/general"
-import {BoundClassId, BoundType, JiNotationBoundClass} from "@sagittal/system"
-import {JiNotationBoundClassAnalysis} from "../../../../../src/boundClass"
-import {formatJiNotationBoundClass} from "../../../../../src/io"
-import {RANKS} from "../../../../../src/ranks"
-import {jiNotationBoundClassAnalysisFixture, jiNotationBoundClassFixture} from "../../../../helpers/src/fixtures"
+import { Cents, computePitchFromCents, NEWLINE } from "@sagittal/general"
+import { BoundClassId, BoundType, JiNotationBoundClass } from "@sagittal/system"
+import { JiNotationBoundClassAnalysis } from "../../../../../src/boundClass"
+import { formatJiNotationBoundClass } from "../../../../../src/io"
+import { RANKS } from "../../../../../src/ranks"
+import {
+    jiNotationBoundClassAnalysisFixture,
+    jiNotationBoundClassFixture,
+} from "../../../../helpers/src/fixtures"
 
 describe("formatJiNotationBoundClass", (): void => {
     it("returns a string which is a multi-line, properly indented rendition of the JI notation bound class analysis, as well as identifying information for the JI notation bound", (): void => {
@@ -17,7 +20,10 @@ describe("formatJiNotationBoundClass", (): void => {
             bestRank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
         }
 
-        const actual = formatJiNotationBoundClass(jiNotationBoundClassAnalysis, [boundClassId, jiNotationBoundClass])
+        const actual = formatJiNotationBoundClass(jiNotationBoundClassAnalysis, [
+            boundClassId,
+            jiNotationBoundClass,
+        ])
 
         const expected = [
             `{`,
@@ -38,7 +44,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                "introducingJiNotationLevel": "extreme",`,
             `                "commaAnalysis": {`,
             `                    "pitch": {`,
-            `                        "pev": [`,
+            `                        "vector": [`,
             `                            5,`,
             `                            -3,`,
             `                            0,`,
@@ -47,7 +53,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                            -1`,
             `                        ]`,
             `                    },`,
-            `                    "pev": [`,
+            `                    "vector": [`,
             `                        5,`,
             `                        -3,`,
             `                        0,`,
@@ -63,7 +69,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                    "decimal": 1.00285,`,
             `                    "two3FreeClassAnalysis": {`,
             `                        "two3FreeClass": {`,
-            `                            "pev": [`,
+            `                            "vector": [`,
             `                                0,`,
             `                                0,`,
             `                                0,`,
@@ -98,7 +104,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                "introducingJiNotationLevel": "extreme",`,
             `                "commaAnalysis": {`,
             `                    "pitch": {`,
-            `                        "pev": [`,
+            `                        "vector": [`,
             `                            -11,`,
             `                            6,`,
             `                            0,`,
@@ -112,7 +118,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                            1`,
             `                        ]`,
             `                    },`,
-            `                    "pev": [`,
+            `                    "vector": [`,
             `                        -11,`,
             `                        6,`,
             `                        0,`,
@@ -133,7 +139,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                    "decimal": 1.00315,`,
             `                    "two3FreeClassAnalysis": {`,
             `                        "two3FreeClass": {`,
-            `                            "pev": [`,
+            `                            "vector": [`,
             `                                0,`,
             `                                0,`,
             `                                0,`,
@@ -175,7 +181,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                "introducingJiNotationLevel": "extreme",`,
             `                "commaAnalysis": {`,
             `                    "pitch": {`,
-            `                        "pev": [`,
+            `                        "vector": [`,
             `                            5,`,
             `                            -3,`,
             `                            0,`,
@@ -184,7 +190,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                            -1`,
             `                        ]`,
             `                    },`,
-            `                    "pev": [`,
+            `                    "vector": [`,
             `                        5,`,
             `                        -3,`,
             `                        0,`,
@@ -200,7 +206,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                    "decimal": 1.00285,`,
             `                    "two3FreeClassAnalysis": {`,
             `                        "two3FreeClass": {`,
-            `                            "pev": [`,
+            `                            "vector": [`,
             `                                0,`,
             `                                0,`,
             `                                0,`,
@@ -235,7 +241,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                "introducingJiNotationLevel": "extreme",`,
             `                "commaAnalysis": {`,
             `                    "pitch": {`,
-            `                        "pev": [`,
+            `                        "vector": [`,
             `                            -11,`,
             `                            6,`,
             `                            0,`,
@@ -249,7 +255,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                            1`,
             `                        ]`,
             `                    },`,
-            `                    "pev": [`,
+            `                    "vector": [`,
             `                        -11,`,
             `                        6,`,
             `                        0,`,
@@ -270,7 +276,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `                    "decimal": 1.00315,`,
             `                    "two3FreeClassAnalysis": {`,
             `                        "two3FreeClass": {`,
-            `                            "pev": [`,
+            `                            "vector": [`,
             `                                0,`,
             `                                0,`,
             `                                0,`,
@@ -308,7 +314,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `    "bestPossibleBoundHistoryAnalysis": {`,
             `        "boundEventAnalyses": [],`,
             `        "pitch": {`,
-            `            "pev": [`,
+            `            "vector": [`,
             `                1`,
             `            ],`,
             `            "scaler": [`,
@@ -327,7 +333,7 @@ describe("formatJiNotationBoundClass", (): void => {
             `    },`,
             `    "bestRank": 3,`,
             `    "initialPosition": {`,
-            `        "pev": []`,
+            `        "vector": []`,
             `    },`,
             `    "initialPositionTinaDistance": 0,`,
             `    "bestPossibleBoundHistoryTotalDistance": 0,`,

@@ -1,7 +1,9 @@
-import {areSpevsEqual, isUndefined, Maybe, Spev} from "@sagittal/general"
-import {CommaClassId, getCommaClass, JI_NOTATION_COMMA_CLASS_IDS} from "@sagittal/system"
+import { areScaledVectorsEqual, isUndefined, Maybe, ScaledVector } from "@sagittal/general"
+import { CommaClassId, getCommaClass, JI_NOTATION_COMMA_CLASS_IDS } from "@sagittal/system"
 
-const computePositionCommaClassId = (position: Maybe<Spev<{rational: true}>>): Maybe<CommaClassId> => {
+const computePositionCommaClassId = (
+    position: Maybe<ScaledVector<{ rational: true }>>,
+): Maybe<CommaClassId> => {
     if (!position) {
         return undefined
     }
@@ -9,7 +11,7 @@ const computePositionCommaClassId = (position: Maybe<Spev<{rational: true}>>): M
     const commaClassId = JI_NOTATION_COMMA_CLASS_IDS.find((commaClassId: CommaClassId): boolean => {
         const commaClass = getCommaClass(commaClassId)
 
-        return areSpevsEqual(commaClass.pitch, position)
+        return areScaledVectorsEqual(commaClass.pitch, position)
     })
 
     if (!isUndefined(commaClassId)) {
@@ -19,6 +21,4 @@ const computePositionCommaClassId = (position: Maybe<Spev<{rational: true}>>): M
     }
 }
 
-export {
-    computePositionCommaClassId,
-}
+export { computePositionCommaClassId }

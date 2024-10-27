@@ -1,4 +1,4 @@
-import {APOTOME, HALF_SCALER, Name, Spev} from "@sagittal/general"
+import { APOTOME, HALF_SCALER, Name, ScaledVector } from "@sagittal/general"
 import {
     BoundType,
     EXTREME_EDA,
@@ -8,9 +8,9 @@ import {
     JiNotationLevelId,
     MEDIUM_EDA,
 } from "@sagittal/system"
-import {BoundEvent, BoundHistory} from "../../../src/histories"
-import {computeExtendedJiNotationLevelBoundHistories} from "../../../src/histories/extendedLevelHistories"
-import {jiNotationBoundClassFixture} from "../../helpers/src/fixtures"
+import { BoundEvent, BoundHistory } from "../../../src/histories"
+import { computeExtendedJiNotationLevelBoundHistories } from "../../../src/histories/extendedLevelHistories"
+import { jiNotationBoundClassFixture } from "../../helpers/src/fixtures"
 
 describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
     it("given the histories for a bound up to the current JI notation level, returns the histories extended for all possible events at this JI notation level", (): void => {
@@ -19,35 +19,39 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
             boundType: BoundType.INA_MIDPOINT,
             name: "1.5°21" as Name<JiNotationBound>,
             pitch: {
-                pev: APOTOME.pev,
+                vector: APOTOME.vector,
                 scaler: [1.5, MEDIUM_EDA],
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
         }
         const historyPriorEventB: BoundEvent = {
             jiNotationLevel: JiNotationLevelId.MEDIUM,
             boundType: BoundType.COMMA_MEAN,
             name: "|( )|(" as Name<JiNotationBound>,
             pitch: {
-                pev: [],
+                vector: [],
                 scaler: HALF_SCALER,
-            } as Spev<{rational: false}>,
+            } as ScaledVector<{ rational: false }>,
         }
-        const histories: BoundHistory[] = [
-            [historyPriorEventA],
-            [historyPriorEventB],
-        ]
+        const histories: BoundHistory[] = [[historyPriorEventA], [historyPriorEventB]]
         const jiNotationLevel = JiNotationLevelId.HIGH
         const jiNotationBoundClass: JiNotationBoundClass = {
             ...jiNotationBoundClassFixture,
             pitch: {
-                pev: APOTOME.pev,
+                vector: APOTOME.vector,
                 scaler: [16.5, EXTREME_EDA],
-            } as Spev<{rational: false}>,
-            jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.HIGH, JiNotationLevelId.ULTRA],
+            } as ScaledVector<{ rational: false }>,
+            jiNotationLevels: [
+                JiNotationLevelId.MEDIUM,
+                JiNotationLevelId.HIGH,
+                JiNotationLevelId.ULTRA,
+            ],
         }
 
-        const actual =
-            computeExtendedJiNotationLevelBoundHistories(histories, jiNotationLevel, jiNotationBoundClass)
+        const actual = computeExtendedJiNotationLevelBoundHistories(
+            histories,
+            jiNotationLevel,
+            jiNotationBoundClass,
+        )
 
         const expected = [
             [
@@ -56,7 +60,9 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "2.5°47" as Name<JiNotationBound>,
-                    pitch: {pev: APOTOME.pev, scaler: [2.5, HIGH_EDA]} as Spev<{rational: false}>,
+                    pitch: { vector: APOTOME.vector, scaler: [2.5, HIGH_EDA] } as ScaledVector<{
+                        rational: false
+                    }>,
                 },
             ],
             [
@@ -65,7 +71,9 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "3.5°47" as Name<JiNotationBound>,
-                    pitch: {pev: APOTOME.pev, scaler: [3.5, HIGH_EDA]} as Spev<{rational: false}>,
+                    pitch: { vector: APOTOME.vector, scaler: [3.5, HIGH_EDA] } as ScaledVector<{
+                        rational: false
+                    }>,
                 },
             ],
             [
@@ -74,7 +82,12 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( ~|" as Name<JiNotationBound>,
-                    pitch: {pev: [3, 1, 1, -1, 0, 0, -1], scaler: HALF_SCALER} as Spev<{rational: false}>,
+                    pitch: {
+                        vector: [3, 1, 1, -1, 0, 0, -1],
+                        scaler: HALF_SCALER,
+                    } as ScaledVector<{
+                        rational: false
+                    }>,
                 },
             ],
             [
@@ -83,7 +96,9 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "2.5°47" as Name<JiNotationBound>,
-                    pitch: {pev: APOTOME.pev, scaler: [2.5, HIGH_EDA]} as Spev<{rational: false}>,
+                    pitch: { vector: APOTOME.vector, scaler: [2.5, HIGH_EDA] } as ScaledVector<{
+                        rational: false
+                    }>,
                 },
             ],
             [
@@ -92,7 +107,9 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "3.5°47" as Name<JiNotationBound>,
-                    pitch: {pev: APOTOME.pev, scaler: [3.5, HIGH_EDA]} as Spev<{rational: false}>,
+                    pitch: { vector: APOTOME.vector, scaler: [3.5, HIGH_EDA] } as ScaledVector<{
+                        rational: false
+                    }>,
                 },
             ],
             [
@@ -101,7 +118,12 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.HIGH,
                     boundType: BoundType.COMMA_MEAN,
                     name: "|( ~|" as Name<JiNotationBound>,
-                    pitch: {pev: [3, 1, 1, -1, 0, 0, -1], scaler: HALF_SCALER} as Spev<{rational: false}>,
+                    pitch: {
+                        vector: [3, 1, 1, -1, 0, 0, -1],
+                        scaler: HALF_SCALER,
+                    } as ScaledVector<{
+                        rational: false
+                    }>,
                 },
             ],
         ]

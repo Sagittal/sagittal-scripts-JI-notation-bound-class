@@ -1,4 +1,9 @@
-import {CommaMean, computeRationalSpevGeometricMean, indexOfFinalElement, Name} from "@sagittal/general"
+import {
+    CommaMean,
+    computeRationalScaledVectorGeometricMean,
+    indexOfFinalElement,
+    Name,
+} from "@sagittal/general"
 import {
     CommaClassId,
     computeSagittalSagitype,
@@ -14,8 +19,8 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevelId): C
     const jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass =
         jiNotationLevelCommaClassIds.slice(0, indexOfFinalElement(jiNotationLevelCommaClassIds))
 
-    return jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass
-        .map((commaClassId: CommaClassId, index: number): CommaMean => {
+    return jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass.map(
+        (commaClassId: CommaClassId, index: number): CommaMean => {
             const nextCommaClassId = jiNotationLevelCommaClassIds[index + 1]
 
             const commaClass = getCommaClass(commaClassId)
@@ -27,12 +32,14 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevelId): C
             ].join(" ") as Name<CommaMean>
 
             return {
-                pitch: computeRationalSpevGeometricMean(commaClass.pitch, nextCommaClass.pitch),
+                pitch: computeRationalScaledVectorGeometricMean(
+                    commaClass.pitch,
+                    nextCommaClass.pitch,
+                ),
                 name,
             }
-        })
+        },
+    )
 }
 
-export {
-    computeJiNotationLevelCommaMeans,
-}
+export { computeJiNotationLevelCommaMeans }

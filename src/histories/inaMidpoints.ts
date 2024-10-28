@@ -5,6 +5,7 @@ import {
     Name,
     Quotient,
     ScaledVector,
+    indexOf,
 } from "@sagittal/general"
 import {
     HALF_APOTOME,
@@ -14,8 +15,8 @@ import {
     JiNotationLevelId,
 } from "@sagittal/system"
 
-const computeInaMidpoints = (jiNotationLevel: JiNotationLevelId): InaMidpoint[] => {
-    const eda = JI_NOTATION_LEVEL_EDAS[JI_NOTATION_LEVELS.indexOf(jiNotationLevel)]
+const computeInaMidpoints = (jiNotationLevelId: JiNotationLevelId): InaMidpoint[] => {
+    const eda = JI_NOTATION_LEVEL_EDAS[indexOf(JI_NOTATION_LEVELS, jiNotationLevelId)]
 
     const inaMidpoints = [...Array(eda).keys()].map((degree: number): Maybe<InaMidpoint> => {
         const midpoint = degree + 0.5
@@ -33,9 +34,7 @@ const computeInaMidpoints = (jiNotationLevel: JiNotationLevelId): InaMidpoint[] 
         return { name, pitch }
     })
 
-    return inaMidpoints.filter(
-        (inaMidpoint: Maybe<InaMidpoint>): boolean => !!inaMidpoint,
-    ) as InaMidpoint[]
+    return inaMidpoints.filter((inaMidpoint: Maybe<InaMidpoint>): boolean => !!inaMidpoint) as InaMidpoint[]
 }
 
 export { computeInaMidpoints }

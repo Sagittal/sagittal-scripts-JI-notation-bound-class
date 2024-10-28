@@ -5,7 +5,7 @@ import {computeBoundHistoryTotalInaDistance} from "../../../src/history/historyT
 import {boundEventAnalysisFixture} from "../../helpers/src/fixtures"
 
 describe("computeBoundHistoryTotalInaDistance", (): void => {
-    it("sums up the ina-distances of all the bound class events in the bound class history (they are already all positive)           ", (): void => {
+    it("sums up the ina-distances of all the bound class events in the bound class history (they are already all positive)", (): void => {
         const boundEventAnalyses: BoundEventAnalysis[] = [
             {...boundEventAnalysisFixture, inaDistance: 0.4 as Multiplier<Ina>},
             {...boundEventAnalysisFixture, inaDistance: 0.5 as Multiplier<Ina>},

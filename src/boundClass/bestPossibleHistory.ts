@@ -1,17 +1,19 @@
-import {Grade, isEmpty, Maybe} from "@sagittal/general"
-import {BoundHistory} from "../histories"
-import {BoundHistoryAnalysis} from "../history"
+import { Grade, isEmpty, Maybe } from "@sagittal/general"
+import { BoundHistory } from "../histories"
+import { BoundHistoryAnalysis } from "../history"
 
 const computeBestPossibleBoundHistoryAnalysis = (
     boundHistoryAnalyses: BoundHistoryAnalysis[],
 ): Maybe<BoundHistoryAnalysis> => {
     if (isEmpty(boundHistoryAnalyses)) return undefined
 
-    let bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis =
-        {grade: Infinity as Grade<BoundHistory>} as BoundHistoryAnalysis
+    let bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis = {
+        grade: Infinity as Grade<BoundHistory>,
+    } as BoundHistoryAnalysis
 
-    const atLeastOneExactBoundHistory = boundHistoryAnalyses
-        .some((boundHistoryAnalysis: BoundHistoryAnalysis): boolean => !boundHistoryAnalysis.exact)
+    const atLeastOneExactBoundHistory = boundHistoryAnalyses.some(
+        (boundHistoryAnalysis: BoundHistoryAnalysis): boolean => !boundHistoryAnalysis.exact,
+    )
     if (atLeastOneExactBoundHistory) {
         const exactBoundHistoryAnalyses: BoundHistoryAnalysis[] = []
         boundHistoryAnalyses.forEach((boundHistoryAnalysis: BoundHistoryAnalysis): void => {
@@ -27,10 +29,8 @@ const computeBestPossibleBoundHistoryAnalysis = (
     boundHistoryAnalyses.forEach((boundHistoryAnalysis: BoundHistoryAnalysis): void => {
         if (
             boundHistoryAnalysis.grade < bestPossibleBoundHistoryAnalysis.grade ||
-            (
-                boundHistoryAnalysis.grade === bestPossibleBoundHistoryAnalysis.grade &&
-                boundHistoryAnalysis.totalDistance < bestPossibleBoundHistoryAnalysis.totalDistance
-            )
+            (boundHistoryAnalysis.grade === bestPossibleBoundHistoryAnalysis.grade &&
+                boundHistoryAnalysis.totalDistance < bestPossibleBoundHistoryAnalysis.totalDistance)
         ) {
             bestPossibleBoundHistoryAnalysis = boundHistoryAnalysis
         }
@@ -39,6 +39,4 @@ const computeBestPossibleBoundHistoryAnalysis = (
     return bestPossibleBoundHistoryAnalysis
 }
 
-export {
-    computeBestPossibleBoundHistoryAnalysis,
-}
+export { computeBestPossibleBoundHistoryAnalysis }

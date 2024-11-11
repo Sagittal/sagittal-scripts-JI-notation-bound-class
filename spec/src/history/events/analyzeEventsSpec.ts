@@ -1,12 +1,5 @@
-import { Abs, APOTOME, Cents, Multiplier, ScaledVector } from "@sagittal/general"
-import {
-    BoundType,
-    EXTREME_EDA,
-    HIGH_EDA,
-    Ina,
-    JiNotationLevelId,
-    ULTRA_EDA,
-} from "@sagittal/system"
+import { Abs, APOTOME, Cents, Ed, Irrational, Multiplier, ScaledVector } from "@sagittal/general"
+import { BoundType, EXTREME_EDA, HIGH_EDA, Ina, JiNotationLevelId, ULTRA_EDA } from "@sagittal/system"
 import { BoundHistory } from "../../../../src/histories"
 import { analyzeBoundEvents } from "../../../../src/history/events"
 import { RANKS } from "../../../../src/ranks"
@@ -19,31 +12,31 @@ describe("analyzeBoundEvents", (): void => {
                 ...boundEventFixture,
                 boundType: BoundType.INA_MIDPOINT,
                 jiNotationLevel: JiNotationLevelId.HIGH,
-                pitch: { vector: APOTOME.vector, scaler: [27.5, HIGH_EDA] } as ScaledVector<{
-                    rational: false
-                }>,
+                pitch: { vector: APOTOME.vector, scaler: [27.5, HIGH_EDA as Ed] } as ScaledVector<Irrational>,
             },
             {
                 ...boundEventFixture,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
                 jiNotationLevel: JiNotationLevelId.ULTRA,
-                pitch: { vector: APOTOME.vector, scaler: [33.5, ULTRA_EDA] } as ScaledVector<{
-                    rational: false
-                }>,
+                pitch: {
+                    vector: APOTOME.vector,
+                    scaler: [33.5, ULTRA_EDA as Ed],
+                } as ScaledVector<Irrational>,
             },
             {
                 ...boundEventFixture,
                 boundType: BoundType.COMMA_MEAN,
                 jiNotationLevel: JiNotationLevelId.EXTREME,
-                pitch: { vector: APOTOME.vector, scaler: [135.5, EXTREME_EDA] } as ScaledVector<{
-                    rational: false
-                }>,
+                pitch: {
+                    vector: APOTOME.vector,
+                    scaler: [135.5, EXTREME_EDA as Ed],
+                } as ScaledVector<Irrational>,
             },
         ]
         const actualJiNotationBoundPitch = {
             vector: APOTOME.vector,
-            scaler: [33.5, ULTRA_EDA],
-        } as ScaledVector<{ rational: false }>
+            scaler: [33.5, ULTRA_EDA as Ed],
+        } as ScaledVector<Irrational>
 
         const actual = analyzeBoundEvents(boundHistory, actualJiNotationBoundPitch)
 
@@ -52,9 +45,7 @@ describe("analyzeBoundEvents", (): void => {
                 ...boundEventAnalysisFixture,
                 boundType: BoundType.INA_MIDPOINT,
                 jiNotationLevel: JiNotationLevelId.HIGH,
-                pitch: { vector: APOTOME.vector, scaler: [27.5, HIGH_EDA] } as ScaledVector<{
-                    rational: false
-                }>,
+                pitch: { vector: APOTOME.vector, scaler: [27.5, HIGH_EDA as Ed] } as ScaledVector<Irrational>,
                 rank: RANKS[BoundType.INA_MIDPOINT],
                 exact: false,
                 distance: 0.0 as Abs<Cents>,
@@ -64,9 +55,10 @@ describe("analyzeBoundEvents", (): void => {
                 ...boundEventAnalysisFixture,
                 boundType: BoundType.SIZE_CATEGORY_BOUND,
                 jiNotationLevel: JiNotationLevelId.ULTRA,
-                pitch: { vector: APOTOME.vector, scaler: [33.5, ULTRA_EDA] } as ScaledVector<{
-                    rational: false
-                }>,
+                pitch: {
+                    vector: APOTOME.vector,
+                    scaler: [33.5, ULTRA_EDA as Ed],
+                } as ScaledVector<Irrational>,
                 rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
                 exact: true,
                 distance: 0.854931 as Abs<Cents>,
@@ -76,9 +68,10 @@ describe("analyzeBoundEvents", (): void => {
                 ...boundEventAnalysisFixture,
                 boundType: BoundType.COMMA_MEAN,
                 jiNotationLevel: JiNotationLevelId.EXTREME,
-                pitch: { vector: APOTOME.vector, scaler: [135.5, EXTREME_EDA] } as ScaledVector<{
-                    rational: false
-                }>,
+                pitch: {
+                    vector: APOTOME.vector,
+                    scaler: [135.5, EXTREME_EDA as Ed],
+                } as ScaledVector<Irrational>,
                 rank: RANKS[BoundType.COMMA_MEAN],
                 exact: false,
                 distance: 0.450063 as Abs<Cents>,

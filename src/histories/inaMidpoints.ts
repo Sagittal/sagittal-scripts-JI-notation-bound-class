@@ -6,6 +6,7 @@ import {
     Quotient,
     ScaledVector,
     indexOf,
+    Irrational,
 } from "@sagittal/general"
 import {
     HALF_APOTOME,
@@ -23,7 +24,7 @@ const computeInaMidpoints = (jiNotationLevelId: JiNotationLevelId): InaMidpoint[
         const pitch = {
             vector: APOTOME.vector,
             scaler: [midpoint, eda as number] as Quotient,
-        } as ScaledVector<{ rational: false }>
+        } as ScaledVector<Irrational>
 
         if (isScaledVectorGreater(pitch, HALF_APOTOME)) {
             return undefined

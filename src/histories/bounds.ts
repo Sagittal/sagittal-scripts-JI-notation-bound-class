@@ -1,4 +1,4 @@
-import {CommaMean} from "@sagittal/general"
+import { CommaMean } from "@sagittal/general"
 import {
     BoundType,
     InaMidpoint,
@@ -7,9 +7,9 @@ import {
     JiNotationLevelId,
     SizeCategoryBound,
 } from "@sagittal/system"
-import {computeInaMidpoints} from "./inaMidpoints"
-import {computeJiNotationLevelCommaMeans} from "./levelCommaMeans"
-import {computeSizeCategoryBoundsUpToHalfApotome} from "./sizeCategoryBounds"
+import { computeInaMidpoints } from "./inaMidpoints"
+import { computeJiNotationLevelCommaMeans } from "./levelCommaMeans"
+import { computeSizeCategoryBoundsUpToHalfApotome } from "./sizeCategoryBounds"
 
 const computeBoundPositions = <T extends JiNotationBound>(
     computeLevelBoundPositions: (jiNotationLevel: JiNotationLevelId) => T[],
@@ -18,18 +18,17 @@ const computeBoundPositions = <T extends JiNotationBound>(
         (
             bounds: Record<JiNotationLevelId, T[]>,
             jiNotationLevel: JiNotationLevelId,
-        ): Record<JiNotationLevelId, T[]> =>
-            ({
-                ...bounds,
-                [jiNotationLevel]: computeLevelBoundPositions(jiNotationLevel),
-            }),
+        ): Record<JiNotationLevelId, T[]> => ({
+            ...bounds,
+            [jiNotationLevel]: computeLevelBoundPositions(jiNotationLevel),
+        }),
         {} as Record<JiNotationLevelId, T[]>,
     )
 
-const INA_MIDPOINTS: Record<JiNotationLevelId, InaMidpoint[]> =
-    computeBoundPositions(computeInaMidpoints)
-const JI_NOTATION_LEVELS_COMMA_MEANS: Record<JiNotationLevelId, CommaMean[]> =
-    computeBoundPositions(computeJiNotationLevelCommaMeans)
+const INA_MIDPOINTS: Record<JiNotationLevelId, InaMidpoint[]> = computeBoundPositions(computeInaMidpoints)
+const JI_NOTATION_LEVELS_COMMA_MEANS: Record<JiNotationLevelId, CommaMean[]> = computeBoundPositions(
+    computeJiNotationLevelCommaMeans,
+)
 const JI_NOTATION_LEVELS_SIZE_CATEGORY_BOUNDS: Record<JiNotationLevelId, SizeCategoryBound[]> =
     computeBoundPositions(computeSizeCategoryBoundsUpToHalfApotome)
 

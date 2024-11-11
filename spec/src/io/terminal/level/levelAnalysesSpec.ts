@@ -1,60 +1,63 @@
-import {Count, Decimal, Rank, shallowClone} from "@sagittal/general"
-import {BoundType, JI_NOTATION_LEVELS, JiNotationLevelId} from "@sagittal/system"
-import {jiNotationLevelsBestCumulativeHistoryRanks, jiNotationLevelsBestHistoryRanks} from "../../../../../src/globals"
-import {formatJiNotationLevelAnalyses} from "../../../../../src/io/terminal/level"
-import {RANKS} from "../../../../../src/ranks"
+import { Count, Decimal, Integer, Rank, shallowClone } from "@sagittal/general"
+import { BoundType, JI_NOTATION_LEVELS, JiNotationLevelId } from "@sagittal/system"
+import {
+    jiNotationLevelsBestCumulativeHistoryRanks,
+    jiNotationLevelsBestHistoryRanks,
+} from "../../../../../src/globals"
+import { formatJiNotationLevelAnalyses } from "../../../../../src/io/terminal/level"
+import { RANKS } from "../../../../../src/ranks"
 
 describe("formatJiNotationLevelAnalyses", (): void => {
     beforeEach((): void => {
         jiNotationLevelsBestHistoryRanks[JiNotationLevelId.MEDIUM] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
         jiNotationLevelsBestHistoryRanks[JiNotationLevelId.HIGH] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
         jiNotationLevelsBestHistoryRanks[JiNotationLevelId.ULTRA] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
         jiNotationLevelsBestHistoryRanks[JiNotationLevelId.EXTREME] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
         jiNotationLevelsBestHistoryRanks[JiNotationLevelId.INSANE] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 18 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[JiNotationLevelId.MEDIUM] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[JiNotationLevelId.HIGH] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[JiNotationLevelId.ULTRA] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[JiNotationLevelId.EXTREME] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
         jiNotationLevelsBestCumulativeHistoryRanks[JiNotationLevelId.INSANE] = {
-            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
-            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<{integer: true}> & Rank<BoundType>>,
+            [RANKS[BoundType.INA_MIDPOINT]]: 16 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.COMMA_MEAN]]: 23 as Count<Decimal<Integer> & Rank<BoundType>>,
+            [RANKS[BoundType.SIZE_CATEGORY_BOUND]]: 1 as Count<Decimal<Integer> & Rank<BoundType>>,
         }
     })
 

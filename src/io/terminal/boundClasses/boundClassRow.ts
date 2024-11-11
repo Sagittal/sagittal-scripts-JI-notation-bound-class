@@ -1,16 +1,15 @@
-import {computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Row} from "@sagittal/general"
-import {alignSagitype, JiNotationBoundClassEntry} from "@sagittal/system"
-import {JiNotationBoundClassAnalysis} from "../../../boundClass"
-import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
-import {extractJiNotationLevelDistances} from "./levelDistances"
-import {extractJiNotationLevelRanks} from "./levelRanks"
-import {formatMinaName} from "./minaName"
+import { computeCentsFromPitch, formatDecimal, formatIntegerDecimal, Row } from "@sagittal/general"
+import { alignSagitype, JiNotationBoundClassEntry } from "@sagittal/system"
+import { JiNotationBoundClassAnalysis } from "../../../boundClass"
+import { extractJiNotationBoundClassIdentifiers } from "../boundClassIdentifiers"
+import { extractJiNotationLevelDistances } from "./levelDistances"
+import { extractJiNotationLevelRanks } from "./levelRanks"
+import { formatMinaName } from "./minaName"
 
 const computeJiNotationBoundClassRow = (
     jiNotationBoundClassAnalysis: JiNotationBoundClassAnalysis,
     jiNotationBoundClassEntry: JiNotationBoundClassEntry,
-): Row<{of: JiNotationBoundClassAnalysis}> => {
-    let jiNotationBoundClassRow: Row<{of: JiNotationBoundClassAnalysis}>
+): Row<{ of: JiNotationBoundClassAnalysis }> => {
     const jiNotationBoundClassIdentifiers = extractJiNotationBoundClassIdentifiers(jiNotationBoundClassEntry)
 
     const {
@@ -29,12 +28,9 @@ const computeJiNotationBoundClassRow = (
         bestPossibleBoundHistoryTotalInaDistance,
     } = jiNotationBoundClassAnalysis
 
-    const [
-        mediumLevelRank,
-        highLevelRank,
-        ultraLevelRank,
-        extremeLevelRank,
-    ] = extractJiNotationLevelRanks(bestPossibleBoundHistoryAnalysis)
+    const [mediumLevelRank, highLevelRank, ultraLevelRank, extremeLevelRank] = extractJiNotationLevelRanks(
+        bestPossibleBoundHistoryAnalysis,
+    )
 
     const [
         bestPossibleBoundHistoryMediumDistance,
@@ -48,11 +44,12 @@ const computeJiNotationBoundClassRow = (
         bestPossibleBoundHistoryHighInaDistance,
         bestPossibleBoundHistoryUltraInaDistance,
         bestPossibleBoundHistoryExtremeInaDistance,
-    ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis, {ina: true})
+    ] = extractJiNotationLevelDistances(bestPossibleBoundHistoryAnalysis, { ina: true })
 
     const boundClassId = jiNotationBoundClassEntry[0]
 
-    jiNotationBoundClassRow = [
+    /* eslint-disable prettier/prettier */
+    const jiNotationBoundClassRow = [
         boundClassId,
         formatMinaName(lesserBoundedMinaName),
         formatMinaName(greaterBoundedMinaName),
@@ -62,25 +59,24 @@ const computeJiNotationBoundClassRow = (
         highLevelRank,
         ultraLevelRank,
         extremeLevelRank,
-        formatIntegerDecimal(bestRank, {align: true}),
+        formatIntegerDecimal(bestRank, { align: true }),
         bestPossibleBoundHistoryMediumDistance,
         bestPossibleBoundHistoryHighDistance,
         bestPossibleBoundHistoryUltraDistance,
         bestPossibleBoundHistoryExtremeDistance,
-        formatDecimal(bestPossibleBoundHistoryTotalDistance, {align: true}),
+        formatDecimal(bestPossibleBoundHistoryTotalDistance, { align: true }),
         bestPossibleBoundHistoryMediumInaDistance,
         bestPossibleBoundHistoryHighInaDistance,
         bestPossibleBoundHistoryUltraInaDistance,
         bestPossibleBoundHistoryExtremeInaDistance,
-        formatDecimal(bestPossibleBoundHistoryTotalInaDistance, {align: true}), // These are ¢ but b/c the header
-        formatDecimal(cents, {align: true}),                                    // Specifically states they are ¢
-        formatDecimal(computeCentsFromPitch(initialPosition), {align: true}),   // And this is a very dense table
-        formatDecimal(initialPositionTinaDistance, {align: true}),              // We're saving space and no ¢ signs
-    ] as Row as Row<{of: JiNotationBoundClassAnalysis}>
+        formatDecimal(bestPossibleBoundHistoryTotalInaDistance, { align: true }),   // These are ¢ but b/c the header
+        formatDecimal(cents, { align: true }),                                      // Specifically states they are ¢
+        formatDecimal(computeCentsFromPitch(initialPosition), { align: true }),     // And this is a very dense table
+        formatDecimal(initialPositionTinaDistance, { align: true }),                // We're saving space and no ¢ signs
+    ] as Row as Row<{ of: JiNotationBoundClassAnalysis }>
+    /* eslint-enable prettier/prettier */
 
     return jiNotationBoundClassRow
 }
 
-export {
-    computeJiNotationBoundClassRow,
-}
+export { computeJiNotationBoundClassRow }

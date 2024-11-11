@@ -1,9 +1,9 @@
-import {Name} from "@sagittal/general"
-import {BoundType, JiNotationBound, JiNotationLevelId} from "@sagittal/system"
-import {BoundEventConsolidation} from "../../../src/consolidateHistories/types"
-import {updateEventConsolidation} from "../../../src/consolidateHistories/updateEventConsolidation"
-import {BoundEventAnalysis, BoundHistoryAnalysis} from "../../../src/history"
-import {RANKS} from "../../../src/ranks"
+import { Name } from "@sagittal/general"
+import { BoundType, JiNotationBound, JiNotationLevelId } from "@sagittal/system"
+import { BoundEventConsolidation } from "../../../src/consolidateHistories/types"
+import { updateEventConsolidation } from "../../../src/consolidateHistories/updateEventConsolidation"
+import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../src/history"
+import { RANKS } from "../../../src/ranks"
 import {
     boundEventAnalysisFixture,
     boundEventConsolidationFixture,
@@ -17,10 +17,10 @@ describe("updateEventConsolidation", (): void => {
     let bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis
 
     beforeEach((): void => {
-        boundHistoryAnalysis = {...boundHistoryAnalysisFixture}
-        boundEventAnalysis = {...boundEventAnalysisFixture}
+        boundHistoryAnalysis = { ...boundHistoryAnalysisFixture }
+        boundEventAnalysis = { ...boundEventAnalysisFixture }
         nextBoundEventAnalysis = undefined
-        bestPossibleBoundHistoryAnalysis = {...boundHistoryAnalysisFixture, boundEventAnalyses: []}
+        bestPossibleBoundHistoryAnalysis = { ...boundHistoryAnalysisFixture, boundEventAnalyses: [] }
     })
 
     describe("next events", (): void => {
@@ -46,7 +46,7 @@ describe("updateEventConsolidation", (): void => {
                 ...boundEventConsolidationFixture,
                 nextBoundEvents: ["2.5°58"] as Array<Name<JiNotationBound>>,
             }
-            nextBoundEventAnalysis = {...boundEventAnalysis, name: ".)/| '/|" as Name<JiNotationBound>}
+            nextBoundEventAnalysis = { ...boundEventAnalysis, name: ".)/| '/|" as Name<JiNotationBound> }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -64,7 +64,7 @@ describe("updateEventConsolidation", (): void => {
                 ...boundEventConsolidationFixture,
                 nextBoundEvents: ["2.5°58"] as Array<Name<JiNotationBound>>,
             }
-            nextBoundEventAnalysis = {...boundEventAnalysisFixture, name: "2.5°58" as Name<JiNotationBound>}
+            nextBoundEventAnalysis = { ...boundEventAnalysisFixture, name: "2.5°58" as Name<JiNotationBound> }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -80,9 +80,11 @@ describe("updateEventConsolidation", (): void => {
 
     describe("membership of a bound class history which is possible", (): void => {
         it("when the bound class event consolidation has been identified as a member of a possible bound class history, and the bound class history analysis is possible, the bound class event consolidation remains identified as a member of a possible bound class history", (): void => {
-            const boundEventConsolidation: BoundEventConsolidation =
-                {...boundEventConsolidationFixture, isPossibleBoundHistoryMember: true}
-            boundHistoryAnalysis = {...boundHistoryAnalysisFixture, possible: true}
+            const boundEventConsolidation: BoundEventConsolidation = {
+                ...boundEventConsolidationFixture,
+                isPossibleBoundHistoryMember: true,
+            }
+            boundHistoryAnalysis = { ...boundHistoryAnalysisFixture, possible: true }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -95,9 +97,11 @@ describe("updateEventConsolidation", (): void => {
         })
 
         it("when the bound class event consolidation has been identified as a member of a possible bound class history, and the bound class history analysis is not possible, the bound class event consolidation remains identified as a member of a possible bound class history", (): void => {
-            const boundEventConsolidation: BoundEventConsolidation =
-                {...boundEventConsolidationFixture, isPossibleBoundHistoryMember: true}
-            boundHistoryAnalysis = {...boundHistoryAnalysisFixture, possible: false}
+            const boundEventConsolidation: BoundEventConsolidation = {
+                ...boundEventConsolidationFixture,
+                isPossibleBoundHistoryMember: true,
+            }
+            boundHistoryAnalysis = { ...boundHistoryAnalysisFixture, possible: false }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -110,9 +114,11 @@ describe("updateEventConsolidation", (): void => {
         })
 
         it("when the bound class event consolidation has not been identified as a member of a possible bound class history, and the bound class history analysis is possible, the bound class event consolidation becomes identified as a member of a possible bound class history", (): void => {
-            const boundEventConsolidation: BoundEventConsolidation =
-                {...boundEventConsolidationFixture, isPossibleBoundHistoryMember: false}
-            boundHistoryAnalysis = {...boundHistoryAnalysisFixture, possible: true}
+            const boundEventConsolidation: BoundEventConsolidation = {
+                ...boundEventConsolidationFixture,
+                isPossibleBoundHistoryMember: false,
+            }
+            boundHistoryAnalysis = { ...boundHistoryAnalysisFixture, possible: true }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -125,9 +131,11 @@ describe("updateEventConsolidation", (): void => {
         })
 
         it("when the bound class event consolidation has not been identified as a member of a possible bound class history, and the bound class history analysis is not possible, the bound class event consolidation remains not identified as a member of a possible bound class history", (): void => {
-            const boundEventConsolidation: BoundEventConsolidation =
-                {...boundEventConsolidationFixture, isPossibleBoundHistoryMember: false}
-            boundHistoryAnalysis = {...boundHistoryAnalysisFixture, possible: false}
+            const boundEventConsolidation: BoundEventConsolidation = {
+                ...boundEventConsolidationFixture,
+                isPossibleBoundHistoryMember: false,
+            }
+            boundHistoryAnalysis = { ...boundHistoryAnalysisFixture, possible: false }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -150,11 +158,13 @@ describe("updateEventConsolidation", (): void => {
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
-                boundEventAnalyses: [{
-                    ...boundEventAnalysisFixture,
-                    name: "eventName" as Name<JiNotationBound>,
-                    jiNotationLevel: JiNotationLevelId.ULTRA,
-                }],
+                boundEventAnalyses: [
+                    {
+                        ...boundEventAnalysisFixture,
+                        name: "eventName" as Name<JiNotationBound>,
+                        jiNotationLevel: JiNotationLevelId.ULTRA,
+                    },
+                ],
             }
 
             updateEventConsolidation(boundEventConsolidation, {
@@ -175,11 +185,13 @@ describe("updateEventConsolidation", (): void => {
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
-                boundEventAnalyses: [{
-                    ...boundEventAnalysisFixture,
-                    name: "eventName" as Name<JiNotationBound>,
-                    jiNotationLevel: JiNotationLevelId.EXTREME,
-                }],
+                boundEventAnalyses: [
+                    {
+                        ...boundEventAnalysisFixture,
+                        name: "eventName" as Name<JiNotationBound>,
+                        jiNotationLevel: JiNotationLevelId.EXTREME,
+                    },
+                ],
             }
 
             updateEventConsolidation(boundEventConsolidation, {
@@ -201,11 +213,13 @@ describe("updateEventConsolidation", (): void => {
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
-                boundEventAnalyses: [{
-                    ...boundEventAnalysisFixture,
-                    name: "eventName" as Name<JiNotationBound>,
-                    jiNotationLevel: JiNotationLevelId.ULTRA,
-                }],
+                boundEventAnalyses: [
+                    {
+                        ...boundEventAnalysisFixture,
+                        name: "eventName" as Name<JiNotationBound>,
+                        jiNotationLevel: JiNotationLevelId.ULTRA,
+                    },
+                ],
             }
 
             updateEventConsolidation(boundEventConsolidation, {
@@ -227,11 +241,13 @@ describe("updateEventConsolidation", (): void => {
             }
             bestPossibleBoundHistoryAnalysis = {
                 ...boundHistoryAnalysisFixture,
-                boundEventAnalyses: [{
-                    ...boundEventAnalysisFixture,
-                    name: "eventName" as Name<JiNotationBound>,
-                    jiNotationLevel: JiNotationLevelId.EXTREME,
-                }],
+                boundEventAnalyses: [
+                    {
+                        ...boundEventAnalysisFixture,
+                        name: "eventName" as Name<JiNotationBound>,
+                        jiNotationLevel: JiNotationLevelId.EXTREME,
+                    },
+                ],
             }
 
             updateEventConsolidation(boundEventConsolidation, {
@@ -245,13 +261,13 @@ describe("updateEventConsolidation", (): void => {
         })
     })
 
-    describe("rank of the best ranked bound class history any event updated into this event consolidation was a member of          ", (): void => {
+    describe("rank of the best ranked bound class history any event updated into this event consolidation was a member of", (): void => {
         it("when the history analysis's rank is less than the rank of the best ranked history this event consolidation has so far been updated with an event from, it updates its rank of best ranked member history", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
                 rankOfBestRankedMemberHistory: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             }
-            boundHistoryAnalysis = {...boundHistoryAnalysisFixture, rank: RANKS[BoundType.COMMA_MEAN]}
+            boundHistoryAnalysis = { ...boundHistoryAnalysisFixture, rank: RANKS[BoundType.COMMA_MEAN] }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -290,7 +306,7 @@ describe("updateEventConsolidation", (): void => {
                 ...boundEventConsolidationFixture,
                 rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             }
-            boundEventAnalysis = {...boundEventAnalysisFixture, rank: RANKS[BoundType.COMMA_MEAN]}
+            boundEventAnalysis = { ...boundEventAnalysisFixture, rank: RANKS[BoundType.COMMA_MEAN] }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -299,8 +315,9 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.rankOfBestRankedEventInAnyMemberHistory)
-                .toBe(RANKS[BoundType.COMMA_MEAN])
+            expect(boundEventConsolidation.rankOfBestRankedEventInAnyMemberHistory).toBe(
+                RANKS[BoundType.COMMA_MEAN],
+            )
         })
 
         it("when the bound class event analysis's rank is not less than the rank of the best ranked bound class event this event consolidation has so far been updated with, it keeps its rank of best ranked bound class event the same", (): void => {
@@ -308,7 +325,7 @@ describe("updateEventConsolidation", (): void => {
                 ...boundEventConsolidationFixture,
                 rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.INA_MIDPOINT],
             }
-            boundEventAnalysis = {...boundEventAnalysisFixture, rank: RANKS[BoundType.COMMA_MEAN]}
+            boundEventAnalysis = { ...boundEventAnalysisFixture, rank: RANKS[BoundType.COMMA_MEAN] }
 
             updateEventConsolidation(boundEventConsolidation, {
                 boundHistoryAnalysis,
@@ -317,8 +334,9 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            expect(boundEventConsolidation.rankOfBestRankedEventInAnyMemberHistory)
-                .toBe(RANKS[BoundType.INA_MIDPOINT])
+            expect(boundEventConsolidation.rankOfBestRankedEventInAnyMemberHistory).toBe(
+                RANKS[BoundType.INA_MIDPOINT],
+            )
         })
     })
 })

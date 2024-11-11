@@ -1,11 +1,11 @@
-import {Abs, Cents, Grade, Sum} from "@sagittal/general"
-import {computeBestPossibleBoundHistoryAnalysis} from "../../../src/boundClass/bestPossibleHistory"
-import {BoundHistory} from "../../../src/histories"
-import {BoundHistoryAnalysis} from "../../../src/history"
-import {boundHistoryAnalysisFixture} from "../../helpers/src/fixtures"
+import { Abs, Cents, Grade, Sum } from "@sagittal/general"
+import { computeBestPossibleBoundHistoryAnalysis } from "../../../src/boundClass/bestPossibleHistory"
+import { BoundHistory } from "../../../src/histories"
+import { BoundHistoryAnalysis } from "../../../src/history"
+import { boundHistoryAnalysisFixture } from "../../helpers/src/fixtures"
 
 describe("computeBestPossibleBoundHistoryAnalysis", (): void => {
-    it("returns the bound class history with the best grade (the not possible ones are all already filtered out)                ", (): void => {
+    it("returns the bound class history with the best grade (the not possible ones are all already filtered out)", (): void => {
         const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
                 ...boundHistoryAnalysisFixture,

@@ -1,6 +1,6 @@
-import {Name} from "@sagittal/general"
-import {Minas} from "@sagittal/system"
-import {formatMinaName} from "../../../../../src/io/terminal"
+import { Name } from "@sagittal/general"
+import { Minas } from "@sagittal/system"
+import { formatMinaName } from "../../../../../src/io/terminal"
 
 describe("formatMinaName", (): void => {
     it("returns a whole number with no decimal positions for whole minas", (): void => {
@@ -23,7 +23,7 @@ describe("formatMinaName", (): void => {
         expect(formatMinaName("78.390035" as Name<Minas>)).toBe(" 78.390")
     })
 
-    it("returns a blank string for the final JI notation bound class (when one of the minas is undefined)               ", (): void => {
+    it("returns a blank string for the final JI notation bound class (when one of the minas is undefined)", (): void => {
         expect(formatMinaName(undefined)).toBe("       ")
     })
 })

@@ -1,12 +1,12 @@
-import { Vector, ScaledVector } from "@sagittal/general"
+import { Vector, ScaledVector, Rational } from "@sagittal/general"
 import { CommaClassId } from "@sagittal/system"
 import { computePositionCommaClassId } from "../../../../src/io/terminal/positionCommaClassId"
 
 describe("computePositionCommaClassId", (): void => {
     it("given a position, returns the JI Notation comma class ID at that position", (): void => {
         const position = {
-            vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
-        } as ScaledVector<{ rational: true }>
+            vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+        } as ScaledVector<Rational>
 
         const actual = computePositionCommaClassId(position)
 

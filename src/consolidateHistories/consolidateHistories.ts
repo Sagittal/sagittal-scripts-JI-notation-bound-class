@@ -1,9 +1,9 @@
-import {Maybe} from "@sagittal/general"
-import {BoundEventAnalysis, BoundHistoryAnalysis} from "../history"
-import {ensureOneBestPossibleEventPerJiNotationLevel} from "./ensureOneBestPossibleEventPerLevel"
-import {computeInitialEventConsolidation} from "./initialEventConsolidation"
-import {BoundEventConsolidation, BoundHistoryConsolidation} from "./types"
-import {updateEventConsolidation} from "./updateEventConsolidation"
+import { isUndefined, Maybe } from "@sagittal/general"
+import { BoundEventAnalysis, BoundHistoryAnalysis } from "../history"
+import { ensureOneBestPossibleEventPerJiNotationLevel } from "./ensureOneBestPossibleEventPerLevel"
+import { computeInitialEventConsolidation } from "./initialEventConsolidation"
+import { BoundEventConsolidation, BoundHistoryConsolidation } from "./types"
+import { updateEventConsolidation } from "./updateEventConsolidation"
 
 const consolidateBoundHistories = (
     boundHistoryAnalyses: BoundHistoryAnalysis[],
@@ -12,41 +12,43 @@ const consolidateBoundHistories = (
     const boundHistoryConsolidation: BoundHistoryConsolidation = {}
 
     boundHistoryAnalyses.forEach((boundHistoryAnalysis: BoundHistoryAnalysis): void => {
-        boundHistoryAnalysis.boundEventAnalyses.forEach((
-            boundEventAnalysis: BoundEventAnalysis, index: number,
-        ): void => {
-            boundHistoryConsolidation[boundEventAnalysis.jiNotationLevel] =
-                boundHistoryConsolidation[boundEventAnalysis.jiNotationLevel] || []
-            const boundEventConsolidations: Maybe<BoundEventConsolidation[]> =
-                boundHistoryConsolidation[boundEventAnalysis.jiNotationLevel]
+        boundHistoryAnalysis.boundEventAnalyses.forEach(
+            (boundEventAnalysis: BoundEventAnalysis, index: number): void => {
+                boundHistoryConsolidation[boundEventAnalysis.jiNotationLevel] =
+                    boundHistoryConsolidation[boundEventAnalysis.jiNotationLevel] || []
+                const boundEventConsolidations: Maybe<BoundEventConsolidation[]> =
+                    boundHistoryConsolidation[boundEventAnalysis.jiNotationLevel]
 
-            const nextBoundEventAnalysis = boundHistoryAnalysis.boundEventAnalyses[index + 1]
+                const nextBoundEventAnalysis = boundHistoryAnalysis.boundEventAnalyses[index + 1]
 
-            const matchingEventConsolidation: Maybe<BoundEventConsolidation> = boundEventConsolidations &&
-                boundEventConsolidations.find(
-                    (existingEventConsolidation: BoundEventConsolidation): boolean => {
-                        return existingEventConsolidation.name === boundEventAnalysis.name
-                    },
-                )
+                const matchingEventConsolidation: Maybe<BoundEventConsolidation> =
+                    boundEventConsolidations &&
+                    boundEventConsolidations.find(
+                        (existingEventConsolidation: BoundEventConsolidation): boolean => {
+                            return existingEventConsolidation.name === boundEventAnalysis.name
+                        },
+                    )
 
-            const updateEventConsolidationOptions = {
-                nextBoundEventAnalysis,
-                boundHistoryAnalysis,
-                boundEventAnalysis,
-                bestPossibleBoundHistoryAnalysis,
-            }
+                const updateEventConsolidationOptions = {
+                    nextBoundEventAnalysis,
+                    boundHistoryAnalysis,
+                    boundEventAnalysis,
+                    bestPossibleBoundHistoryAnalysis,
+                }
 
-            if (matchingEventConsolidation) {
-                updateEventConsolidation(matchingEventConsolidation, updateEventConsolidationOptions)
-            } else {
-                const newEventConsolidation: BoundEventConsolidation =
-                    computeInitialEventConsolidation(boundEventAnalysis)
+                if (matchingEventConsolidation) {
+                    updateEventConsolidation(matchingEventConsolidation, updateEventConsolidationOptions)
+                } else {
+                    const newEventConsolidation: BoundEventConsolidation =
+                        computeInitialEventConsolidation(boundEventAnalysis)
 
-                updateEventConsolidation(newEventConsolidation, updateEventConsolidationOptions)
+                    updateEventConsolidation(newEventConsolidation, updateEventConsolidationOptions)
 
-                boundEventConsolidations && boundEventConsolidations.push(newEventConsolidation)
-            }
-        })
+                    if (!isUndefined(boundEventConsolidations))
+                        boundEventConsolidations.push(newEventConsolidation)
+                }
+            },
+        )
     })
 
     ensureOneBestPossibleEventPerJiNotationLevel(boundHistoryConsolidation)
@@ -54,6 +56,4 @@ const consolidateBoundHistories = (
     return boundHistoryConsolidation
 }
 
-export {
-    consolidateBoundHistories,
-}
+export { consolidateBoundHistories }

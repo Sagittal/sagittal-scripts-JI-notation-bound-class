@@ -1,10 +1,7 @@
-import { Maybe, NumericProperties, ScaledVector } from "@sagittal/general"
+import { Maybe, Rational, ScaledVector } from "@sagittal/general"
 
-type NeighborPositions<T extends NumericProperties = {}> = [
-    Maybe<ScaledVector<T>>,
-    Maybe<ScaledVector<T>>,
-]
+type NeighborPositions = [Maybe<ScaledVector<Rational>>, Maybe<ScaledVector<Rational>>]
 
-type BoundedCommaClassPositions = NeighborPositions<{ rational: true }>
+type BoundedCommaClassPositions = NeighborPositions
 
 export { NeighborPositions, BoundedCommaClassPositions }

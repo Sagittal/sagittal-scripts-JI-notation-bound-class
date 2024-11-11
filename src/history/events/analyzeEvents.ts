@@ -1,4 +1,4 @@
-import { areScaledVectorsEqual, ScaledVector } from "@sagittal/general"
+import { areScaledVectorsEqual, Irrational, ScaledVector } from "@sagittal/general"
 import { BoundEvent, BoundHistory } from "../../histories"
 import { RANKS } from "../../ranks"
 import { computeBoundEventDistance } from "./eventDistance"
@@ -7,7 +7,7 @@ import { BoundEventAnalysis } from "./types"
 
 const analyzeBoundEvents = (
     boundHistory: BoundHistory,
-    actualJiNotationBoundPitch: ScaledVector,
+    actualJiNotationBoundPitch: ScaledVector<Irrational>,
 ): BoundEventAnalysis[] =>
     boundHistory.map((boundEvent: BoundEvent, index: number): BoundEventAnalysis => {
         const { pitch, boundType } = boundEvent

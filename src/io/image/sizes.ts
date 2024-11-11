@@ -1,4 +1,4 @@
-import {Basis, Cents, computePx, Multiplier, multiply, Px, Scale} from "@sagittal/general"
+import { Basis, Cents, computePx, Multiplier, multiply, Px, Scale } from "@sagittal/general"
 
 const X_VS_Y_STRETCH: Multiplier<Scale<Cents>> = 5 as Multiplier<Scale<Cents>>
 
@@ -9,8 +9,8 @@ const X_SCALE: Scale<Cents> = multiply(SCALE, X_VS_Y_STRETCH)
 const MARGIN: Basis<Cents> = 0.1 as Basis<Cents>
 const LEVEL_HEIGHT: Basis<Cents> = 1 as Basis<Cents>
 
-const TICK_SIZE: Px = computePx(LEVEL_HEIGHT / 2 as Basis<Cents>, SCALE)
-const HALF_TICK_SIZE: Px = TICK_SIZE / 2 as Px
+const TICK_SIZE: Px = computePx((LEVEL_HEIGHT / 2) as Basis<Cents>, SCALE)
+const HALF_TICK_SIZE: Px = (TICK_SIZE / 2) as Px
 
 const DOT_SIZE: Px = computePx(0.01 as Basis<Cents>, SCALE)
 const DASH_SIZE: Px = 1 as Px

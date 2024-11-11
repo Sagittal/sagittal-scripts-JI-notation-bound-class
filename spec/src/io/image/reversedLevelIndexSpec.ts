@@ -1,5 +1,5 @@
-import {Basis, Cents, Multiplier} from "@sagittal/general"
-import {computeReversedJiNotationLevelIndex} from "../../../../src/io/image/reversedLevelIndex"
+import { Basis, Cents, Multiplier } from "@sagittal/general"
+import { computeReversedJiNotationLevelIndex } from "../../../../src/io/image/reversedLevelIndex"
 
 describe("computeReversedJiNotationLevelIndex", (): void => {
     it("returns 0 for the highest JI notation level, which is 4, and descends from there", (): void => {

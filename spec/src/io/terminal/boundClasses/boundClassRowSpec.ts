@@ -1,8 +1,15 @@
-import {Abs, Cents, computePitchFromCents, Multiplier, Row, Sum} from "@sagittal/general"
-import {BoundClassId, BoundType, Ina, JiNotationBoundClass, JiNotationLevelId, Tinas} from "@sagittal/system"
-import {JiNotationBoundClassAnalysis} from "../../../../../src/boundClass"
-import {computeJiNotationBoundClassRow} from "../../../../../src/io/terminal/boundClasses/boundClassRow"
-import {RANKS} from "../../../../../src/ranks"
+import { Abs, Cents, computePitchFromCents, Multiplier, Row, Sum } from "@sagittal/general"
+import {
+    BoundClassId,
+    BoundType,
+    Ina,
+    JiNotationBoundClass,
+    JiNotationLevelId,
+    Tinas,
+} from "@sagittal/system"
+import { JiNotationBoundClassAnalysis } from "../../../../../src/boundClass"
+import { computeJiNotationBoundClassRow } from "../../../../../src/io/terminal/boundClasses/boundClassRow"
+import { RANKS } from "../../../../../src/ranks"
 import {
     boundEventAnalysisFixture,
     boundHistoryAnalysisFixture,
@@ -26,8 +33,8 @@ describe("computeJiNotationBoundClassRow", (): void => {
                         ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevelId.ULTRA,
                         rank: RANKS[BoundType.INA_MIDPOINT],
-                        distance: 0.000 as Abs<Cents>,
-                        inaDistance: 0.000 as Multiplier<Ina>,
+                        distance: 0.0 as Abs<Cents>,
+                        inaDistance: 0.0 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
@@ -52,36 +59,39 @@ describe("computeJiNotationBoundClassRow", (): void => {
             bestPossibleBoundHistoryTotalInaDistance: 0.839 as Sum<Multiplier<Ina>>,
         }
 
-        const actual = computeJiNotationBoundClassRow(
-            jiNotationBoundClassAnalysis,
-            [boundClassId, jiNotationBoundClass],
-        )
+        const actual = computeJiNotationBoundClassRow(jiNotationBoundClassAnalysis, [
+            boundClassId,
+            jiNotationBoundClass,
+        ])
 
+        /* eslint-disable prettier/prettier */
         const expected = [
-            "mina10",           // Bound class ID
-            " 10",              // Lesser bounded mina name
-            " 11",              // Greater bounded mina name
-            "   ,,|( ",         // Extreme lesser bounded comma class
-            "    ,|( ",         // Extreme greater bounded comma class
-            " ",                // Medium rank
-            " ",                // High rank
-            "  1    ",          // Ultra rank
-            "  1    ",          // Extreme rank
-            "  2    ",          // Best rank
-            "",                 // Best possible bound class history Medium distance
-            "",                 // Best possible bound class history High distance
-            "  0.333",          // Best possible bound class history Ultra distance
-            "  0.022",          // Best possible bound class history Extreme distance
-            "  0.355",          // Best possible bound class history total distance
-            "",                 // Best possible bound class history Medium ina distance  (athina)
-            "",                 // Best possible bound class history High ina distance    (hina)
-            "  0.682",          // Best possible bound class history Ultra ina distance   (ultrina)
-            "  0.157",          // Best possible bound class history Extreme ina distance (mina)
-            "  0.839",          // Best possible bound class history total ina distance
-            "  5.448",          // Cents
-            "  5.485",          // Initial position
-            "  0.039",          // Initial position tina distance
-        ] as Row<{of: JiNotationBoundClassAnalysis}>
+            "mina10",   // Bound class ID
+            " 10",      // Lesser bounded mina name
+            " 11",      // Greater bounded mina name
+            "   ,,|( ", // Extreme lesser bounded comma class
+            "    ,|( ", // Extreme greater bounded comma class
+            " ",        // Medium rank
+            " ",        // High rank
+            "  1    ",  // Ultra rank
+            "  1    ",  // Extreme rank
+            "  2    ",  // Best rank
+            "",         // Best possible bound class history Medium distance
+            "",         // Best possible bound class history High distance
+            "  0.333",  // Best possible bound class history Ultra distance
+            "  0.022",  // Best possible bound class history Extreme distance
+            "  0.355",  // Best possible bound class history total distance
+            "",         // Best possible bound class history Medium ina distance  (athina)
+            "",         // Best possible bound class history High ina distance    (hina)
+            "  0.682",  // Best possible bound class history Ultra ina distance   (ultrina)
+            "  0.157",  // Best possible bound class history Extreme ina distance (mina)
+            "  0.839",  // Best possible bound class history total ina distance
+            "  5.448",  // Cents
+            "  5.485",  // Initial position
+            "  0.039",  // Initial position tina distance
+        ] as Row<{ of: JiNotationBoundClassAnalysis }>
+        /* eslint-enable prettier/prettier */
+
         expect(actual).toEqual(expected)
     })
 })

@@ -1,1 +1,1 @@
-export {generateLevelsDiagram} from "./levelsDiagram"
+export { generateLevelsDiagram } from "./levelsDiagram"

@@ -1,4 +1,4 @@
-import { ScaledVector } from "@sagittal/general"
+import { Irrational, Rational, ScaledVector } from "@sagittal/general"
 import {
     CommaClassId,
     getCommaClass,
@@ -9,22 +9,18 @@ import { computeNeighborPositions } from "./neighborPositions"
 import { BoundedCommaClassPositions } from "./types"
 
 const computeBoundedCommaClassPositions = (
-    position: ScaledVector,
+    position: ScaledVector<Irrational>,
     jiNotationLevel: JiNotationLevelId,
 ): BoundedCommaClassPositions => {
-    const jiNotationLevelCommaClassIds: CommaClassId[] =
-        JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]
+    const jiNotationLevelCommaClassIds: CommaClassId[] = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]
 
-    const jiNotationLevelCommaClassPositions: ScaledVector[] = jiNotationLevelCommaClassIds.map(
-        (jiNotationLevelCommaClassId: CommaClassId): ScaledVector => {
+    const jiNotationLevelCommaClassPositions: ScaledVector<Rational>[] = jiNotationLevelCommaClassIds.map(
+        (jiNotationLevelCommaClassId: CommaClassId): ScaledVector<Rational> => {
             return getCommaClass(jiNotationLevelCommaClassId).pitch
         },
     )
 
-    return computeNeighborPositions(
-        position,
-        jiNotationLevelCommaClassPositions,
-    ) as BoundedCommaClassPositions
+    return computeNeighborPositions(position, jiNotationLevelCommaClassPositions)
 }
 
 export { computeBoundedCommaClassPositions }

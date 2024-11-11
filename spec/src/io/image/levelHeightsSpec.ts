@@ -1,6 +1,6 @@
-import {Basis, Cents, Multiplier, Px} from "@sagittal/general"
-import {JiNotationLevelId} from "@sagittal/system"
-import {computeJiNotationLevelHeights} from "../../../../src/io/image/levelHeights"
+import { Basis, Cents, Multiplier, Px } from "@sagittal/general"
+import { JiNotationLevelId } from "@sagittal/system"
+import { computeJiNotationLevelHeights } from "../../../../src/io/image/levelHeights"
 
 describe("computeJiNotationLevelHeights", (): void => {
     it("gives the correct height for the tops of each JI notation level", (): void => {

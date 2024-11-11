@@ -1,15 +1,15 @@
-import {Decimal, Rank} from "@sagittal/general"
-import {BoundType} from "@sagittal/system"
-import {computeBinaryGradeRepresentationIndex} from "../../../src/history/binaryGradeRepresentationCardinality"
-import {RANKS} from "../../../src/ranks"
+import { Decimal, Integer, Rank } from "@sagittal/general"
+import { BoundType } from "@sagittal/system"
+import { computeBinaryGradeRepresentationIndex } from "../../../src/history/binaryGradeRepresentationCardinality"
+import { RANKS } from "../../../src/ranks"
 
 describe("computeBinaryGradeRepresentationIndex", (): void => {
     it("gives the correct index for the power-of-two-based grade", (): void => {
-        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<{integer: true}> & Rank<BoundType>, 4)).toBe(0)
-        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<{integer: true}> & Rank<BoundType>, 3)).toBe(1)
-        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<{integer: true}> & Rank<BoundType>, 2)).toBe(2)
-        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<{integer: true}> & Rank<BoundType>, 1)).toBe(3)
-        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<{integer: true}> & Rank<BoundType>, 0)).toBe(4)
+        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<Integer> & Rank<BoundType>, 4)).toBe(0)
+        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<Integer> & Rank<BoundType>, 3)).toBe(1)
+        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<Integer> & Rank<BoundType>, 2)).toBe(2)
+        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<Integer> & Rank<BoundType>, 1)).toBe(3)
+        expect(computeBinaryGradeRepresentationIndex(0 as Decimal<Integer> & Rank<BoundType>, 0)).toBe(4)
 
         expect(computeBinaryGradeRepresentationIndex(RANKS[BoundType.INA_MIDPOINT], 4)).toBe(5)
         expect(computeBinaryGradeRepresentationIndex(RANKS[BoundType.INA_MIDPOINT], 3)).toBe(6)

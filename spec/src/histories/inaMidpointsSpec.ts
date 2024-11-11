@@ -1,9 +1,16 @@
-import { APOTOME, computePitchExpectation, Name, PitchExpectation } from "@sagittal/general"
+import {
+    Apotome,
+    APOTOME,
+    computePitchExpectation,
+    Irrational,
+    Name,
+    PitchExpectation,
+} from "@sagittal/general"
 import { EXTREME_EDA, InaMidpoint, JiNotationLevelId, MEDIUM_EDA } from "@sagittal/system"
 import { computeInaMidpoints } from "../../../src/histories/inaMidpoints"
 
 describe("computeInaMidpoints", (): void => {
-    it("works (e.g.) for the Medium JI notation level, only including midpoints below or at the max position                ", (): void => {
+    it("works (e.g.) for the Medium JI notation level, only including midpoints below or at the max position", (): void => {
         const jiNotationLevel = JiNotationLevelId.MEDIUM
 
         const actual = computeInaMidpoints(jiNotationLevel)
@@ -94,7 +101,7 @@ describe("computeInaMidpoints", (): void => {
         const jiNotationLevel = JiNotationLevelId.EXTREME
 
         const actual = computeInaMidpoints(jiNotationLevel).map(
-            (inaMidpoint: InaMidpoint): PitchExpectation => {
+            (inaMidpoint: InaMidpoint): PitchExpectation<Irrational, { of: Apotome }> => {
                 return computePitchExpectation(inaMidpoint.pitch)
             },
         )
@@ -802,7 +809,7 @@ describe("computeInaMidpoints", (): void => {
                 cents: 56.84250302885589,
                 vector: [-5.5, 3.5],
             },
-        ] as PitchExpectation[]
+        ] as PitchExpectation<Irrational, { of: Apotome }>[]
         expect(actual).toEqual(expected)
     })
 })

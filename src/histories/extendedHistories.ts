@@ -1,13 +1,13 @@
-import {computeExtensionBase, ExtensionBaseType} from "@sagittal/general"
-import {BoundType, JiNotationBoundClass, JiNotationLevelId} from "@sagittal/system"
-import {computeBoundedCommaClassPositions} from "../boundedPositions"
-import {computeBoundEvents} from "./events"
-import {BoundEvent, BoundHistory} from "./types"
+import { computeExtensionBase, ExtensionBaseType } from "@sagittal/general"
+import { BoundType, JiNotationBoundClass, JiNotationLevelId } from "@sagittal/system"
+import { computeBoundedCommaClassPositions } from "../boundedPositions"
+import { computeBoundEvents } from "./events"
+import { BoundEvent, BoundHistory } from "./types"
 
 const computeExtendedHistories = (
     boundHistory: BoundHistory,
     jiNotationLevel: JiNotationLevelId,
-    {pitch}: JiNotationBoundClass,
+    { pitch }: JiNotationBoundClass,
 ): BoundHistory[] => {
     const extendedBoundHistories = computeExtensionBase(ExtensionBaseType.ARRAY) as BoundHistory[]
 
@@ -27,6 +27,4 @@ const computeExtendedHistories = (
     return extendedBoundHistories
 }
 
-export {
-    computeExtendedHistories,
-}
+export { computeExtendedHistories }

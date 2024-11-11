@@ -16,8 +16,10 @@ import {
 const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevelId): CommaMean[] => {
     const jiNotationLevelCommaClassIds = JI_NOTATION_LEVELS_COMMA_CLASS_IDS[jiNotationLevel]
 
-    const jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass =
-        jiNotationLevelCommaClassIds.slice(0, indexOfFinalElement(jiNotationLevelCommaClassIds))
+    const jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass = jiNotationLevelCommaClassIds.slice(
+        0,
+        indexOfFinalElement(jiNotationLevelCommaClassIds),
+    )
 
     return jiNotationLevelCommaClassIdsExcludingTheFinalCommaClass.map(
         (commaClassId: CommaClassId, index: number): CommaMean => {
@@ -32,10 +34,7 @@ const computeJiNotationLevelCommaMeans = (jiNotationLevel: JiNotationLevelId): C
             ].join(" ") as Name<CommaMean>
 
             return {
-                pitch: computeRationalScaledVectorGeometricMean(
-                    commaClass.pitch,
-                    nextCommaClass.pitch,
-                ),
+                pitch: computeRationalScaledVectorGeometricMean(commaClass.pitch, nextCommaClass.pitch),
                 name,
             }
         },

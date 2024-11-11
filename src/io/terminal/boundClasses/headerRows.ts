@@ -1,5 +1,5 @@
-import {Io, Row, splitFieldTitlesIntoRowsBySpaces} from "@sagittal/general"
-import {JiNotationBoundClassAnalysis} from "../../../boundClass"
+import { Io, Row, splitFieldTitlesIntoRowsBySpaces } from "@sagittal/general"
+import { JiNotationBoundClassAnalysis } from "../../../boundClass"
 
 const BOUND_ANALYSES_FIELD_TITLES: Io[] = [
     "bound class ID",
@@ -24,13 +24,11 @@ const BOUND_ANALYSES_FIELD_TITLES: Io[] = [
     "overall ina-dst moved",
     "actual bound class pos (¢)",
     "initial comma mean pos (¢)",
-    "a.b.c. vs i.c.m. error (tinas)",  // Actual bound class vs. initial comma mean
+    "a.b.c. vs i.c.m. error (tinas)", // Actual bound class vs. initial comma mean
 ] as Io[]
 
-const computeJiNotationBoundClassAnalysisHeaderRows =
-    (): Array<Row<{of: JiNotationBoundClassAnalysis, header: true}>> =>
-        splitFieldTitlesIntoRowsBySpaces(BOUND_ANALYSES_FIELD_TITLES, {includeSpacerRow: true})
+const computeJiNotationBoundClassAnalysisHeaderRows = (): Array<
+    Row<{ of: JiNotationBoundClassAnalysis; header: true }>
+> => splitFieldTitlesIntoRowsBySpaces(BOUND_ANALYSES_FIELD_TITLES, { includeSpacerRow: true })
 
-export {
-    computeJiNotationBoundClassAnalysisHeaderRows,
-}
+export { computeJiNotationBoundClassAnalysisHeaderRows }

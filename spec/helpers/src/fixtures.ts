@@ -6,6 +6,8 @@ import {
     EMPTY_VECTOR,
     Grade,
     HALF_SCALER,
+    Integer,
+    Irrational,
     IRRATIONAL_SCALED_VECTOR_BASE_VECTOR,
     Multiplier,
     Name,
@@ -30,9 +32,7 @@ import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../src/history"
 import { RANKS } from "../../../src/ranks"
 
 const boundEventFixture: BoundEvent = {
-    pitch: { vector: IRRATIONAL_SCALED_VECTOR_BASE_VECTOR, scaler: HALF_SCALER } as ScaledVector<{
-        rational: false
-    }>,
+    pitch: { vector: IRRATIONAL_SCALED_VECTOR_BASE_VECTOR, scaler: HALF_SCALER } as ScaledVector<Irrational>,
     boundType: "" as BoundType,
     jiNotationLevel: "" as JiNotationLevelId,
     name: "" as Name<JiNotationBound>,
@@ -42,16 +42,14 @@ const boundEventAnalysisFixture: BoundEventAnalysis = {
     ...boundEventFixture,
     distance: 0 as Abs<Cents>,
     inaDistance: 0 as Multiplier<Ina>,
-    rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
+    rank: 0 as Decimal<Integer> & Rank<BoundType>,
     exact: false,
 }
 
 const boundHistoryAnalysisFixture: BoundHistoryAnalysis = {
     boundEventAnalyses: [],
-    pitch: { vector: IRRATIONAL_SCALED_VECTOR_BASE_VECTOR, scaler: HALF_SCALER } as ScaledVector<{
-        rational: false
-    }>,
-    rank: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
+    pitch: { vector: IRRATIONAL_SCALED_VECTOR_BASE_VECTOR, scaler: HALF_SCALER } as ScaledVector<Irrational>,
+    rank: 0 as Decimal<Integer> & Rank<BoundType>,
     grade: 0 as Grade<BoundHistory>,
     totalDistance: 0 as Sum<Abs<Cents>>,
     exact: false,
@@ -65,8 +63,8 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
     ...boundEventFixture,
     isPossibleBoundHistoryMember: false,
     isBestPossibleBoundHistoryMember: false,
-    rankOfBestRankedMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
-    rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<{ integer: true }> & Rank<BoundType>,
+    rankOfBestRankedMemberHistory: 0 as Decimal<Integer> & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<Integer> & Rank<BoundType>,
     nextBoundEvents: [] as Array<Name<JiNotationBound>>,
     exact: false,
 }
@@ -76,7 +74,7 @@ const jiNotationBoundClassFixture: JiNotationBoundClass = {
     pitch: {
         vector: EMPTY_VECTOR,
         scaler: [1, 1] as Quotient,
-    } as ScaledVector<{ rational: false }>,
+    } as ScaledVector<Irrational>,
     boundType: BoundType.INA_MIDPOINT,
     name: "" as Name<JiNotationBound>,
 }

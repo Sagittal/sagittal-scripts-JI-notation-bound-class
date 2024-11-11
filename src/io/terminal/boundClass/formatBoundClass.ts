@@ -9,9 +9,9 @@ import {
     stringify,
     sumTexts,
 } from "@sagittal/general"
-import {JiNotationBoundClassEntry} from "@sagittal/system"
-import {JiNotationBoundClassAnalysis} from "../../../boundClass"
-import {extractJiNotationBoundClassIdentifiers} from "../boundClassIdentifiers"
+import { JiNotationBoundClassEntry } from "@sagittal/system"
+import { JiNotationBoundClassAnalysis } from "../../../boundClass"
+import { extractJiNotationBoundClassIdentifiers } from "../boundClassIdentifiers"
 
 const roundIfNumeric = (value: unknown, precision: Precision): unknown =>
     isNumber(value) ? round(value, precision) : value
@@ -26,10 +26,12 @@ const formatJiNotationBoundClass = (
         DEFAULT_PRECISION,
     )
 
-    const formattedJiNotationBoundIdentifiers = stringify(jiNotationBoundIdentifiers, {multiline: true})
-        .replace(/\\\\/g, "\\")
-    const formattedJiNotationBoundClassAnalysis = stringify(jiNotationBoundClassAnalysis, {multiline: true})
-        .replace(/\\\\/g, "\\")
+    const formattedJiNotationBoundIdentifiers = stringify(jiNotationBoundIdentifiers, {
+        multiline: true,
+    }).replace(/\\\\/g, "\\")
+    const formattedJiNotationBoundClassAnalysis = stringify(jiNotationBoundClassAnalysis, {
+        multiline: true,
+    }).replace(/\\\\/g, "\\")
 
     return sumTexts(
         formattedJiNotationBoundIdentifiers,
@@ -38,6 +40,4 @@ const formatJiNotationBoundClass = (
     ) as Formatted<JiNotationBoundClassAnalysis>
 }
 
-export {
-    formatJiNotationBoundClass,
-}
+export { formatJiNotationBoundClass }

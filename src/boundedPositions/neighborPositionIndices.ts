@@ -1,6 +1,9 @@
-import {increment, Index, subtract} from "@sagittal/general"
+import { increment, Index, subtract } from "@sagittal/general"
 
-const computeNeighborPositionIndices = (position: number, sortedTargetPositions: number[]): [Index, Index] => {
+const computeNeighborPositionIndices = (
+    position: number,
+    sortedTargetPositions: number[],
+): [Index, Index] => {
     let index = 0 as Index
     let target = sortedTargetPositions[index]
     while (target < position) {
@@ -8,12 +11,7 @@ const computeNeighborPositionIndices = (position: number, sortedTargetPositions:
         target = sortedTargetPositions[index]
     }
 
-    return [
-        subtract(index, 1 as Index),
-        index,
-    ]
+    return [subtract(index, 1 as Index), index]
 }
 
-export {
-    computeNeighborPositionIndices,
-}
+export { computeNeighborPositionIndices }

@@ -1,4 +1,4 @@
-import { APOTOME, HALF_SCALER, Multiplier, Name, ScaledVector } from "@sagittal/general"
+import { APOTOME, Ed, HALF_SCALER, Irrational, Multiplier, Name, ScaledVector } from "@sagittal/general"
 import {
     BoundType,
     EXTREME_EDA,
@@ -19,7 +19,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevelId.ULTRA,
             boundType: BoundType.COMMA_MEAN,
             name: "'/| )/|" as Name<JiNotationBound>,
-            pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<{ rational: false }>,
+            pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<Irrational>,
             rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             exact: false,
         }
@@ -28,9 +28,10 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevelId.ULTRA,
             boundType: BoundType.INA_MIDPOINT,
             name: "12.5°58" as Name<JiNotationBound>,
-            pitch: { vector: APOTOME.vector, scaler: [12.5, ULTRA_EDA] } as ScaledVector<{
-                rational: false
-            }>,
+            pitch: {
+                vector: APOTOME.vector,
+                scaler: [12.5, ULTRA_EDA as Ed],
+            } as ScaledVector<Irrational>,
             rank: RANKS[BoundType.COMMA_MEAN],
             exact: false,
         }
@@ -39,7 +40,7 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ",)/| )/|" as Name<JiNotationBound>,
-            pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<{ rational: false }>,
+            pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<Irrational>,
             rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
             exact: false,
         }
@@ -48,9 +49,10 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.INA_MIDPOINT,
             name: "50.5°233" as Name<JiNotationBound>,
-            pitch: { vector: APOTOME.vector, scaler: [50.5, EXTREME_EDA] } as ScaledVector<{
-                rational: false
-            }>,
+            pitch: {
+                vector: APOTOME.vector,
+                scaler: [50.5, EXTREME_EDA as Ed],
+            } as ScaledVector<Irrational>,
             rank: RANKS[BoundType.COMMA_MEAN],
             exact: false,
         }
@@ -59,21 +61,18 @@ describe("consolidateBoundHistories", (): void => {
             jiNotationLevel: JiNotationLevelId.EXTREME,
             boundType: BoundType.COMMA_MEAN,
             name: ",)/| )/|" as Name<JiNotationBound>,
-            pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<{ rational: false }>,
+            pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<Irrational>,
             rank: RANKS[BoundType.COMMA_MEAN],
             exact: false,
         }
 
         const bestPossibleBoundHistoryAnalysis: BoundHistoryAnalysis = {
             ...boundHistoryAnalysisFixture,
-            boundEventAnalyses: [
-                boundEventAnalysisBGoesToEventC,
-                boundEventAnalysisCButWithBetterRank,
-            ],
+            boundEventAnalyses: [boundEventAnalysisBGoesToEventC, boundEventAnalysisCButWithBetterRank],
             rank: RANKS[BoundType.COMMA_MEAN],
             possible: true,
             tinaError: 0 as Multiplier<Tinas>,
-            pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<{ rational: false }>,
+            pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<Irrational>,
         }
         const boundHistoryAnalyses: BoundHistoryAnalysis[] = [
             {
@@ -82,7 +81,7 @@ describe("consolidateBoundHistories", (): void => {
                 rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
                 possible: true,
                 tinaError: 0 as Multiplier<Tinas>,
-                pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<{ rational: false }>,
+                pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<Irrational>,
             },
             bestPossibleBoundHistoryAnalysis,
             {
@@ -91,7 +90,7 @@ describe("consolidateBoundHistories", (): void => {
                 rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
                 possible: false,
                 tinaError: 3.05589400712 as Multiplier<Tinas>,
-                pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<{ rational: false }>,
+                pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<Irrational>,
             },
             {
                 ...boundHistoryAnalysisFixture,
@@ -99,14 +98,11 @@ describe("consolidateBoundHistories", (): void => {
                 rank: RANKS[BoundType.SIZE_CATEGORY_BOUND],
                 possible: false,
                 tinaError: 2.26723955922 as Multiplier<Tinas>,
-                pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<{ rational: false }>,
+                pitch: { vector: [], scaler: HALF_SCALER } as ScaledVector<Irrational>,
             },
         ]
 
-        const actual = consolidateBoundHistories(
-            boundHistoryAnalyses,
-            bestPossibleBoundHistoryAnalysis,
-        )
+        const actual = consolidateBoundHistories(boundHistoryAnalyses, bestPossibleBoundHistoryAnalysis)
 
         const expected = {
             [JiNotationLevelId.ULTRA]: [

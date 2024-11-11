@@ -1,4 +1,4 @@
-import { APOTOME, Name, ScaledVector } from "@sagittal/general"
+import { APOTOME, Ed, Irrational, Name, ScaledVector } from "@sagittal/general"
 import { BoundType, JiNotationBound, ULTRA_EDA } from "@sagittal/system"
 import { computeInitialEventConsolidation } from "../../../src/consolidateHistories/initialEventConsolidation"
 import { BoundEventConsolidation } from "../../../src/consolidateHistories/types"
@@ -14,9 +14,7 @@ describe("computeInitialEventConsolidation", (): void => {
         boundType: BoundType.INA_MIDPOINT,
         name: "12.5°58" as Name<JiNotationBound>,
         rank: RANKS[BoundType.COMMA_MEAN],
-        pitch: { vector: APOTOME.vector, scaler: [12.5, ULTRA_EDA] } as ScaledVector<{
-            rational: false
-        }>,
+        pitch: { vector: APOTOME.vector, scaler: [12.5, ULTRA_EDA as Ed] } as ScaledVector<Irrational>,
     }
 
     beforeEach((): void => {
@@ -24,9 +22,7 @@ describe("computeInitialEventConsolidation", (): void => {
     })
 
     it("initializes the rank related fields to the worst rank (so that there's nowhere to go but up when updating them with data from the bound class history analyses", (): void => {
-        expect(actual.rankOfBestRankedEventInAnyMemberHistory).toBe(
-            RANKS[BoundType.SIZE_CATEGORY_BOUND],
-        )
+        expect(actual.rankOfBestRankedEventInAnyMemberHistory).toBe(RANKS[BoundType.SIZE_CATEGORY_BOUND])
         expect(actual.rankOfBestRankedMemberHistory).toBe(RANKS[BoundType.SIZE_CATEGORY_BOUND])
     })
 

@@ -4,6 +4,8 @@ import {
     APOTOME,
     Cents,
     computePitchFromCents,
+    Ed,
+    Irrational,
     IRRATIONAL_SCALED_VECTOR_BASE_VECTOR,
     Multiplier,
     multiply,
@@ -33,10 +35,10 @@ import {
 describe("analyzeHistory", (): void => {
     const actualJiNotationBoundPitch = {
         vector: APOTOME.vector,
-        scaler: [25.5, EXTREME_EDA],
-    } as ScaledVector<{ rational: false }>
+        scaler: [25.5, EXTREME_EDA as Ed],
+    } as ScaledVector<Irrational>
     let boundHistory: BoundHistory
-    let pitch: ScaledVector<{ rational: false }>
+    let pitch: ScaledVector<Irrational>
     let jiNotationBoundClass: JiNotationBoundClass
     let initialPosition
 
@@ -44,7 +46,7 @@ describe("analyzeHistory", (): void => {
         pitch = addScaledVectors(actualJiNotationBoundPitch, {
             vector: IRRATIONAL_SCALED_VECTOR_BASE_VECTOR,
             scaler: [1, 2400] as Quotient, // 2^(1/2400) = 0.5¢
-        } as ScaledVector<{ rational: false }>)
+        } as ScaledVector<Irrational>)
         boundHistory = [
             {
                 ...boundEventFixture,
@@ -96,8 +98,8 @@ describe("analyzeHistory", (): void => {
         expect(actual.initialPositionTinaDistance).toBeCloseToTyped(3.710191 as Multiplier<Tinas>)
     })
 
-    describe("when the bound class history's position matches the actual JI notation bound class position                    ", (): void => {
-        it("returns the bound class history's events with their rank, plus true for the possible property and a 0 tina error           ", (): void => {
+    describe("when the bound class history's position matches the actual JI notation bound class position", (): void => {
+        it("returns the bound class history's events with their rank, plus true for the possible property and a 0 tina error", (): void => {
             pitch = actualJiNotationBoundPitch
             boundHistory = [
                 {
@@ -128,7 +130,7 @@ describe("analyzeHistory", (): void => {
     })
 
     describe(`when the bound class history's position does not match the actual JI notation bound class position, returns the bound class history plus false for the possible property and the error in tinas`, (): void => {
-        it("works when the position is greater than the actual JI notation bound class position by less than a tina              ", (): void => {
+        it("works when the position is greater than the actual JI notation bound class position by less than a tina", (): void => {
             const expectedTinaError = (2 / 5) as Multiplier<Tinas>
             pitch = addScaledVectors(
                 actualJiNotationBoundPitch,
@@ -159,7 +161,7 @@ describe("analyzeHistory", (): void => {
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
         })
 
-        it("works when the position is greater than the actual JI notation bound class position by more than a tina             ", (): void => {
+        it("works when the position is greater than the actual JI notation bound class position by more than a tina", (): void => {
             const expectedTinaError = (5 / 2) as Multiplier<Tinas>
             pitch = addScaledVectors(
                 actualJiNotationBoundPitch,
@@ -191,7 +193,7 @@ describe("analyzeHistory", (): void => {
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
         })
 
-        it("works when the position is below the actual JI notation bound class position by less than a tina                       ", (): void => {
+        it("works when the position is below the actual JI notation bound class position by less than a tina", (): void => {
             const expectedTinaError = (-2 / 5) as Multiplier<Tinas>
             pitch = addScaledVectors(
                 actualJiNotationBoundPitch,
@@ -224,7 +226,7 @@ describe("analyzeHistory", (): void => {
             expect(actual.tinaError).toBeCloseToTyped(expectedTinaError)
         })
 
-        it("works when the position is below the actual JI notation bound class position by more than a tina                       ", (): void => {
+        it("works when the position is below the actual JI notation bound class position by more than a tina", (): void => {
             const expectedTinaError = (-5 / 2) as Multiplier<Tinas>
             pitch = addScaledVectors(
                 actualJiNotationBoundPitch,

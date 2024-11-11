@@ -1,4 +1,14 @@
-import { APOTOME, CommaMean, HALF_SCALER, Vector, Name, ScaledVector } from "@sagittal/general"
+import {
+    APOTOME,
+    CommaMean,
+    HALF_SCALER,
+    Vector,
+    Name,
+    ScaledVector,
+    Irrational,
+    Ed,
+    Rational,
+} from "@sagittal/general"
 import {
     BoundClassId,
     BoundType,
@@ -16,22 +26,15 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
                 vector: APOTOME.vector,
-                scaler: [175.5, INSANE_EDA],
-            } as ScaledVector<{ rational: false }>,
-            jiNotationLevels: [
-                JiNotationLevelId.MEDIUM,
-                JiNotationLevelId.EXTREME,
-                JiNotationLevelId.INSANE,
-            ],
+                scaler: [175.5, INSANE_EDA as Ed],
+            } as ScaledVector<Irrational>,
+            jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "175.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
         }
         const boundClassId = BoundClassId.MINA_50
 
-        const actual = computeJiNotationLevelBoundedCommaClassIds([
-            boundClassId,
-            jiNotationBoundClass,
-        ])
+        const actual = computeJiNotationLevelBoundedCommaClassIds([boundClassId, jiNotationBoundClass])
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId,
@@ -45,23 +48,16 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
     it("works for the final JI notation bound class", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
-                vector: APOTOME.vector as Vector<{ rational: true }>,
-                scaler: [404.5, INSANE_EDA],
-            } as ScaledVector<{ rational: false }>,
-            jiNotationLevels: [
-                JiNotationLevelId.MEDIUM,
-                JiNotationLevelId.EXTREME,
-                JiNotationLevelId.INSANE,
-            ],
+                vector: APOTOME.vector,
+                scaler: [404.5, INSANE_EDA as Ed],
+            } as ScaledVector<Irrational>,
+            jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "404.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
         }
         const boundClassId = BoundClassId.MINA_116
 
-        const actual = computeJiNotationLevelBoundedCommaClassIds([
-            boundClassId,
-            jiNotationBoundClass,
-        ])
+        const actual = computeJiNotationLevelBoundedCommaClassIds([boundClassId, jiNotationBoundClass])
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId: BoundClassId.MINA_116,
@@ -76,18 +72,15 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
                 vector: APOTOME.vector,
-                scaler: [1.5, INSANE_EDA],
-            } as ScaledVector<{ rational: false }>,
+                scaler: [1.5, INSANE_EDA as Ed],
+            } as ScaledVector<Irrational>,
             jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "1.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
         }
         const boundClassId = BoundClassId.MINA_0
 
-        const actual = computeJiNotationLevelBoundedCommaClassIds([
-            boundClassId,
-            jiNotationBoundClass,
-        ])
+        const actual = computeJiNotationLevelBoundedCommaClassIds([boundClassId, jiNotationBoundClass])
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId: BoundClassId.MINA_0,
@@ -100,23 +93,16 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
     it("works for the bound class between the two commas which are extremely close together", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
-                vector: [-4, -1, -1, 0, 0, 1, 0, 1] as Vector<{ rational: true }>,
+                vector: [-4, -1, -1, 0, 0, 1, 0, 1] as Vector<Rational>,
                 scaler: HALF_SCALER,
-            } as ScaledVector<{ rational: false }>,
-            jiNotationLevels: [
-                JiNotationLevelId.ULTRA,
-                JiNotationLevelId.EXTREME,
-                JiNotationLevelId.INSANE,
-            ],
+            } as ScaledVector<Irrational>,
+            jiNotationLevels: [JiNotationLevelId.ULTRA, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: ")/| ,.|)" as Name<CommaMean>,
             boundType: BoundType.COMMA_MEAN,
         }
         const boundClassId = BoundClassId.MINA_51
 
-        const actual = computeJiNotationLevelBoundedCommaClassIds([
-            boundClassId,
-            jiNotationBoundClass,
-        ])
+        const actual = computeJiNotationLevelBoundedCommaClassIds([boundClassId, jiNotationBoundClass])
 
         const expected: BoundedCommaClassIdPairs = {
             boundClassId: BoundClassId.MINA_51,

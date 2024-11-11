@@ -1,27 +1,31 @@
-import {JI_NOTATION_BOUND_CLASS_ENTRIES, JiNotationBoundClassEntry, JiNotationLevelId} from "@sagittal/system"
-import {computeBoundedCommaClassPositions} from "../../boundedPositions"
-import {computePositionCommaClassId} from "./positionCommaClassId"
-import {BoundedCommaClassIdPairs} from "./types"
+import {
+    JI_NOTATION_BOUND_CLASS_ENTRIES,
+    JiNotationBoundClassEntry,
+    JiNotationLevelId,
+} from "@sagittal/system"
+import { computeBoundedCommaClassPositions } from "../../boundedPositions"
+import { computePositionCommaClassId } from "./positionCommaClassId"
+import { BoundedCommaClassIdPairs } from "./types"
 
-const computeJiNotationLevelBoundedCommaClassIds = (
-    [boundClassId, {pitch, jiNotationLevels}]: JiNotationBoundClassEntry,
-): BoundedCommaClassIdPairs =>
+const computeJiNotationLevelBoundedCommaClassIds = ([
+    boundClassId,
+    { pitch, jiNotationLevels },
+]: JiNotationBoundClassEntry): BoundedCommaClassIdPairs =>
     jiNotationLevels.reduce(
         (
             boundedCommaClassIdPairs: BoundedCommaClassIdPairs,
             jiNotationLevel: JiNotationLevelId,
         ): BoundedCommaClassIdPairs => ({
             ...boundedCommaClassIdPairs,
-            [jiNotationLevel]: computeBoundedCommaClassPositions(pitch, jiNotationLevel)
-                .map(computePositionCommaClassId),
+            [jiNotationLevel]: computeBoundedCommaClassPositions(pitch, jiNotationLevel).map(
+                computePositionCommaClassId,
+            ),
         }),
-        {boundClassId},
+        { boundClassId },
     )
 
-const BOUNDED_COMMA_CLASS_ID_PAIRS: BoundedCommaClassIdPairs[] =
-    JI_NOTATION_BOUND_CLASS_ENTRIES.map(computeJiNotationLevelBoundedCommaClassIds)
-
-export {
+const BOUNDED_COMMA_CLASS_ID_PAIRS: BoundedCommaClassIdPairs[] = JI_NOTATION_BOUND_CLASS_ENTRIES.map(
     computeJiNotationLevelBoundedCommaClassIds,
-    BOUNDED_COMMA_CLASS_ID_PAIRS,
-}
+)
+
+export { computeJiNotationLevelBoundedCommaClassIds, BOUNDED_COMMA_CLASS_ID_PAIRS }

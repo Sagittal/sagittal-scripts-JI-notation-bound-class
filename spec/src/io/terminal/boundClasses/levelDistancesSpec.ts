@@ -1,8 +1,8 @@
-import {Abs, Cents, Formatted, Multiplier} from "@sagittal/general"
-import {Ina, JiNotationLevelId} from "@sagittal/system"
-import {BoundHistoryAnalysis} from "../../../../../src/history"
-import {extractJiNotationLevelDistances} from "../../../../../src/io/terminal/boundClasses/levelDistances"
-import {boundEventAnalysisFixture, boundHistoryAnalysisFixture} from "../../../../helpers/src/fixtures"
+import { Abs, Cents, Formatted, Multiplier } from "@sagittal/general"
+import { Ina, JiNotationLevelId } from "@sagittal/system"
+import { BoundHistoryAnalysis } from "../../../../../src/history"
+import { extractJiNotationLevelDistances } from "../../../../../src/io/terminal/boundClasses/levelDistances"
+import { boundEventAnalysisFixture, boundHistoryAnalysisFixture } from "../../../../helpers/src/fixtures"
 
 describe("extractJiNotationLevelDistances", (): void => {
     it("returns an array of the distances of each event (from the previous bound class event)", (): void => {
@@ -12,7 +12,7 @@ describe("extractJiNotationLevelDistances", (): void => {
                 {
                     ...boundEventAnalysisFixture,
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
-                    distance: 0.000000 as Abs<Cents>,
+                    distance: 0.0 as Abs<Cents>,
                 },
                 {
                     ...boundEventAnalysisFixture,
@@ -39,12 +39,7 @@ describe("extractJiNotationLevelDistances", (): void => {
 
         const actual = extractJiNotationLevelDistances(boundHistoryAnalysis)
 
-        const expected = [
-            "  4.444",
-            "  3.333",
-            "  2.222",
-            "  1.111",
-        ] as Array<Formatted<Abs<Cents>>>
+        const expected = ["  4.444", "  3.333", "  2.222", "  1.111"] as Array<Formatted<Abs<Cents>>>
         expect(actual).toEqual(expected)
     })
 
@@ -55,7 +50,7 @@ describe("extractJiNotationLevelDistances", (): void => {
                 {
                     ...boundEventAnalysisFixture,
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
-                    distance: 0.000000 as Abs<Cents>,
+                    distance: 0.0 as Abs<Cents>,
                 },
                 {
                     ...boundEventAnalysisFixture,
@@ -77,12 +72,7 @@ describe("extractJiNotationLevelDistances", (): void => {
 
         const actual = extractJiNotationLevelDistances(boundHistoryAnalysis)
 
-        const expected = [
-            "  4.444",
-            "  2.222",
-            "",
-            "  1.111",
-        ] as Array<Formatted<Abs<Cents>>>
+        const expected = ["  4.444", "  2.222", "", "  1.111"] as Array<Formatted<Abs<Cents>>>
         expect(actual).toEqual(expected)
     })
 
@@ -94,7 +84,7 @@ describe("extractJiNotationLevelDistances", (): void => {
                     {
                         ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevelId.MEDIUM,
-                        inaDistance: 0.000000 as Multiplier<Ina>,
+                        inaDistance: 0.0 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
@@ -119,14 +109,9 @@ describe("extractJiNotationLevelDistances", (): void => {
                 ],
             }
 
-            const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, {ina: true})
+            const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, { ina: true })
 
-            const expected = [
-                "  4.444",
-                "  3.333",
-                "  2.222",
-                "  1.111",
-            ] as Array<Formatted<Multiplier<Ina>>>
+            const expected = ["  4.444", "  3.333", "  2.222", "  1.111"] as Array<Formatted<Multiplier<Ina>>>
             expect(actual).toEqual(expected)
         })
 
@@ -137,7 +122,7 @@ describe("extractJiNotationLevelDistances", (): void => {
                     {
                         ...boundEventAnalysisFixture,
                         jiNotationLevel: JiNotationLevelId.MEDIUM,
-                        inaDistance: 0.000000 as Multiplier<Ina>,
+                        inaDistance: 0.0 as Multiplier<Ina>,
                     },
                     {
                         ...boundEventAnalysisFixture,
@@ -157,14 +142,9 @@ describe("extractJiNotationLevelDistances", (): void => {
                 ],
             }
 
-            const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, {ina: true})
+            const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, { ina: true })
 
-            const expected = [
-                "  4.444",
-                "  2.222",
-                "",
-                "  1.111",
-            ] as Array<Formatted<Multiplier<Ina>>>
+            const expected = ["  4.444", "  2.222", "", "  1.111"] as Array<Formatted<Multiplier<Ina>>>
             expect(actual).toEqual(expected)
         })
     })

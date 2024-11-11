@@ -13,18 +13,16 @@ const computeBoundEvents = (
 
     const levelBounds = JI_NOTATION_BOUNDS_BY_TYPE[boundType][jiNotationLevel]
 
-    levelBounds.forEach(
-        ({ pitch, name = BLANK as Name<JiNotationBound> }: JiNotationBound): void => {
-            if (
-                (!lesserBoundedCommaClassPosition ||
-                    isScaledVectorGreater(pitch, lesserBoundedCommaClassPosition)) &&
-                (!greaterBoundedCommaClassPosition ||
-                    isScaledVectorLesser(pitch, greaterBoundedCommaClassPosition))
-            ) {
-                boundEvent.push({ jiNotationLevel, boundType, name, pitch })
-            }
-        },
-    )
+    levelBounds.forEach(({ pitch, name = BLANK as Name<JiNotationBound> }: JiNotationBound): void => {
+        if (
+            (!lesserBoundedCommaClassPosition ||
+                isScaledVectorGreater(pitch, lesserBoundedCommaClassPosition)) &&
+            (!greaterBoundedCommaClassPosition ||
+                isScaledVectorLesser(pitch, greaterBoundedCommaClassPosition))
+        ) {
+            boundEvent.push({ jiNotationLevel, boundType, name, pitch })
+        }
+    })
 
     return boundEvent
 }

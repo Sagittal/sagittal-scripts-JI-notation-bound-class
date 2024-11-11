@@ -1,8 +1,8 @@
-import {Decimal, Rank} from "@sagittal/general"
-import {BoundType} from "@sagittal/system"
-import {BoundEventAnalysis} from "../history"
-import {RANKS} from "../ranks"
-import {BoundEventConsolidation} from "./types"
+import { Decimal, Integer, Rank } from "@sagittal/general"
+import { BoundType } from "@sagittal/system"
+import { BoundEventAnalysis } from "../history"
+import { RANKS } from "../ranks"
+import { BoundEventConsolidation } from "./types"
 
 const computeInitialEventConsolidation = (
     boundEventAnalysis: BoundEventAnalysis,
@@ -15,10 +15,8 @@ const computeInitialEventConsolidation = (
     isPossibleBoundHistoryMember: false,
     isBestPossibleBoundHistoryMember: false,
     nextBoundEvents: [],
-    rankOfBestRankedMemberHistory: Object.keys(RANKS).length as Decimal<{integer: true}> & Rank<BoundType>,
-    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length as Decimal<{integer: true}> & Rank<BoundType>,
+    rankOfBestRankedMemberHistory: Object.keys(RANKS).length as Decimal<Integer> & Rank<BoundType>,
+    rankOfBestRankedEventInAnyMemberHistory: Object.keys(RANKS).length as Decimal<Integer> & Rank<BoundType>,
 })
 
-export {
-    computeInitialEventConsolidation,
-}
+export { computeInitialEventConsolidation }

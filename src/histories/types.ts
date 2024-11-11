@@ -1,10 +1,10 @@
-import { Name, ScaledVector } from "@sagittal/general"
+import { Apotome, Irrational, Name, ScaledVector } from "@sagittal/general"
 import { BoundType, JiNotationBound, JiNotationLevelId } from "@sagittal/system"
 
 interface BoundEvent {
     jiNotationLevel: JiNotationLevelId
     name: Name<JiNotationBound>
-    pitch: ScaledVector
+    pitch: ScaledVector<Irrational, { of: Apotome }>
     boundType: BoundType
 }
 

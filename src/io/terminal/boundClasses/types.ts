@@ -1,9 +1,7 @@
-import {JiNotationBoundClass} from "@sagittal/system"
+import { JiNotationBoundClass } from "@sagittal/system"
 
 interface JiNotationBoundClassRowOptions {
     jiNotationBoundClass: JiNotationBoundClass
 }
 
-export {
-    JiNotationBoundClassRowOptions,
-}
+export { JiNotationBoundClassRowOptions }

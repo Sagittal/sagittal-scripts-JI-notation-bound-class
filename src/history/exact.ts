@@ -1,9 +1,6 @@
-import {BoundEventAnalysis} from "./events"
+import { BoundEventAnalysis } from "./events"
 
 const computeExact = (boundEventAnalyses: BoundEventAnalysis[]): boolean =>
-    boundEventAnalyses
-        .every((boundEventAnalysis: BoundEventAnalysis): boolean => boundEventAnalysis.exact)
+    boundEventAnalyses.every((boundEventAnalysis: BoundEventAnalysis): boolean => boundEventAnalysis.exact)
 
-export {
-    computeExact,
-}
+export { computeExact }

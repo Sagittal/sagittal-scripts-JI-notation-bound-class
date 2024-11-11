@@ -1,10 +1,12 @@
-import {abs, subtractPitch} from "@sagittal/general"
+import { abs, subtractPitch } from "@sagittal/general"
 import {
     analyzeComma,
     BoundClassId,
     CommaClassId,
     computeSagittalSagitype,
     computeSagittalUnicode,
+    DirectedNumbers,
+    DirectedWord,
     getCommaClass,
     getIntroducingJiNotationLevel,
     getMinaName,
@@ -13,8 +15,8 @@ import {
     JI_NOTATION_BOUND_CLASSES,
     JiNotationLevelId,
 } from "@sagittal/system"
-import {computeInaDistance} from "../../history"
-import {BoundedCommaClassInfo} from "./types"
+import { computeInaDistance } from "../../history"
+import { BoundedCommaClassInfo } from "./types"
 
 const computeBoundedCommaClassInfo = (
     commaClassId: CommaClassId,
@@ -22,7 +24,10 @@ const computeBoundedCommaClassInfo = (
     jiNotationLevel: JiNotationLevelId,
 ): BoundedCommaClassInfo => {
     const commaClass = getCommaClass(commaClassId)
-    const commaAnalysis = analyzeComma(commaClass.pitch)
+    const commaAnalysis = analyzeComma(commaClass.pitch, {
+        directedWord: DirectedWord.NEVER,
+        directedNumbers: DirectedNumbers.ON,
+    })
 
     const sagittal = getRepresentativeSagittal(commaClassId)
     const sagitype = computeSagittalSagitype(sagittal)
@@ -54,6 +59,4 @@ const computeBoundedCommaClassInfo = (
     }
 }
 
-export {
-    computeBoundedCommaClassInfo,
-}
+export { computeBoundedCommaClassInfo }

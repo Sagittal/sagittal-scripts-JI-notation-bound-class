@@ -6,18 +6,12 @@ import {
     Vector,
     Name,
     ScaledVector,
+    Irrational,
+    Ed,
+    Rational,
 } from "@sagittal/general"
-import {
-    BoundType,
-    HIGH_EDA,
-    JiNotationBound,
-    JiNotationLevelId,
-    ULTRA_EDA,
-} from "@sagittal/system"
-import {
-    BoundedCommaClassPositions,
-    computeBoundedCommaClassPositions,
-} from "../../../src/boundedPositions"
+import { BoundType, HIGH_EDA, JiNotationBound, JiNotationLevelId, ULTRA_EDA } from "@sagittal/system"
+import { BoundedCommaClassPositions, computeBoundedCommaClassPositions } from "../../../src/boundedPositions"
 import { BoundEvent } from "../../../src/histories"
 import { computeBoundEvents } from "../../../src/histories/events"
 
@@ -52,16 +46,14 @@ describe("computeBoundEvents", (): void => {
                         name: "2.5°58" as Name<JiNotationBound>,
                         pitch: {
                             vector: APOTOME.vector,
-                            scaler: [2.5, ULTRA_EDA],
-                        } as ScaledVector<{
-                            rational: false
-                        }>,
+                            scaler: [2.5, ULTRA_EDA as Ed],
+                        } as ScaledVector<Irrational>,
                     },
                 ]
                 expect(actual).toEqual(expected)
             })
 
-            it("works when only one ina midpoint is between the bounded comma class positions, even if it is not within a half-ina            ", (): void => {
+            it("works when only one ina midpoint is between the bounded comma class positions, even if it is not within a half-ina", (): void => {
                 jiNotationLevel = JiNotationLevelId.ULTRA
                 boundedCommaClassPositions = computeBoundedCommaClassPositions(
                     computePitchFromCents(4.5 as Cents),
@@ -81,10 +73,8 @@ describe("computeBoundEvents", (): void => {
                         name: "2.5°58" as Name<JiNotationBound>,
                         pitch: {
                             vector: APOTOME.vector,
-                            scaler: [2.5, ULTRA_EDA],
-                        } as ScaledVector<{
-                            rational: false
-                        }>,
+                            scaler: [2.5, ULTRA_EDA as Ed],
+                        } as ScaledVector<Irrational>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -97,11 +87,7 @@ describe("computeBoundEvents", (): void => {
                     jiNotationLevel,
                 )
 
-                const actual = computeBoundEvents(
-                    jiNotationLevel,
-                    boundedCommaClassPositions,
-                    boundType,
-                )
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -110,10 +96,8 @@ describe("computeBoundEvents", (): void => {
                         name: "11.5°47" as Name<JiNotationBound>,
                         pitch: {
                             vector: APOTOME.vector,
-                            scaler: [11.5, HIGH_EDA],
-                        } as ScaledVector<{
-                            rational: false
-                        }>,
+                            scaler: [11.5, HIGH_EDA as Ed],
+                        } as ScaledVector<Irrational>,
                     },
                     {
                         jiNotationLevel: JiNotationLevelId.HIGH,
@@ -121,27 +105,21 @@ describe("computeBoundEvents", (): void => {
                         name: "12.5°47" as Name<JiNotationBound>,
                         pitch: {
                             vector: APOTOME.vector,
-                            scaler: [12.5, HIGH_EDA],
-                        } as ScaledVector<{
-                            rational: false
-                        }>,
+                            scaler: [12.5, HIGH_EDA as Ed],
+                        } as ScaledVector<Irrational>,
                     },
                 ]
                 expect(actual).toEqual(expected)
             })
 
-            it("returns an empty array if there are no INA_MIDPOINT midpoints between the position's bounded comma class positions            ", (): void => {
+            it("returns an empty array if there are no INA_MIDPOINT midpoints between the position's bounded comma class positions", (): void => {
                 jiNotationLevel = JiNotationLevelId.ULTRA
                 boundedCommaClassPositions = computeBoundedCommaClassPositions(
                     computePitchFromCents(6.05 as Cents),
                     jiNotationLevel,
                 )
 
-                const actual = computeBoundEvents(
-                    jiNotationLevel,
-                    boundedCommaClassPositions,
-                    boundType,
-                )
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [] as BoundEvent[]
                 expect(actual).toEqual(expected)
@@ -160,11 +138,7 @@ describe("computeBoundEvents", (): void => {
                     jiNotationLevel,
                 )
 
-                const actual = computeBoundEvents(
-                    jiNotationLevel,
-                    boundedCommaClassPositions,
-                    boundType,
-                )
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -174,7 +148,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             vector: [2, 2, -1, -1],
                             scaler: HALF_SCALER,
-                        } as ScaledVector<{ rational: false }>,
+                        } as ScaledVector<Irrational>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -187,11 +161,7 @@ describe("computeBoundEvents", (): void => {
                     jiNotationLevel,
                 )
 
-                const actual = computeBoundEvents(
-                    jiNotationLevel,
-                    boundedCommaClassPositions,
-                    boundType,
-                )
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -201,7 +171,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             vector: [-7, 5, -1, -1, 0, 0, 0, 1],
                             scaler: HALF_SCALER,
-                        } as ScaledVector<{ rational: false }>,
+                        } as ScaledVector<Irrational>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -214,11 +184,7 @@ describe("computeBoundEvents", (): void => {
                     jiNotationLevel,
                 )
 
-                const actual = computeBoundEvents(
-                    jiNotationLevel,
-                    boundedCommaClassPositions,
-                    boundType,
-                )
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -228,7 +194,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             vector: [27, -12, -1, -2],
                             scaler: HALF_SCALER,
-                        } as ScaledVector<{ rational: false }>,
+                        } as ScaledVector<Irrational>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -241,11 +207,7 @@ describe("computeBoundEvents", (): void => {
                     jiNotationLevel,
                 )
 
-                const actual = computeBoundEvents(
-                    jiNotationLevel,
-                    boundedCommaClassPositions,
-                    boundType,
-                )
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -255,13 +217,13 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             vector: [-10, 4, -1, 1, 2, -1],
                             scaler: HALF_SCALER,
-                        } as ScaledVector<{ rational: false }>,
+                        } as ScaledVector<Irrational>,
                     },
                 ]
                 expect(actual).toEqual(expected)
             })
 
-            it("works even if there is a closer comma mean to the position but it is not between the bounded comma class positions         ", (): void => {
+            it("works even if there is a closer comma mean to the position but it is not between the bounded comma class positions", (): void => {
                 // Mean between )|) and |\ is 31.204382, 0.20 away
                 // Mean between |) and )|) is 28.953101, 2.05 away
                 // However, )|) is at 30.985839,
@@ -273,11 +235,7 @@ describe("computeBoundEvents", (): void => {
                     jiNotationLevel,
                 )
 
-                const actual = computeBoundEvents(
-                    jiNotationLevel,
-                    boundedCommaClassPositions,
-                    boundType,
-                )
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -287,7 +245,7 @@ describe("computeBoundEvents", (): void => {
                         pitch: {
                             vector: [3, -1, 0, -2, 0, 0, 0, 1],
                             scaler: HALF_SCALER,
-                        } as ScaledVector<{ rational: false }>,
+                        } as ScaledVector<Irrational>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -299,18 +257,14 @@ describe("computeBoundEvents", (): void => {
                 boundType = BoundType.SIZE_CATEGORY_BOUND
             })
 
-            it("returns one event for each size category bound between the position's bounded comma class positions         ", (): void => {
+            it("returns one event for each size category bound between the position's bounded comma class positions", (): void => {
                 jiNotationLevel = JiNotationLevelId.MEDIUM
                 boundedCommaClassPositions = computeBoundedCommaClassPositions(
                     computePitchFromCents(34.0 as Cents),
                     jiNotationLevel,
                 )
 
-                const actual = computeBoundEvents(
-                    jiNotationLevel,
-                    boundedCommaClassPositions,
-                    boundType,
-                )
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [
                     {
@@ -318,26 +272,22 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.SIZE_CATEGORY_BOUND,
                         name: "C|S" as Name<JiNotationBound>,
                         pitch: {
-                            vector: [27, -17] as Vector<{ rational: true }>,
+                            vector: [27, -17] as Vector<Rational>,
                             scaler: HALF_SCALER,
-                        } as ScaledVector<{ rational: false }>,
+                        } as ScaledVector<Irrational>,
                     },
                 ]
                 expect(actual).toEqual(expected)
             })
 
-            it("returns an empty array if there are no size category bounds between the position's bounded comma class positions         ", (): void => {
+            it("returns an empty array if there are no size category bounds between the position's bounded comma class positions", (): void => {
                 jiNotationLevel = JiNotationLevelId.ULTRA
                 boundedCommaClassPositions = computeBoundedCommaClassPositions(
                     computePitchFromCents(6.05 as Cents),
                     jiNotationLevel,
                 )
 
-                const actual = computeBoundEvents(
-                    jiNotationLevel,
-                    boundedCommaClassPositions,
-                    boundType,
-                )
+                const actual = computeBoundEvents(jiNotationLevel, boundedCommaClassPositions, boundType)
 
                 const expected = [] as BoundEvent[]
                 expect(actual).toEqual(expected)

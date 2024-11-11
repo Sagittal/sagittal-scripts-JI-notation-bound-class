@@ -1,8 +1,17 @@
-import {Filename, Io, isUndefined, LogTarget, program, saveLog, setupScriptAndIo} from "@sagittal/general"
-import {BoundClassId, JI_NOTATION_BOUND_CLASSES} from "@sagittal/system"
-import {analyzeJiNotationBoundClass} from "../boundClass"
-import {computeHistories} from "../histories"
-import {formatJiNotationBoundClass} from "../io"
+import {
+    Filename,
+    Io,
+    isUndefined,
+    LogTarget,
+    program,
+    saveLog,
+    setupScriptAndIo,
+    stringify,
+} from "@sagittal/general"
+import { BoundClassId, JI_NOTATION_BOUND_CLASSES } from "@sagittal/system"
+import { analyzeJiNotationBoundClass } from "../boundClass"
+import { computeHistories } from "../histories"
+import { formatJiNotationBoundClass } from "../io"
 
 setupScriptAndIo("analyzeBoundClass" as Filename, [LogTarget.FINAL])
 
@@ -13,11 +22,18 @@ const jiNotationBoundClass = JI_NOTATION_BOUND_CLASSES[boundClassId]
 
 if (jiNotationBoundClass) {
     const histories = computeHistories(jiNotationBoundClass)
-    const jiNotationBoundClassAnalysis = analyzeJiNotationBoundClass(histories, [boundClassId, jiNotationBoundClass])
+    const jiNotationBoundClassAnalysis = analyzeJiNotationBoundClass(histories, [
+        boundClassId,
+        jiNotationBoundClass,
+    ])
 
-    const jiNotationBoundOutput: Io =
-        formatJiNotationBoundClass(jiNotationBoundClassAnalysis, [boundClassId, jiNotationBoundClass])
+    const jiNotationBoundOutput: Io = formatJiNotationBoundClass(jiNotationBoundClassAnalysis, [
+        boundClassId,
+        jiNotationBoundClass,
+    ])
     saveLog(jiNotationBoundOutput, LogTarget.FINAL)
 } else {
-    throw new Error(`Could not find JI notation bound class with ID ${boundClassId}. Possible IDs are: ${Object.keys(JI_NOTATION_BOUND_CLASSES)}`)
+    throw new Error(
+        `Could not find JI notation bound class with ID ${boundClassId}. Possible IDs are: ${stringify(Object.keys(JI_NOTATION_BOUND_CLASSES))}`,
+    )
 }

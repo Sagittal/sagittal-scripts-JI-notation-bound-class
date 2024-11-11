@@ -1,12 +1,12 @@
-import {Name} from "@sagittal/general"
-import {BoundType, JiNotationBound, JiNotationLevelId} from "@sagittal/system"
-import {isBoundEventContained} from "../../../src/consolidateHistories/doEventsContainEvent"
-import {BoundEventAnalysis} from "../../../src/history"
-import {RANKS} from "../../../src/ranks"
-import {boundEventAnalysisFixture} from "../../helpers/src/fixtures"
+import { Name } from "@sagittal/general"
+import { BoundType, JiNotationBound, JiNotationLevelId } from "@sagittal/system"
+import { isBoundEventContained } from "../../../src/consolidateHistories/doEventsContainEvent"
+import { BoundEventAnalysis } from "../../../src/history"
+import { RANKS } from "../../../src/ranks"
+import { boundEventAnalysisFixture } from "../../helpers/src/fixtures"
 
 describe("isBoundEventContained", (): void => {
-    it("returns true when the bound class events contain an event which has the same name and the same JI notation level            ", (): void => {
+    it("returns true when the bound class events contain an event which has the same name and the same JI notation level", (): void => {
         const boundEventAnalyses: BoundEventAnalysis[] = [
             {
                 ...boundEventAnalysisFixture,
@@ -27,7 +27,7 @@ describe("isBoundEventContained", (): void => {
         expect(actual).toBeTruthy()
     })
 
-    it("returns false when the bound class events contain an event which has the same name but not the same JI notation level            ", (): void => {
+    it("returns false when the bound class events contain an event which has the same name but not the same JI notation level", (): void => {
         const boundEventAnalyses = [
             {
                 ...boundEventAnalysisFixture,
@@ -48,7 +48,7 @@ describe("isBoundEventContained", (): void => {
         expect(actual).toBeFalsy()
     })
 
-    it("returns false when the bound class events contain an event which has the same JI notation level but not the same name           ", (): void => {
+    it("returns false when the bound class events contain an event which has the same JI notation level but not the same name", (): void => {
         const boundEventAnalyses = [
             {
                 ...boundEventAnalysisFixture,

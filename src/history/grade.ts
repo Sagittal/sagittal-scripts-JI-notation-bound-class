@@ -29,7 +29,7 @@ const computeGrade = (boundEventAnalyses: BoundEventAnalysis[]): Grade<BoundHist
         ): Grade<BoundHistory> =>
             (grade + binaryGradeRepresentationTerm * pow(BASE_2, index as Exponent)) as Grade<BoundHistory>,
         0 as Grade<BoundHistory>,
-    ) as Grade<BoundHistory>
+    )
 }
 
 export { computeGrade }

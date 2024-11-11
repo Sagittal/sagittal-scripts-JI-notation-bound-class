@@ -1,4 +1,4 @@
-import { APOTOME, ScaledVector } from "@sagittal/general"
+import { APOTOME, Ed, Irrational, ScaledVector } from "@sagittal/general"
 import { EXTREME_EDA, HIGH_EDA, ULTRA_EDA } from "@sagittal/system"
 import { BoundHistory } from "../../../src/histories"
 import { computeBoundHistoryPosition } from "../../../src/history/historyPosition"
@@ -11,22 +11,22 @@ describe("computeBoundHistoryPosition", (): void => {
                 ...boundEventFixture,
                 pitch: {
                     vector: APOTOME.vector,
-                    scaler: [27.5, HIGH_EDA],
-                } as ScaledVector<{ rational: false }>, // Not yet...
+                    scaler: [27.5, HIGH_EDA as Ed],
+                } as ScaledVector<Irrational>, // Not yet...
             },
             {
                 ...boundEventFixture,
                 pitch: {
                     vector: APOTOME.vector,
-                    scaler: [33.5, ULTRA_EDA],
-                } as ScaledVector<{ rational: false }>, // Almost there...
+                    scaler: [33.5, ULTRA_EDA as Ed],
+                } as ScaledVector<Irrational>, // Almost there...
             },
             {
                 ...boundEventFixture,
                 pitch: {
                     vector: APOTOME.vector,
-                    scaler: [135.5, EXTREME_EDA],
-                } as ScaledVector<{ rational: false }>, // Final event
+                    scaler: [135.5, EXTREME_EDA as Ed],
+                } as ScaledVector<Irrational>, // Final event
             },
         ]
 
@@ -34,8 +34,8 @@ describe("computeBoundHistoryPosition", (): void => {
 
         const expected = {
             vector: APOTOME.vector,
-            scaler: [135.5, EXTREME_EDA],
-        } as ScaledVector<{ rational: false }>
+            scaler: [135.5, EXTREME_EDA as Ed],
+        } as ScaledVector<Irrational>
         expect(actual).toEqual(expected)
     })
 })

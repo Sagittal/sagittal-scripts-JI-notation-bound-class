@@ -1,4 +1,12 @@
-import { Cents, computePitchFromCents, HALF_SCALER, Vector, ScaledVector } from "@sagittal/general"
+import {
+    Cents,
+    computePitchFromCents,
+    HALF_SCALER,
+    Vector,
+    ScaledVector,
+    Rational,
+    Irrational,
+} from "@sagittal/general"
 import { JiNotationBoundClass, JiNotationLevelId } from "@sagittal/system"
 import { computeInitialPosition } from "../../../src/boundClass/initialPosition"
 import { jiNotationBoundClassFixture } from "../../helpers/src/fixtures"
@@ -18,9 +26,9 @@ describe("computeInitialPosition", (): void => {
             //   [ -14   6   0   0   0   0   0   0   1 ⟩       ~|\
             // + [  -8   8  -2                         ⟩      //|
             // / 2 =
-            vector: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Vector<{ rational: true }>,
+            vector: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
             scaler: HALF_SCALER,
-        } as ScaledVector<{ rational: false }>
+        } as ScaledVector<Irrational>
         expect(actual).toEqual(expected)
     })
 })

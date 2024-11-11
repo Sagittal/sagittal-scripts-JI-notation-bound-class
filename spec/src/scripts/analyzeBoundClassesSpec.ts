@@ -1,4 +1,10 @@
-import {Filename, Io, slowTestOnlyRunInFullSuite, readLines, runScriptAndGetConsoleOutput} from "@sagittal/general"
+import {
+    Filename,
+    Io,
+    slowTestOnlyRunInFullSuite,
+    readLines,
+    runScriptAndGetConsoleOutput,
+} from "@sagittal/general"
 
 describe("analyze-ji-notation-bound-classes", (): void => {
     it("computes a table of analyses of each bound's history, and also analyses by rank and level", (): void => {

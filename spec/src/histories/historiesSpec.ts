@@ -1,4 +1,4 @@
-import { APOTOME, HALF_SCALER, Vector, Name, ScaledVector } from "@sagittal/general"
+import { APOTOME, HALF_SCALER, Name } from "@sagittal/general"
 import {
     BoundType,
     EXTREME_EDA,
@@ -9,7 +9,7 @@ import {
     MEDIUM_EDA,
     ULTRA_EDA,
 } from "@sagittal/system"
-import { computeHistories } from "../../../src/histories"
+import { BoundHistory, computeHistories } from "../../../src/histories"
 import { jiNotationBoundClassFixture } from "../../helpers/src/fixtures"
 
 describe("computeHistories", (): void => {
@@ -19,14 +19,14 @@ describe("computeHistories", (): void => {
             pitch: {
                 vector: APOTOME.vector,
                 scaler: [67.5, INSANE_EDA],
-            } as ScaledVector<{ rational: false }>,
+            },
             jiNotationLevels: [
                 JiNotationLevelId.MEDIUM,
                 JiNotationLevelId.ULTRA,
                 JiNotationLevelId.EXTREME,
                 JiNotationLevelId.INSANE,
             ],
-        }
+        } as JiNotationBoundClass
 
         const actual = computeHistories(jiNotationBoundClass)
 
@@ -39,7 +39,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -48,7 +48,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -57,7 +57,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -66,7 +66,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [65.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -77,7 +77,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -86,7 +86,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -95,7 +95,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -104,7 +104,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [66.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -115,7 +115,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -124,7 +124,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -133,7 +133,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -142,7 +142,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [67.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -153,7 +153,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -162,7 +162,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -171,7 +171,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -180,7 +180,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [68.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -191,7 +191,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -200,7 +200,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -209,7 +209,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -218,7 +218,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -229,7 +229,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -238,7 +238,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -247,7 +247,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -256,7 +256,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [65.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -267,7 +267,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -276,7 +276,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -285,7 +285,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -294,7 +294,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [66.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -305,7 +305,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -314,7 +314,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -323,7 +323,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -332,7 +332,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [67.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -343,7 +343,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -352,7 +352,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -361,7 +361,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -370,7 +370,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [68.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -381,7 +381,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -390,7 +390,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -399,7 +399,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -408,7 +408,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -419,7 +419,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -428,7 +428,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -437,7 +437,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -446,7 +446,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [65.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -457,7 +457,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -466,7 +466,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -475,7 +475,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -484,7 +484,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [66.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -495,7 +495,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -504,7 +504,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -513,7 +513,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -522,7 +522,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [67.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -533,7 +533,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -542,7 +542,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -551,7 +551,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -560,7 +560,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [68.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -571,7 +571,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -580,7 +580,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -589,7 +589,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -598,7 +598,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -609,7 +609,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -618,7 +618,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -627,7 +627,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -636,7 +636,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [65.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -647,7 +647,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -656,7 +656,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -665,7 +665,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -674,7 +674,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [66.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -685,7 +685,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -694,7 +694,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -703,7 +703,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -712,7 +712,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [67.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -723,7 +723,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -732,7 +732,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -741,7 +741,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -750,7 +750,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [68.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -761,7 +761,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [1.5, MEDIUM_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -770,7 +770,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -779,7 +779,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -788,7 +788,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -799,7 +799,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -808,7 +808,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -817,7 +817,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -826,7 +826,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [65.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -837,7 +837,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -846,7 +846,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -855,7 +855,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -864,7 +864,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [66.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -875,7 +875,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -884,7 +884,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -893,7 +893,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -902,7 +902,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [67.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -913,7 +913,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -922,7 +922,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -931,7 +931,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -940,7 +940,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [68.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -951,7 +951,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -960,7 +960,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -969,7 +969,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -978,7 +978,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -989,7 +989,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -998,7 +998,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1007,7 +1007,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1016,7 +1016,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [65.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1027,7 +1027,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1036,7 +1036,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1045,7 +1045,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1054,7 +1054,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [66.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1065,7 +1065,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1074,7 +1074,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1083,7 +1083,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1092,7 +1092,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [67.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1103,7 +1103,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1112,7 +1112,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1121,7 +1121,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1130,7 +1130,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [68.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1141,7 +1141,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1150,7 +1150,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [4.5, ULTRA_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1159,7 +1159,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1168,7 +1168,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1179,7 +1179,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1188,7 +1188,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1197,7 +1197,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1206,7 +1206,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [65.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1217,7 +1217,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1226,7 +1226,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1235,7 +1235,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1244,7 +1244,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [66.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1255,7 +1255,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1264,7 +1264,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1273,7 +1273,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1282,7 +1282,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [67.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1293,7 +1293,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1302,7 +1302,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1311,7 +1311,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1320,7 +1320,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [68.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1331,7 +1331,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1340,7 +1340,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1349,7 +1349,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [19.5, EXTREME_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1358,7 +1358,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1369,7 +1369,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1378,7 +1378,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1387,7 +1387,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1396,7 +1396,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [65.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1407,7 +1407,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1416,7 +1416,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1425,7 +1425,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1434,7 +1434,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [66.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1445,7 +1445,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1454,7 +1454,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1463,7 +1463,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1472,7 +1472,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [67.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1483,7 +1483,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1492,7 +1492,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1501,7 +1501,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1510,7 +1510,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: APOTOME.vector,
                         scaler: [68.5, INSANE_EDA],
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
             [
@@ -1521,7 +1521,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [17, -10, 1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.ULTRA,
@@ -1530,7 +1530,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [0, 3, 0, 1, -1, 0, -1],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -1539,7 +1539,7 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
@@ -1548,10 +1548,11 @@ describe("computeHistories", (): void => {
                     pitch: {
                         vector: [-10, -2, 0, 1, 3],
                         scaler: HALF_SCALER,
-                    } as ScaledVector<{ rational: false }>,
+                    },
                 },
             ],
-        ]
+        ] as BoundHistory[]
+
         expect(actual).toEqual(expected)
     })
 
@@ -1559,15 +1560,11 @@ describe("computeHistories", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             ...jiNotationBoundClassFixture,
             pitch: {
-                vector: APOTOME.vector as Vector<{ rational: true }>,
+                vector: APOTOME.vector,
                 scaler: [404.5, INSANE_EDA],
-            } as ScaledVector<{ rational: false }>,
-            jiNotationLevels: [
-                JiNotationLevelId.MEDIUM,
-                JiNotationLevelId.EXTREME,
-                JiNotationLevelId.INSANE,
-            ],
-        }
+            },
+            jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
+        } as JiNotationBoundClass
 
         const actual = computeHistories(jiNotationBoundClass)
 
@@ -1577,25 +1574,25 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [116.5, 233] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [116.5, 233],
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "402.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [402.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [402.5, 809],
+                    },
                 },
             ],
             [
@@ -1603,25 +1600,25 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [116.5, 233] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [116.5, 233],
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "403.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [403.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [403.5, 809],
+                    },
                 },
             ],
             [
@@ -1629,25 +1626,25 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [116.5, 233] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [116.5, 233],
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "404.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [404.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [404.5, 809],
+                    },
                 },
             ],
             [
@@ -1655,25 +1652,22 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [116.5, 233] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [116.5, 233],
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
             ],
             [
@@ -1681,25 +1675,22 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "402.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [402.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [402.5, 809],
+                    },
                 },
             ],
             [
@@ -1707,25 +1698,22 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "403.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [403.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [403.5, 809],
+                    },
                 },
             ],
             [
@@ -1733,25 +1721,22 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "404.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [404.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [404.5, 809],
+                    },
                 },
             ],
             [
@@ -1759,25 +1744,19 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "10.5°21" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: [10.5, 21] },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
             ],
             [
@@ -1785,25 +1764,25 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [116.5, 233] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [116.5, 233],
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "402.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [402.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [402.5, 809],
+                    },
                 },
             ],
             [
@@ -1811,25 +1790,25 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [116.5, 233] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [116.5, 233],
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "403.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [403.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [403.5, 809],
+                    },
                 },
             ],
             [
@@ -1837,25 +1816,25 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [116.5, 233] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [116.5, 233],
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "404.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [404.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [404.5, 809],
+                    },
                 },
             ],
             [
@@ -1863,25 +1842,22 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "116.5°233" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [116.5, 233] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [116.5, 233],
+                    },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
             ],
             [
@@ -1889,25 +1865,22 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "402.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [402.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [402.5, 809],
+                    },
                 },
             ],
             [
@@ -1915,25 +1888,22 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "403.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [403.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [403.5, 809],
+                    },
                 },
             ],
             [
@@ -1941,25 +1911,22 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.INA_MIDPOINT,
                     name: "404.5°809" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: [404.5, 809] } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: {
+                        vector: APOTOME.vector,
+                        scaler: [404.5, 809],
+                    },
                 },
             ],
             [
@@ -1967,28 +1934,23 @@ describe("computeHistories", (): void => {
                     jiNotationLevel: JiNotationLevelId.MEDIUM,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.EXTREME,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
                 {
                     jiNotationLevel: JiNotationLevelId.INSANE,
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "M|L" as Name<JiNotationBound>,
-                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER } as ScaledVector<{
-                        rational: false
-                    }>,
+                    pitch: { vector: APOTOME.vector, scaler: HALF_SCALER },
                 },
             ],
-        ]
+        ] as BoundHistory[]
+
         expect(actual).toEqual(expected)
     })
 })

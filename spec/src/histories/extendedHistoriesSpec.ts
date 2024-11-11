@@ -8,7 +8,6 @@ import {
     ScaledVector,
     Irrational,
     Ed,
-    Rational,
 } from "@sagittal/general"
 import { BoundType, HIGH_EDA, JiNotationBound, JiNotationLevelId, ULTRA_EDA } from "@sagittal/system"
 import { BoundEvent, BoundHistory } from "../../../src/histories"
@@ -58,7 +57,7 @@ describe("computeExtendedHistories", (): void => {
                     boundType: BoundType.COMMA_MEAN,
                     name: "'//| )//|" as Name<JiNotationBound>,
                     pitch: {
-                        vector: [4, -3, -1, 0, 0, 2, 0, -1] as Vector<Rational>,
+                        vector: [4, -3, -1, 0, 0, 2, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
@@ -70,7 +69,7 @@ describe("computeExtendedHistories", (): void => {
                     boundType: BoundType.SIZE_CATEGORY_BOUND,
                     name: "S|M" as Name<JiNotationBound>,
                     pitch: {
-                        vector: [8, -5] as Vector<Rational>,
+                        vector: [8, -5] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },

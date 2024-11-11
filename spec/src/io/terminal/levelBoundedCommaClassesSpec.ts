@@ -7,7 +7,6 @@ import {
     ScaledVector,
     Irrational,
     Ed,
-    Rational,
 } from "@sagittal/general"
 import {
     BoundClassId,
@@ -93,7 +92,7 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
     it("works for the bound class between the two commas which are extremely close together", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
-                vector: [-4, -1, -1, 0, 0, 1, 0, 1] as Vector<Rational>,
+                vector: [-4, -1, -1, 0, 0, 1, 0, 1] as Vector,
                 scaler: HALF_SCALER,
             } as ScaledVector<Irrational>,
             jiNotationLevels: [JiNotationLevelId.ULTRA, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],

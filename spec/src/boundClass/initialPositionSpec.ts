@@ -4,7 +4,6 @@ import {
     HALF_SCALER,
     Vector,
     ScaledVector,
-    Rational,
     Irrational,
 } from "@sagittal/general"
 import { JiNotationBoundClass, JiNotationLevelId } from "@sagittal/system"
@@ -26,7 +25,7 @@ describe("computeInitialPosition", (): void => {
             //   [ -14   6   0   0   0   0   0   0   1 ⟩       ~|\
             // + [  -8   8  -2                         ⟩      //|
             // / 2 =
-            vector: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+            vector: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Vector,
             scaler: HALF_SCALER,
         } as ScaledVector<Irrational>
         expect(actual).toEqual(expected)

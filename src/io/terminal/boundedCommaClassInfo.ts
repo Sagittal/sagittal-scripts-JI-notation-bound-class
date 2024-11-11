@@ -5,8 +5,6 @@ import {
     CommaClassId,
     computeSagittalSagitype,
     computeSagittalUnicode,
-    DirectedNumbers,
-    DirectedWord,
     getCommaClass,
     getIntroducingJiNotationLevel,
     getMinaName,
@@ -14,6 +12,7 @@ import {
     getSmallestSymbolSubsetId,
     JI_NOTATION_BOUND_CLASSES,
     JiNotationLevelId,
+    OUTDATED_COMMA_NAME_OPTIONS_PREFERENCE,
 } from "@sagittal/system"
 import { computeInaDistance } from "../../history"
 import { BoundedCommaClassInfo } from "./types"
@@ -24,10 +23,7 @@ const computeBoundedCommaClassInfo = (
     jiNotationLevel: JiNotationLevelId,
 ): BoundedCommaClassInfo => {
     const commaClass = getCommaClass(commaClassId)
-    const commaAnalysis = analyzeComma(commaClass.pitch, {
-        directedWord: DirectedWord.NEVER,
-        directedNumbers: DirectedNumbers.ON,
-    })
+    const commaAnalysis = analyzeComma(commaClass.pitch, OUTDATED_COMMA_NAME_OPTIONS_PREFERENCE)
 
     const sagittal = getRepresentativeSagittal(commaClassId)
     const sagitype = computeSagittalSagitype(sagittal)

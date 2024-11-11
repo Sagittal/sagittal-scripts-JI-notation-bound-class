@@ -5,7 +5,7 @@ import { RANK_COLOR_METHODS } from "../rankColors"
 
 const computeJiNotationLevelAnalysisRowColors = (
     jiNotationLevel: JiNotationLevelId,
-): Array<Maybe<ColorMethod>> => {
+): Maybe<ColorMethod>[] => {
     const colors = [] as ColorMethod[]
 
     const jiNotationLevelsBestHistoryRanksValues = Object.keys(

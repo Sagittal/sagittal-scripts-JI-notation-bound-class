@@ -4,7 +4,7 @@ import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../history"
 
 const extractJiNotationLevelRanks = (
     boundHistoryAnalysis: BoundHistoryAnalysis,
-): Array<Formatted<Decimal<Integer> & Rank<BoundType>>> =>
+): Formatted<Decimal<Integer> & Rank<BoundType>>[] =>
     JI_NOTATION_LEVELS.map(
         (jiNotationLevel: JiNotationLevelId): Formatted<Decimal<Integer> & Rank<BoundType>> => {
             const jiNotationLevelEventAnalysis = boundHistoryAnalysis.boundEventAnalyses.find(

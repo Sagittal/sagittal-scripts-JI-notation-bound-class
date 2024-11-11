@@ -9,7 +9,7 @@ describe("updateRankAnalysis", (): void => {
     const boundClassId = BoundClassId.MINA_84
 
     let previousRankAnalysis: number
-    let previousRankBoundClassIndices: Array<BoundClassId>
+    let previousRankBoundClassIndices: BoundClassId[]
 
     beforeEach((): void => {
         previousRankAnalysis = rankCounts[bestRank]

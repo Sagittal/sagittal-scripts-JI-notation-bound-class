@@ -65,7 +65,7 @@ const boundEventConsolidationFixture: BoundEventConsolidation = {
     isBestPossibleBoundHistoryMember: false,
     rankOfBestRankedMemberHistory: 0 as Decimal<Integer> & Rank<BoundType>,
     rankOfBestRankedEventInAnyMemberHistory: 0 as Decimal<Integer> & Rank<BoundType>,
-    nextBoundEvents: [] as Array<Name<JiNotationBound>>,
+    nextBoundEvents: [] as Name<JiNotationBound>[],
     exact: false,
 }
 

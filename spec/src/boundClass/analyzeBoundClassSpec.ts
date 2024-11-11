@@ -176,7 +176,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.COMMA_MEAN],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundEvents: [".)/| '/|", "47.5°233"] as Array<Name<JiNotationBound>>,
+                        nextBoundEvents: [".)/| '/|", "47.5°233"] as Name<JiNotationBound>[],
                     },
                 ],
                 [JiNotationLevelId.EXTREME]: [
@@ -193,7 +193,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.COMMA_MEAN],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundEvents: ["164.5°809"] as Array<Name<JiNotationBound>>,
+                        nextBoundEvents: ["164.5°809"] as Name<JiNotationBound>[],
                     },
                     {
                         jiNotationLevel: JiNotationLevelId.EXTREME,
@@ -208,7 +208,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         exact: false,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.INA_MIDPOINT],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundEvents: ["164.5°809"] as Array<Name<JiNotationBound>>,
+                        nextBoundEvents: ["164.5°809"] as Name<JiNotationBound>[],
                     },
                 ],
                 [JiNotationLevelId.INSANE]: [
@@ -225,7 +225,7 @@ describe("analyzeJiNotationBoundClass", (): void => {
                         exact: true,
                         rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.INA_MIDPOINT],
                         rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                        nextBoundEvents: [] as Array<Name<JiNotationBound>>,
+                        nextBoundEvents: [] as Name<JiNotationBound>[],
                     },
                 ],
             },

@@ -9,7 +9,7 @@ import { computeX } from "./x"
 const visualizeInaMidpoints = (): Io[] => {
     const inaMidpointElements: Io[] = [] as Io[]
 
-    const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as Array<[JiNotationLevelId, InaMidpoint[]]>
+    const inaMidpointEntries = Object.entries(INA_MIDPOINTS) as [JiNotationLevelId, InaMidpoint[]][]
     inaMidpointEntries.forEach(
         ([jiNotationLevel, inaMidpoints]: [JiNotationLevelId, InaMidpoint[]]): void => {
             const centerY: Px = round(JI_NOTATION_LEVEL_CENTERS[jiNotationLevel], DEFAULT_PRECISION)

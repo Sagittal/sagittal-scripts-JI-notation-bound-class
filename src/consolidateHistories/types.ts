@@ -7,7 +7,7 @@ interface BoundEventConsolidation extends BoundEvent {
     exact: boolean
     isBestPossibleBoundHistoryMember: boolean
     isPossibleBoundHistoryMember: boolean
-    nextBoundEvents: Array<Name<JiNotationBound>>
+    nextBoundEvents: Name<JiNotationBound>[]
     rankOfBestRankedEventInAnyMemberHistory: Decimal<Integer> & Rank<BoundType>
     rankOfBestRankedMemberHistory: Decimal<Integer> & Rank<BoundType>
 }

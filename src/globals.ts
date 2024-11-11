@@ -31,7 +31,7 @@ const rankCounts: Record<
 
 const rankBoundClassIds: Record<
     RecordKey<Decimal<Integer> & Rank<BoundType>>,
-    Array<BoundClassId>
+    BoundClassId[]
 > = structuredClone(INITIAL_RANK_BOUND_IDS)
 
 export {

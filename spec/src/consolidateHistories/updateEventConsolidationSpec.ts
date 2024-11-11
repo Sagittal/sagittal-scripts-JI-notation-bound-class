@@ -27,7 +27,7 @@ describe("updateEventConsolidation", (): void => {
         it("when there is no next event analysis (i.e. this is the final event of the bound class history analysis) the next events stays the same", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
-                nextBoundEvents: ["2.5°58"] as Array<Name<JiNotationBound>>,
+                nextBoundEvents: ["2.5°58"] as Name<JiNotationBound>[],
             }
 
             updateEventConsolidation(boundEventConsolidation, {
@@ -37,14 +37,14 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            const expected = ["2.5°58"] as Array<Name<JiNotationBound>>
+            const expected = ["2.5°58"] as Name<JiNotationBound>[]
             expect(boundEventConsolidation.nextBoundEvents).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("when there is a next event analysis, it adds its name to the next events", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
-                nextBoundEvents: ["2.5°58"] as Array<Name<JiNotationBound>>,
+                nextBoundEvents: ["2.5°58"] as Name<JiNotationBound>[],
             }
             nextBoundEventAnalysis = { ...boundEventAnalysis, name: ".)/| '/|" as Name<JiNotationBound> }
 
@@ -55,14 +55,14 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            const expected = ["2.5°58", ".)/| '/|"] as Array<Name<JiNotationBound>>
+            const expected = ["2.5°58", ".)/| '/|"] as Name<JiNotationBound>[]
             expect(boundEventConsolidation.nextBoundEvents).toBeArrayWithDeepEqualContents(expected)
         })
 
         it("when there is a next event analysis, but an event with that name has already been updated into this event consolidation, the next events stays the same", (): void => {
             const boundEventConsolidation: BoundEventConsolidation = {
                 ...boundEventConsolidationFixture,
-                nextBoundEvents: ["2.5°58"] as Array<Name<JiNotationBound>>,
+                nextBoundEvents: ["2.5°58"] as Name<JiNotationBound>[],
             }
             nextBoundEventAnalysis = { ...boundEventAnalysisFixture, name: "2.5°58" as Name<JiNotationBound> }
 
@@ -73,7 +73,7 @@ describe("updateEventConsolidation", (): void => {
                 bestPossibleBoundHistoryAnalysis,
             })
 
-            const expected = ["2.5°58"] as Array<Name<JiNotationBound>>
+            const expected = ["2.5°58"] as Name<JiNotationBound>[]
             expect(boundEventConsolidation.nextBoundEvents).toBeArrayWithDeepEqualContents(expected)
         })
     })

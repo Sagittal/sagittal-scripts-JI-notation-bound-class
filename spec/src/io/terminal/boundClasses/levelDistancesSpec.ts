@@ -39,7 +39,7 @@ describe("extractJiNotationLevelDistances", (): void => {
 
         const actual = extractJiNotationLevelDistances(boundHistoryAnalysis)
 
-        const expected = ["  4.444", "  3.333", "  2.222", "  1.111"] as Array<Formatted<Abs<Cents>>>
+        const expected = ["  4.444", "  3.333", "  2.222", "  1.111"] as Formatted<Abs<Cents>>[]
         expect(actual).toEqual(expected)
     })
 
@@ -72,7 +72,7 @@ describe("extractJiNotationLevelDistances", (): void => {
 
         const actual = extractJiNotationLevelDistances(boundHistoryAnalysis)
 
-        const expected = ["  4.444", "  2.222", "", "  1.111"] as Array<Formatted<Abs<Cents>>>
+        const expected = ["  4.444", "  2.222", "", "  1.111"] as Formatted<Abs<Cents>>[]
         expect(actual).toEqual(expected)
     })
 
@@ -111,7 +111,7 @@ describe("extractJiNotationLevelDistances", (): void => {
 
             const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, { ina: true })
 
-            const expected = ["  4.444", "  3.333", "  2.222", "  1.111"] as Array<Formatted<Multiplier<Ina>>>
+            const expected = ["  4.444", "  3.333", "  2.222", "  1.111"] as Formatted<Multiplier<Ina>>[]
             expect(actual).toEqual(expected)
         })
 
@@ -144,7 +144,7 @@ describe("extractJiNotationLevelDistances", (): void => {
 
             const actual = extractJiNotationLevelDistances(boundHistoryAnalysis, { ina: true })
 
-            const expected = ["  4.444", "  2.222", "", "  1.111"] as Array<Formatted<Multiplier<Ina>>>
+            const expected = ["  4.444", "  2.222", "", "  1.111"] as Formatted<Multiplier<Ina>>[]
             expect(actual).toEqual(expected)
         })
     })

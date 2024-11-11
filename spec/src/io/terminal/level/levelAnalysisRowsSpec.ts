@@ -28,7 +28,7 @@ describe("computeJiNotationLevelAnalysisRows", (): void => {
             ["ina midpoint", " 18    ", " 18    "],
             ["comma mean", " 23    ", " 17    "],
             ["size category bound", " 13    ", " 15    "],
-        ] as Array<Row<{ of: JiNotationLevelId }>>
+        ] as Row<{ of: JiNotationLevelId }>[]
         expect(actual).toEqual(expected)
     })
 })

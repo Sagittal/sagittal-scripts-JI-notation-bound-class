@@ -5,9 +5,10 @@ import { BoundEventConsolidation, BoundHistoryConsolidation } from "./types"
 const ensureOneBestPossibleEventPerJiNotationLevel = (
     boundHistoryConsolidation: BoundHistoryConsolidation,
 ): void => {
-    const boundHistoryConsolidationEntries = Object.entries(boundHistoryConsolidation) as Array<
-        [JiNotationLevelId, BoundEventConsolidation[]]
-    >
+    const boundHistoryConsolidationEntries = Object.entries(boundHistoryConsolidation) as [
+        JiNotationLevelId,
+        BoundEventConsolidation[],
+    ][]
 
     boundHistoryConsolidationEntries.forEach(
         ([jiNotationLevel, boundEventConsolidations]: [

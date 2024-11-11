@@ -7,9 +7,11 @@ import { computeX } from "./x"
 const visualizeJiNotationLevelBoundClasses = (): Io[] => {
     const jiNotationLevelBoundClassElements: Io[] = [] as Io[]
 
-    const jiNotationLevelsBoundClasses = Object.entries(JI_NOTATION_LEVELS_BOUND_CLASSES) as Array<
-        [JiNotationLevelId, JiNotationBoundClass[]]
-    >
+    const jiNotationLevelsBoundClasses = Object.entries(JI_NOTATION_LEVELS_BOUND_CLASSES) as [
+        JiNotationLevelId,
+        JiNotationBoundClass[],
+    ][]
+
     jiNotationLevelsBoundClasses.forEach(
         ([jiNotationLevel, jiNotationLevelBoundClasses]: [
             JiNotationLevelId,

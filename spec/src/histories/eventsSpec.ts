@@ -8,7 +8,6 @@ import {
     ScaledVector,
     Irrational,
     Ed,
-    Rational,
 } from "@sagittal/general"
 import { BoundType, HIGH_EDA, JiNotationBound, JiNotationLevelId, ULTRA_EDA } from "@sagittal/system"
 import { BoundedCommaClassPositions, computeBoundedCommaClassPositions } from "../../../src/boundedPositions"
@@ -272,7 +271,7 @@ describe("computeBoundEvents", (): void => {
                         boundType: BoundType.SIZE_CATEGORY_BOUND,
                         name: "C|S" as Name<JiNotationBound>,
                         pitch: {
-                            vector: [27, -17] as Vector<Rational>,
+                            vector: [27, -17] as Vector,
                             scaler: HALF_SCALER,
                         } as ScaledVector<Irrational>,
                     },

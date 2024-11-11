@@ -1,4 +1,4 @@
-import { Cents, Comma, computePitchFromCents, Rational, Vector } from "@sagittal/general"
+import { Cents, Comma, computePitchFromCents, Vector } from "@sagittal/general"
 import { JiNotationLevelId } from "@sagittal/system"
 import { computeBoundedCommaClassPositions } from "../../../src/boundedPositions"
 
@@ -10,8 +10,8 @@ describe("computeBoundedCommaClassPositions", (): void => {
         const actual = computeBoundedCommaClassPositions(position, jiNotationLevel)
 
         const expected = [
-            { vector: [10, -6, 1, -1] as Vector<Rational> } as Comma, //  |(      ~5.757802¢
-            { vector: [7, -4, 0, 1, -1] as Vector<Rational> } as Comma, // )|(      ~9.687960¢
+            { vector: [10, -6, 1, -1] as Vector } as Comma, //  |(      ~5.757802¢
+            { vector: [7, -4, 0, 1, -1] as Vector } as Comma, // )|(      ~9.687960¢
         ]
 
         expect(actual).toEqual(expected)
@@ -24,7 +24,7 @@ describe("computeBoundedCommaClassPositions", (): void => {
         const actual = computeBoundedCommaClassPositions(position, jiNotationLevel)
 
         const expected = [
-            { vector: [-3, 4, 1, -2] as Vector<Rational> } as Comma, // )/|\     ~56.481904¢
+            { vector: [-3, 4, 1, -2] as Vector } as Comma, // )/|\     ~56.481904¢
             undefined,
         ]
         expect(actual).toEqual(expected)

@@ -8,14 +8,15 @@ import { FORMATTED_RANKS } from "../rankNames"
 
 const computeJiNotationLevelAnalysisRows = (
     jiNotationLevel: JiNotationLevelId,
-): Array<Row<{ of: JiNotationLevelId }>> => {
-    const rows = [] as Array<Row<{ of: JiNotationLevelId }>>
+): Row<{ of: JiNotationLevelId }>[] => {
+    const rows = [] as Row<{ of: JiNotationLevelId }>[]
 
     const jiNotationLevelsBestHistoryRanksEntries = Object.entries(
         jiNotationLevelsBestHistoryRanks[jiNotationLevel],
-    ) as unknown[] as Array<
-        [RecordKey<Decimal<Integer> & Rank<BoundType>>, Count<Decimal<Integer> & Rank<BoundType>>]
-    >
+    ) as unknown[] as [
+        RecordKey<Decimal<Integer> & Rank<BoundType>>,
+        Count<Decimal<Integer> & Rank<BoundType>>,
+    ][]
 
     jiNotationLevelsBestHistoryRanksEntries.forEach(
         ([rank, bestHistoryRankCount]: [

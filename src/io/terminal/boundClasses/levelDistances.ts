@@ -13,7 +13,7 @@ import { BoundEventAnalysis, BoundHistoryAnalysis } from "../../../history"
 const extractJiNotationLevelDistances = (
     boundHistoryAnalysis: BoundHistoryAnalysis,
     { ina = false }: { ina?: boolean } = {},
-): Array<Formatted<Multiplier<Ina> | Abs<Cents>>> => {
+): Formatted<Multiplier<Ina> | Abs<Cents>>[] => {
     const boundEventAnalyses = boundHistoryAnalysis.boundEventAnalyses
 
     return JI_NOTATION_LEVELS.slice(0, indexOfFinalElement(JI_NOTATION_LEVELS)).map(

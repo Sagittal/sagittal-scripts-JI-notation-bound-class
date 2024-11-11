@@ -9,9 +9,10 @@ import { computeX } from "./x"
 const visualizeJiNotationLevelCommaMeans = (): Io[] => {
     const jiNotationLevelCommaMeanElements: Io[] = [] as Io[]
 
-    const jiNotationLevelCommaMeansEntries = Object.entries(JI_NOTATION_LEVELS_COMMA_MEANS) as Array<
-        [JiNotationLevelId, CommaMean[]]
-    >
+    const jiNotationLevelCommaMeansEntries = Object.entries(JI_NOTATION_LEVELS_COMMA_MEANS) as [
+        JiNotationLevelId,
+        CommaMean[],
+    ][]
     jiNotationLevelCommaMeansEntries.forEach(
         ([jiNotationLevel, jiNotationLevelCommaMeans]: [JiNotationLevelId, CommaMean[]]): void => {
             if (jiNotationLevel === JiNotationLevelId.INSANE) {

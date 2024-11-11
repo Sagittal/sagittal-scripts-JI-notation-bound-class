@@ -8,7 +8,6 @@ import {
     Name,
     PitchExpectation,
     ScaledVector,
-    Rational,
     Irrational,
 } from "@sagittal/general"
 import { JiNotationLevelId } from "@sagittal/system"
@@ -23,70 +22,70 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     name: "(|//|) |(" as Name<CommaMean>,
                     pitch: {
-                        vector: [10, -6, 1, -1] as Vector<Rational>,
+                        vector: [10, -6, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|( )|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [17, -10, 1, 0, -1] as Vector<Rational>,
+                        vector: [17, -10, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|( ~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-5, 1, 0, 1, -1, 0, 1] as Vector<Rational>,
+                        vector: [-5, 1, 0, 1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|( /|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-16, 9, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-16, 9, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/| |)" as Name<CommaMean>,
                     pitch: {
-                        vector: [2, 2, -1, -1] as Vector<Rational>,
+                        vector: [2, 2, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|) (|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-6, 6, 0, 0, -1] as Vector<Rational>,
+                        vector: [-6, 6, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(| (|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-14, 10, 1, 1, -2] as Vector<Rational>,
+                        vector: [-14, 10, 1, 1, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(|( //|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-10, 10, -1, 0, -1] as Vector<Rational>,
+                        vector: [-10, 10, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "//| /|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-6, 10, -3, -1] as Vector<Rational>,
+                        vector: [-6, 10, -3, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|) /|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-3, 3, -1, -1, 1] as Vector<Rational>,
+                        vector: [-3, 3, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
@@ -101,182 +100,182 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     name: "(|//|) )|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")| |(" as Name<CommaMean>,
                     pitch: {
-                        vector: [1, -3, 1, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [1, -3, 1, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|( ~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [3, 1, 1, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [3, 1, 1, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~| )|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [0, 3, 0, 1, -1, 0, -1] as Vector<Rational>,
+                        vector: [0, 3, 0, 1, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|( )~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [11, -2, 0, 1, -2, -1] as Vector<Rational>,
+                        vector: [11, -2, 0, 1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")~| ~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-8, 7, 0, 0, -1, -1, 1] as Vector<Rational>,
+                        vector: [-8, 7, 0, 0, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|( |~" as Name<CommaMean>,
                     pitch: {
-                        vector: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Vector<Rational>,
+                        vector: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|~ ~~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~~| )|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [-11, 11, 0, -2, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [-11, 11, 0, -2, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|~ /|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-14, 13, -1, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-14, 13, -1, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/| )/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")/| |)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-7, 5, -1, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-7, 5, -1, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|) )|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [3, -1, 0, -2, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [3, -1, 0, -2, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|) |\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-4, -2, 1, -1, 1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-4, -2, 1, -1, 1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|\\ (|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-13, 5, 1, 1] as Vector<Rational>,
+                        vector: [-13, 5, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(| ~|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-16, 7, 0, 3, -1] as Vector<Rational>,
+                        vector: [-16, 7, 0, 3, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|) /|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [-3, -3, -1, 2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-3, -3, -1, 2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|~ (|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(|( ~|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|\\ //|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "//| )//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-3, 4, -3, 0, 0, 1] as Vector<Rational>,
+                        vector: [-3, 4, -3, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")//| /|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [7, -2, -2, -1, 0, 1] as Vector<Rational>,
+                        vector: [7, -2, -2, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|) (|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [6, 0, -1, -1, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [6, 0, -1, -1, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(|~ /|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-1, -1, 0, 0, 2, 0, 0, -1] as Vector<Rational>,
+                        vector: [-1, -1, 0, 0, 2, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|\\ (/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [7, -3, 0, -2, 1] as Vector<Rational>,
+                        vector: [7, -3, 0, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(/| )/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [9, 0, 1, -4] as Vector<Rational>,
+                        vector: [9, 0, 1, -4] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
@@ -291,322 +290,322 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     name: "(|//|) .)|" as Name<CommaMean>,
                     pitch: {
-                        vector: [6, -5, -1, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [6, -5, -1, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".)| '|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'| )|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-24, 11, 1, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-24, 11, 1, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")| |(" as Name<CommaMean>,
                     pitch: {
-                        vector: [1, -3, 1, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [1, -3, 1, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|( .~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [18, -7, 0, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [18, -7, 0, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".~| '|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [3, 1, 1, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [3, 1, 1, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'|( ~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-12, 9, 2, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [-12, 9, 2, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~| )|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [0, 3, 0, 1, -1, 0, -1] as Vector<Rational>,
+                        vector: [0, 3, 0, 1, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|( ')|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-1, 0, 1, 2, -2] as Vector<Rational>,
+                        vector: [-1, 0, 1, 2, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "')|( )~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-4, 6, 1, 1, -2, -1] as Vector<Rational>,
+                        vector: [-4, 6, 1, 1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")~| .~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [7, -1, -1, 0, -1, -1, 1] as Vector<Rational>,
+                        vector: [7, -1, -1, 0, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".~|( ~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 2, -1, 0, 0, 0, 2] as Vector<Rational>,
+                        vector: [-9, 2, -1, 0, 0, 0, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|( |~" as Name<CommaMean>,
                     pitch: {
-                        vector: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Vector<Rational>,
+                        vector: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|~ ~~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~~| ./|" as Name<CommaMean>,
                     pitch: {
-                        vector: [10, -2, -2, -2, 1] as Vector<Rational>,
+                        vector: [10, -2, -2, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "./| )|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [1, 5, -2, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [1, 5, -2, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|~ /|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-14, 13, -1, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-14, 13, -1, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/| .)/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-2, 3, -3, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-2, 3, -3, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".)/| '/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'/| )/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-32, 19, -1, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-32, 19, -1, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")/| .|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [8, -3, -2, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [8, -3, -2, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".|) |)" as Name<CommaMean>,
                     pitch: {
-                        vector: [27, -12, -1, -2] as Vector<Rational>,
+                        vector: [27, -12, -1, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|) '|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-3, 4, 1, -2] as Vector<Rational>,
+                        vector: [-3, 4, 1, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'|) )|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-12, 7, 1, -2, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-12, 7, 1, -2, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|) .(|" as Name<CommaMean>,
                     pitch: {
-                        vector: [0, 1, -1, 0, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [0, 1, -1, 0, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".(| |\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [2, -3, 0, 1] as Vector<Rational>,
+                        vector: [2, -3, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|\\ (|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-13, 5, 1, 1] as Vector<Rational>,
+                        vector: [-13, 5, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(| '(|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-11, 8, 2, -1, -1] as Vector<Rational>,
+                        vector: [-11, 8, 2, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'(| ~|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-3, -1, 2] as Vector<Rational>,
+                        vector: [-3, -1, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|) .(|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [9, -7, 0, 2, -1] as Vector<Rational>,
+                        vector: [9, -7, 0, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".(|( '~|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-6, 1, 1, 2, -1] as Vector<Rational>,
+                        vector: [-6, 1, 1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'~|) /|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|~ (|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(|( ~|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|\\ .//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-7, 6, -3, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-7, 6, -3, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".//| //|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-1, 8, -5] as Vector<Rational>,
+                        vector: [-1, 8, -5] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "//| '//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 9, -2, 0, 0, 1, 0, -1] as Vector<Rational>,
+                        vector: [-9, 9, -2, 0, 0, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'//| )//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [4, -3, -1, 0, 0, 2, 0, -1] as Vector<Rational>,
+                        vector: [4, -3, -1, 0, 0, 2, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")//| /|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [7, -2, -2, -1, 0, 1] as Vector<Rational>,
+                        vector: [7, -2, -2, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|) (|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [6, 0, -1, -1, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [6, 0, -1, -1, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(|~ '/|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 8, 0, -1, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [-9, 8, 0, -1, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'/|) ./|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-3, 3, -1, -1, 1] as Vector<Rational>,
+                        vector: [-3, 3, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "./|\\ /|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [5, -6, -1, 0, 2] as Vector<Rational>,
+                        vector: [5, -6, -1, 0, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|\\ (/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [7, -3, 0, -2, 1] as Vector<Rational>,
+                        vector: [7, -3, 0, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(/| '/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-8, 5, 1, -2, 1] as Vector<Rational>,
+                        vector: [-8, 5, 1, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'/|\\ )/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-23, 13, 2, -2, 1] as Vector<Rational>,
+                        vector: [-23, 13, 2, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
@@ -621,854 +620,854 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 {
                     name: "(|//|) `|" as Name<CommaMean>,
                     pitch: {
-                        vector: [12, -2, -1, -1, 0, -1] as Vector<Rational>,
+                        vector: [12, -2, -1, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`| ``|" as Name<CommaMean>,
                     pitch: {
-                        vector: [17, -5, 0, -2, -1] as Vector<Rational>,
+                        vector: [17, -5, 0, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "``| .)|" as Name<CommaMean>,
                     pitch: {
-                        vector: [11, -8, 0, -1, -1, 1, 0, 1] as Vector<Rational>,
+                        vector: [11, -8, 0, -1, -1, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".)| '|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'| `'|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-18, 14, 1, -1, 0, -1] as Vector<Rational>,
+                        vector: [-18, 14, 1, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`'| ,)|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-11, 16, -4, -2, 0, -1, 0, 1] as Vector<Rational>,
+                        vector: [-11, 16, -4, -2, 0, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",)| )|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-17, 13, -4, -1, 0, 0, 0, 2] as Vector<Rational>,
+                        vector: [-17, 13, -4, -1, 0, 0, 0, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")| `)|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-12, 5, -1, 2, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-12, 5, -1, 2, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`)| ``)|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-10, 1, 0, 3] as Vector<Rational>,
+                        vector: [-10, 1, 0, 3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "``)| ,,|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-2, -4, 1, 1, 2, -1] as Vector<Rational>,
+                        vector: [-2, -4, 1, 1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,|( ,|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-6, 3, 0, 0, 0, -1, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-6, 3, 0, 0, 0, -1, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",|( |(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-1, 0, 1, -1, -1, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-1, 0, 1, -1, -1, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|( `|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [15, -13, 0, 2] as Vector<Rational>,
+                        vector: [15, -13, 0, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`|( .~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [13, -8, -2, 3, 0, 0, -1] as Vector<Rational>,
+                        vector: [13, -8, -2, 3, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".~| ,'|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [4, 8, -3, -2, 0, 0, -1] as Vector<Rational>,
+                        vector: [4, 8, -3, -2, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",'|( '|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 11, 0, -3] as Vector<Rational>,
+                        vector: [-9, 11, 0, -3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'|( ,~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-15, 3, 2, 2] as Vector<Rational>,
+                        vector: [-15, 3, 2, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",~| ~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-17, 8, 0, 3, 0, 0, -1] as Vector<Rational>,
+                        vector: [-17, 8, 0, 3, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~| ,)|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-24, 9, 0, 0, 4, 0, -1] as Vector<Rational>,
+                        vector: [-24, 9, 0, 0, 4, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",)|( )|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-10, -2, 0, 1, 3] as Vector<Rational>,
+                        vector: [-10, -2, 0, 1, 3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|( `)|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [10, -11, 2, 1] as Vector<Rational>,
+                        vector: [10, -11, 2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`)|( ``)|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-10, 0, 2, 2, 1, -1] as Vector<Rational>,
+                        vector: [-10, 0, 2, 2, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "``)|( ,')|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [8, 2, -2, -1, 0, -1] as Vector<Rational>,
+                        vector: [8, 2, -2, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",')|( ')|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [13, -1, -1, -2, -1] as Vector<Rational>,
+                        vector: [13, -1, -1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "')|( )~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-4, 6, 1, 1, -2, -1] as Vector<Rational>,
+                        vector: [-4, 6, 1, 1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")~| .~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [7, -1, -1, 0, -1, -1, 1] as Vector<Rational>,
+                        vector: [7, -1, -1, 0, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".~|( `.~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [12, -8, -1, 0, 1, 0, 1, 0, -1] as Vector<Rational>,
+                        vector: [12, -8, -1, 0, 1, 0, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`.~|( ,,~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [10, -3, -3, 1, 1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [10, -3, -3, 1, 1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,~|( ,~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [1, -3, -2, 3] as Vector<Rational>,
+                        vector: [1, -3, -2, 3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",~|( ~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-12, 0, 1, 2, 0, 0, 1] as Vector<Rational>,
+                        vector: [-12, 0, 1, 2, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|( `~|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-10, 1, 0, -1, 1, 1, 1] as Vector<Rational>,
+                        vector: [-10, 1, 0, -1, 1, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`~|( ,,|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [-12, 6, -2, 0, 1, 1] as Vector<Rational>,
+                        vector: [-12, 6, -2, 0, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,|~ ,|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [-29, 13, 0, 3] as Vector<Rational>,
+                        vector: [-29, 13, 0, 3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",|~ |~" as Name<CommaMean>,
                     pitch: {
-                        vector: [-10, -3, 2, 2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-10, -3, 2, 2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|~ `|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [14, -7, 0, 0, 0, -2, 0, 0, 1] as Vector<Rational>,
+                        vector: [14, -7, 0, 0, 0, -2, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`|~ ~~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [8, 1, 0, -2, 1, -2] as Vector<Rational>,
+                        vector: [8, 1, 0, -2, 1, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~~| `~~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 8, 0, -2, 2, 0, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-9, 8, 0, -2, 2, 0, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`~~| ``~~|" as Name<CommaMean>,
                     pitch: {
-                        vector: [5, -3, 0, -1, 1, 0, 1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [5, -3, 0, -1, 1, 0, 1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "``~~| ,./|" as Name<CommaMean>,
                     pitch: {
-                        vector: [12, -11, -1, 0, 0, 1, 1] as Vector<Rational>,
+                        vector: [12, -11, -1, 0, 0, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",./| ./|" as Name<CommaMean>,
                     pitch: {
-                        vector: [10, -6, -3, 1, 0, 1] as Vector<Rational>,
+                        vector: [10, -6, -3, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "./| )|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [1, 5, -2, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [1, 5, -2, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|~ ,,/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-2, 9, 0, 0, -1, 0, 0, -1, -1] as Vector<Rational>,
+                        vector: [-2, 9, 0, 0, -1, 0, 0, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,/| ,/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-8, 6, 0, 1, -1, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [-8, 6, 0, 1, -1, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",/| /|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-20, 10, -1, 1, 0, 1] as Vector<Rational>,
+                        vector: [-20, 10, -1, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/| `/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 1, 2, 1] as Vector<Rational>,
+                        vector: [-9, 1, 2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`/| ``/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [2, -8, 5, 1, 0, -1] as Vector<Rational>,
+                        vector: [2, -8, 5, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "``/| .)/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [9, -6, 0, 0, 0, -1, 0, 1] as Vector<Rational>,
+                        vector: [9, -6, 0, 0, 0, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".)/| '/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'/| `'/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-39, 17, 4, 1] as Vector<Rational>,
+                        vector: [-39, 17, 4, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`'/| ,,)/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-16, 0, 3, 2, 1] as Vector<Rational>,
+                        vector: [-16, 0, 3, 2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,)/| ,)/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-4, -2, 2, 1, 1, -1] as Vector<Rational>,
+                        vector: [-4, -2, 2, 1, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",)/| )/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-21, 10, 2, 0, 0, -1, 0, 1] as Vector<Rational>,
+                        vector: [-21, 10, 2, 0, 0, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")/| ,.|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-4, -1, -1, 0, 0, 1, 0, 1] as Vector<Rational>,
+                        vector: [-4, -1, -1, 0, 0, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",.|) .|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [30, -18, -1, -1, 0, 1] as Vector<Rational>,
+                        vector: [30, -18, -1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".|) `.|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [10, -7, -1, 0, 1] as Vector<Rational>,
+                        vector: [10, -7, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`.|) ,,|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-10, 4, -1, 1, 2, -1] as Vector<Rational>,
+                        vector: [-10, 4, -1, 1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,|) ,|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-5, 1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-5, 1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",|) |)" as Name<CommaMean>,
                     pitch: {
-                        vector: [0, -2, 1, -1, 0, 1] as Vector<Rational>,
+                        vector: [0, -2, 1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|) `|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [11, -11, 4, -1] as Vector<Rational>,
+                        vector: [11, -11, 4, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`|) ``|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 0, 4, 0, 1, -1] as Vector<Rational>,
+                        vector: [-9, 0, 4, 0, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "``|) ,'|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-35, 17, 2, 0, 1] as Vector<Rational>,
+                        vector: [-35, 17, 2, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",'|) '|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-30, 14, 3, -1, 0, 1] as Vector<Rational>,
+                        vector: [-30, 14, 3, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'|) `'|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-19, 5, 6, -1] as Vector<Rational>,
+                        vector: [-19, 5, 6, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`'|) ,)|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-5, -6, 6, 0, -1, 0, 1] as Vector<Rational>,
+                        vector: [-5, -6, 6, 0, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",)|) )|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [2, -4, 1, -1, -1, 0, 1, 1] as Vector<Rational>,
+                        vector: [2, -4, 1, -1, -1, 0, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")|) .(|" as Name<CommaMean>,
                     pitch: {
-                        vector: [0, 1, -1, 0, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [0, 1, -1, 0, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".(| |\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [2, -3, 0, 1] as Vector<Rational>,
+                        vector: [2, -3, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "|\\ `|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [10, -8, 1, -1, 2, -1] as Vector<Rational>,
+                        vector: [10, -8, 1, -1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`|\\ ,(|" as Name<CommaMean>,
                     pitch: {
-                        vector: [7, -4, 3, -1, 1, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [7, -4, 3, -1, 1, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",(| (|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-16, 9, 3, 1, -1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-16, 9, 3, 1, -1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(| `(|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-10, 7, 0, 1, -1, 1, -1] as Vector<Rational>,
+                        vector: [-10, 7, 0, 1, -1, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`(| ``(|" as Name<CommaMean>,
                     pitch: {
-                        vector: [1, 0, -2, 0, 0, 1] as Vector<Rational>,
+                        vector: [1, 0, -2, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "``(| ,'(|" as Name<CommaMean>,
                     pitch: {
-                        vector: [1, 3, -2, 1, 0, -1, 1, -1] as Vector<Rational>,
+                        vector: [1, 3, -2, 1, 0, -1, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",'(| '(|" as Name<CommaMean>,
                     pitch: {
-                        vector: [3, 2, 2, -1, 0, -1, 0, -1] as Vector<Rational>,
+                        vector: [3, 2, 2, -1, 0, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'(| ,~|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [4, -5, 2, -2, 0, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [4, -5, 2, -2, 0, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",~|) ~|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-1, -6, 0, 2, 0, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-1, -6, 0, 2, 0, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|) `~|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-20, 8, -1, 2, 0, 0, 1] as Vector<Rational>,
+                        vector: [-20, 8, -1, 2, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`~|) ,.(|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-26, 16, -1, 0, 1, 0, 1, 0, -1] as Vector<Rational>,
+                        vector: [-26, 16, -1, 0, 1, 0, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",.(|( .(|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [3, 1, 0, 0, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [3, 1, 0, 0, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".(|( '~|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-6, 1, 1, 2, -1] as Vector<Rational>,
+                        vector: [-6, 1, 1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'~|) /|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|~ ,,(|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [-6, 3, -1, 1, 0, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-6, 3, -1, 1, 0, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,(|( ,(|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [0, 1, 0, 1, 1, -1, -1] as Vector<Rational>,
+                        vector: [0, 1, 0, 1, 1, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",(|( (|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [5, -2, 1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [5, -2, 1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(|( `(|(" as Name<CommaMean>,
                     pitch: {
-                        vector: [8, 2, 1, -1, -2, -1] as Vector<Rational>,
+                        vector: [8, 2, 1, -1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`(|( ~|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-4, 6, 0, -1, -1, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-4, 6, 0, -1, -1, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "~|\\ ,.//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-19, 8, -2, 1, 0, 1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-19, 8, -2, 1, 0, 1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",.//| .//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [2, 2, -5, 1, 0, 1] as Vector<Rational>,
+                        vector: [2, 2, -5, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ".//| `.//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [13, -7, -2, 1] as Vector<Rational>,
+                        vector: [13, -7, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`.//| ,,//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [0, -4, 1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [0, -4, 1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,//| ,//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-26, 13, -1, 0, 0, 1, 1] as Vector<Rational>,
+                        vector: [-26, 13, -1, 0, 0, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",//| //|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-28, 18, -3, 1, 0, 1] as Vector<Rational>,
+                        vector: [-28, 18, -3, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "//| `//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-17, 9, 0, 1] as Vector<Rational>,
+                        vector: [-17, 9, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`//| ``//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-6, 0, 3, 1, 0, -1] as Vector<Rational>,
+                        vector: [-6, 0, 3, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "``//| ,'//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-8, 5, 1, 2, 0, -1, -1] as Vector<Rational>,
+                        vector: [-8, 5, 1, 2, 0, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",'//| '//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-12, 7, 0, 2, 0, 1, -1, -1] as Vector<Rational>,
+                        vector: [-12, 7, 0, 2, 0, 1, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'//| ,,)//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-1, 0, -2, 1, 1, 1, 0, -1] as Vector<Rational>,
+                        vector: [-1, 0, -2, 1, 1, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,)//| ,)//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-12, 6, 0, 1, 1, -1] as Vector<Rational>,
+                        vector: [-12, 6, 0, 1, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",)//| )//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-7, 3, 1] as Vector<Rational>,
+                        vector: [-7, 3, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ")//| `)//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [22, -10, -3, -1, 0, 1] as Vector<Rational>,
+                        vector: [22, -10, -3, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`)//| ``)//|" as Name<CommaMean>,
                     pitch: {
-                        vector: [15, -8, -2, -1, 0, 0, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [15, -8, -2, -1, 0, 0, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "``)//| ,,/|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-5, 3, -2, 0, 1, -1, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-5, 3, -2, 0, 1, -1, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,/|) ,/|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-13, 9, -2, 0, 1] as Vector<Rational>,
+                        vector: [-13, 9, -2, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",/|) /|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-8, 6, -1, -1, 0, 1] as Vector<Rational>,
+                        vector: [-8, 6, -1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|) `/|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [3, -3, 2, -1] as Vector<Rational>,
+                        vector: [3, -3, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`/|) (|~" as Name<CommaMean>,
                     pitch: {
-                        vector: [5, -7, 3, 0, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [5, -7, 3, 0, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(|~ ,'/|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-21, 10, 1, 0, 1, 1, 0, -1] as Vector<Rational>,
+                        vector: [-21, 10, 1, 0, 1, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",'/|) '/|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-38, 22, 1, -1, 0, 1] as Vector<Rational>,
+                        vector: [-38, 22, 1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'/|) `'/|)" as Name<CommaMean>,
                     pitch: {
-                        vector: [-27, 13, 4, -1] as Vector<Rational>,
+                        vector: [-27, 13, 4, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`'/|) ./|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-4, -4, 3, 0, 1] as Vector<Rational>,
+                        vector: [-4, -4, 3, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "./|\\ `./|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [11, -8, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [11, -8, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`./|\\ ,,/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [8, -4, 1, 0, -1, 0, 1, 0, -1] as Vector<Rational>,
+                        vector: [8, -4, 1, 0, -1, 0, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",,/|\\ ,/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [6, 1, -1, 1, -1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [6, 1, -1, 1, -1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",/|\\ /|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-6, 5, -2, 1] as Vector<Rational>,
+                        vector: [-6, 5, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "/|\\ `/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-19, 8, 1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-19, 8, 1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`/|\\ ,(/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [-14, 5, 2, -1, -1, 1, 1] as Vector<Rational>,
+                        vector: [-14, 5, 2, -1, -1, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",(/| (/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [12, -6, 1, -3, 0, 1] as Vector<Rational>,
+                        vector: [12, -6, 1, -3, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "(/| `(/|" as Name<CommaMean>,
                     pitch: {
-                        vector: [17, -4, 0, -2, 0, 0, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [17, -4, 0, -2, 0, 0, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`(/| '/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-15, 9, 1, 0, 1, 0, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-15, 9, 1, 0, 1, 0, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "'/|\\ `'/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-28, 16, 1, -1, 2, -1] as Vector<Rational>,
+                        vector: [-28, 16, 1, -1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: "`'/|\\ ,)/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-14, 5, 1, 0, 1, -1, 1] as Vector<Rational>,
+                        vector: [-14, 5, 1, 0, 1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
                 {
                     name: ",)/|\\ )/|\\" as Name<CommaMean>,
                     pitch: {
-                        vector: [-9, 2, 2, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-9, 2, 2, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                 },
@@ -1487,7 +1486,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
             const expected = [
                 {
                     pitch: {
-                        vector: [10, -6, 1, -1] as Vector<Rational>,
+                        vector: [10, -6, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5, -3, 0.5, -0.5] as Vector<Irrational>,
@@ -1496,7 +1495,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [17, -10, 1, 0, -1] as Vector<Rational>,
+                        vector: [17, -10, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [8.5, -5, 0.5, 0, -0.5] as Vector<Irrational>,
@@ -1505,7 +1504,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-5, 1, 0, 1, -1, 0, 1] as Vector<Rational>,
+                        vector: [-5, 1, 0, 1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2.5, 0.5, 0, 0.5, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -1514,7 +1513,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-16, 9, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-16, 9, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8, 4.5, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1523,7 +1522,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [2, 2, -1, -1] as Vector<Rational>,
+                        vector: [2, 2, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1, 1, -0.5, -0.5] as Vector<Irrational>,
@@ -1532,7 +1531,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-6, 6, 0, 0, -1] as Vector<Rational>,
+                        vector: [-6, 6, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3, 3, 0, 0, -0.5] as Vector<Irrational>,
@@ -1541,7 +1540,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-14, 10, 1, 1, -2] as Vector<Rational>,
+                        vector: [-14, 10, 1, 1, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-7, 5, 0.5, 0.5, -1] as Vector<Irrational>,
@@ -1550,7 +1549,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-10, 10, -1, 0, -1] as Vector<Rational>,
+                        vector: [-10, 10, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5, 5, -0.5, 0, -0.5] as Vector<Irrational>,
@@ -1559,7 +1558,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-6, 10, -3, -1] as Vector<Rational>,
+                        vector: [-6, 10, -3, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3, 5, -1.5, -0.5] as Vector<Irrational>,
@@ -1568,7 +1567,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-3, 3, -1, -1, 1] as Vector<Rational>,
+                        vector: [-3, 3, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-1.5, 1.5, -0.5, -0.5, 0.5] as Vector<Irrational>,
@@ -1588,7 +1587,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
             const expected = [
                 {
                     pitch: {
-                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 1.5, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1597,7 +1596,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [1, -3, 1, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [1, -3, 1, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0.5, -1.5, 0.5, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1606,7 +1605,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [3, 1, 1, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [3, 1, 1, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1.5, 0.5, 0.5, -0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -1615,7 +1614,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [0, 3, 0, 1, -1, 0, -1] as Vector<Rational>,
+                        vector: [0, 3, 0, 1, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0, 1.5, 0, 0.5, -0.5, 0, -0.5] as Vector<Irrational>,
@@ -1624,7 +1623,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [11, -2, 0, 1, -2, -1] as Vector<Rational>,
+                        vector: [11, -2, 0, 1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5.5, -1, 0, 0.5, -1, -0.5] as Vector<Irrational>,
@@ -1633,7 +1632,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-8, 7, 0, 0, -1, -1, 1] as Vector<Rational>,
+                        vector: [-8, 7, 0, 0, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4, 3.5, 0, 0, -0.5, -0.5, 0.5] as Vector<Irrational>,
@@ -1642,7 +1641,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Vector<Rational>,
+                        vector: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3.5, -0.5, 0, 0, 0, 0, 0.5, 0, 0.5] as Vector<Irrational>,
@@ -1651,7 +1650,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [2, -2, 0, -1, 0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1660,7 +1659,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-11, 11, 0, -2, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [-11, 11, 0, -2, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5.5, 5.5, 0, -1, 0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -1669,7 +1668,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-14, 13, -1, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-14, 13, -1, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-7, 6.5, -0.5, 0, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -1678,7 +1677,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8.5, 5.5, -1, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1687,7 +1686,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-7, 5, -1, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-7, 5, -1, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3.5, 2.5, -0.5, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1696,7 +1695,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [3, -1, 0, -2, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [3, -1, 0, -2, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1.5, -0.5, 0, -1, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1705,7 +1704,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-4, -2, 1, -1, 1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-4, -2, 1, -1, 1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2, -1, 0.5, -0.5, 0.5, 0, 0, 0.5] as Vector<Irrational>,
@@ -1714,7 +1713,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-13, 5, 1, 1] as Vector<Rational>,
+                        vector: [-13, 5, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6.5, 2.5, 0.5, 0.5] as Vector<Irrational>,
@@ -1723,7 +1722,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-16, 7, 0, 3, -1] as Vector<Rational>,
+                        vector: [-16, 7, 0, 3, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8, 3.5, 0, 1.5, -0.5] as Vector<Irrational>,
@@ -1732,7 +1731,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-3, -3, -1, 2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-3, -3, -1, 2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-1.5, -1.5, -0.5, 1, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1741,7 +1740,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-0.5, 0, 0, 0, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1750,7 +1749,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8, 4, 0.5, 0, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1759,7 +1758,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-22, 14, -2, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-11, 7, -1, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1768,7 +1767,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-3, 4, -3, 0, 0, 1] as Vector<Rational>,
+                        vector: [-3, 4, -3, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-1.5, 2, -1.5, 0, 0, 0.5] as Vector<Irrational>,
@@ -1777,7 +1776,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [7, -2, -2, -1, 0, 1] as Vector<Rational>,
+                        vector: [7, -2, -2, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3.5, -1, -1, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -1786,7 +1785,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [6, 0, -1, -1, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [6, 0, -1, -1, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3, 0, -0.5, -0.5, 0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -1795,7 +1794,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-1, -1, 0, 0, 2, 0, 0, -1] as Vector<Rational>,
+                        vector: [-1, -1, 0, 0, 2, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-0.5, -0.5, 0, 0, 1, 0, 0, -0.5] as Vector<Irrational>,
@@ -1804,7 +1803,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [7, -3, 0, -2, 1] as Vector<Rational>,
+                        vector: [7, -3, 0, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3.5, -1.5, 0, -1, 0.5] as Vector<Irrational>,
@@ -1813,7 +1812,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [9, 0, 1, -4] as Vector<Rational>,
+                        vector: [9, 0, 1, -4] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [4.5, 0, 0.5, -2] as Vector<Irrational>,
@@ -1833,7 +1832,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
             const expected = [
                 {
                     pitch: {
-                        vector: [6, -5, -1, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [6, -5, -1, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3, -2.5, -0.5, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1842,7 +1841,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 1.5, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1851,7 +1850,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-24, 11, 1, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-24, 11, 1, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-12, 5.5, 0.5, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1860,7 +1859,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [1, -3, 1, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [1, -3, 1, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0.5, -1.5, 0.5, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1869,7 +1868,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [18, -7, 0, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [18, -7, 0, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [9, -3.5, 0, -0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -1878,7 +1877,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [3, 1, 1, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [3, 1, 1, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1.5, 0.5, 0.5, -0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -1887,7 +1886,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-12, 9, 2, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [-12, 9, 2, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6, 4.5, 1, -0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -1896,7 +1895,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [0, 3, 0, 1, -1, 0, -1] as Vector<Rational>,
+                        vector: [0, 3, 0, 1, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0, 1.5, 0, 0.5, -0.5, 0, -0.5] as Vector<Irrational>,
@@ -1905,7 +1904,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-1, 0, 1, 2, -2] as Vector<Rational>,
+                        vector: [-1, 0, 1, 2, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-0.5, 0, 0.5, 1, -1] as Vector<Irrational>,
@@ -1914,7 +1913,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-4, 6, 1, 1, -2, -1] as Vector<Rational>,
+                        vector: [-4, 6, 1, 1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2, 3, 0.5, 0.5, -1, -0.5] as Vector<Irrational>,
@@ -1923,7 +1922,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [7, -1, -1, 0, -1, -1, 1] as Vector<Rational>,
+                        vector: [7, -1, -1, 0, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3.5, -0.5, -0.5, 0, -0.5, -0.5, 0.5] as Vector<Irrational>,
@@ -1932,7 +1931,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 2, -1, 0, 0, 0, 2] as Vector<Rational>,
+                        vector: [-9, 2, -1, 0, 0, 0, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 1, -0.5, 0, 0, 0, 1] as Vector<Irrational>,
@@ -1941,7 +1940,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Vector<Rational>,
+                        vector: [-7, -1, 0, 0, 0, 0, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3.5, -0.5, 0, 0, 0, 0, 0.5, 0, 0.5] as Vector<Irrational>,
@@ -1950,7 +1949,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [4, -4, 0, -2, 1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [2, -2, 0, -1, 0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1959,7 +1958,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [10, -2, -2, -2, 1] as Vector<Rational>,
+                        vector: [10, -2, -2, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5, -1, -1, -1, 0.5] as Vector<Irrational>,
@@ -1968,7 +1967,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [1, 5, -2, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [1, 5, -2, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0.5, 2.5, -1, 0, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -1977,7 +1976,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-14, 13, -1, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-14, 13, -1, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-7, 6.5, -0.5, 0, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -1986,7 +1985,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-2, 3, -3, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-2, 3, -3, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-1, 1.5, -1.5, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -1995,7 +1994,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8.5, 5.5, -1, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2004,7 +2003,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-32, 19, -1, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-32, 19, -1, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-16, 9.5, -0.5, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2013,7 +2012,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [8, -3, -2, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [8, -3, -2, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [4, -1.5, -1, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2022,7 +2021,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [27, -12, -1, -2] as Vector<Rational>,
+                        vector: [27, -12, -1, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [13.5, -6, -0.5, -1] as Vector<Irrational>,
@@ -2031,7 +2030,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-3, 4, 1, -2] as Vector<Rational>,
+                        vector: [-3, 4, 1, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-1.5, 2, 0.5, -1] as Vector<Irrational>,
@@ -2040,7 +2039,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-12, 7, 1, -2, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-12, 7, 1, -2, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6, 3.5, 0.5, -1, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2049,7 +2048,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [0, 1, -1, 0, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [0, 1, -1, 0, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0, 0.5, -0.5, 0, -0.5, 0, 0, 0.5] as Vector<Irrational>,
@@ -2058,7 +2057,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [2, -3, 0, 1] as Vector<Rational>,
+                        vector: [2, -3, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1, -1.5, 0, 0.5] as Vector<Irrational>,
@@ -2067,7 +2066,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-13, 5, 1, 1] as Vector<Rational>,
+                        vector: [-13, 5, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6.5, 2.5, 0.5, 0.5] as Vector<Irrational>,
@@ -2076,7 +2075,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-11, 8, 2, -1, -1] as Vector<Rational>,
+                        vector: [-11, 8, 2, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5.5, 4, 1, -0.5, -0.5] as Vector<Irrational>,
@@ -2085,7 +2084,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-3, -1, 2] as Vector<Rational>,
+                        vector: [-3, -1, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-1.5, -0.5, 1] as Vector<Irrational>,
@@ -2094,7 +2093,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [9, -7, 0, 2, -1] as Vector<Rational>,
+                        vector: [9, -7, 0, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [4.5, -3.5, 0, 1, -0.5] as Vector<Irrational>,
@@ -2103,7 +2102,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-6, 1, 1, 2, -1] as Vector<Rational>,
+                        vector: [-6, 1, 1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3, 0.5, 0.5, 1, -0.5] as Vector<Irrational>,
@@ -2112,7 +2111,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-9, 2.5, 0, 1, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2121,7 +2120,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-1, 0, 0, 0, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-0.5, 0, 0, 0, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2130,7 +2129,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-16, 8, 1, 0, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8, 4, 0.5, 0, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2139,7 +2138,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-7, 6, -3, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-7, 6, -3, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3.5, 3, -1.5, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2148,7 +2147,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-1, 8, -5] as Vector<Rational>,
+                        vector: [-1, 8, -5] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-0.5, 4, -2.5] as Vector<Irrational>,
@@ -2157,7 +2156,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 9, -2, 0, 0, 1, 0, -1] as Vector<Rational>,
+                        vector: [-9, 9, -2, 0, 0, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 4.5, -1, 0, 0, 0.5, 0, -0.5] as Vector<Irrational>,
@@ -2166,7 +2165,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [4, -3, -1, 0, 0, 2, 0, -1] as Vector<Rational>,
+                        vector: [4, -3, -1, 0, 0, 2, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [2, -1.5, -0.5, 0, 0, 1, 0, -0.5] as Vector<Irrational>,
@@ -2175,7 +2174,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [7, -2, -2, -1, 0, 1] as Vector<Rational>,
+                        vector: [7, -2, -2, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3.5, -1, -1, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -2184,7 +2183,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [6, 0, -1, -1, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [6, 0, -1, -1, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3, 0, -0.5, -0.5, 0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -2193,7 +2192,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 8, 0, -1, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [-9, 8, 0, -1, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 4, 0, -0.5, 0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -2202,7 +2201,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-3, 3, -1, -1, 1] as Vector<Rational>,
+                        vector: [-3, 3, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-1.5, 1.5, -0.5, -0.5, 0.5] as Vector<Irrational>,
@@ -2211,7 +2210,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [5, -6, -1, 0, 2] as Vector<Rational>,
+                        vector: [5, -6, -1, 0, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [2.5, -3, -0.5, 0, 1] as Vector<Irrational>,
@@ -2220,7 +2219,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [7, -3, 0, -2, 1] as Vector<Rational>,
+                        vector: [7, -3, 0, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3.5, -1.5, 0, -1, 0.5] as Vector<Irrational>,
@@ -2229,7 +2228,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-8, 5, 1, -2, 1] as Vector<Rational>,
+                        vector: [-8, 5, 1, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4, 2.5, 0.5, -1, 0.5] as Vector<Irrational>,
@@ -2238,7 +2237,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-23, 13, 2, -2, 1] as Vector<Rational>,
+                        vector: [-23, 13, 2, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-11.5, 6.5, 1, -1, 0.5] as Vector<Irrational>,
@@ -2258,7 +2257,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
             const expected = [
                 {
                     pitch: {
-                        vector: [12, -2, -1, -1, 0, -1] as Vector<Rational>,
+                        vector: [12, -2, -1, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [6, -1, -0.5, -0.5, 0, -0.5] as Vector<Irrational>,
@@ -2267,7 +2266,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [17, -5, 0, -2, -1] as Vector<Rational>,
+                        vector: [17, -5, 0, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [8.5, -2.5, 0, -1, -0.5] as Vector<Irrational>,
@@ -2276,7 +2275,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [11, -8, 0, -1, -1, 1, 0, 1] as Vector<Rational>,
+                        vector: [11, -8, 0, -1, -1, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5.5, -4, 0, -0.5, -0.5, 0.5, 0, 0.5] as Vector<Irrational>,
@@ -2285,7 +2284,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-9, 3, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 1.5, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2294,7 +2293,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-18, 14, 1, -1, 0, -1] as Vector<Rational>,
+                        vector: [-18, 14, 1, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-9, 7, 0.5, -0.5, 0, -0.5] as Vector<Irrational>,
@@ -2303,7 +2302,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-11, 16, -4, -2, 0, -1, 0, 1] as Vector<Rational>,
+                        vector: [-11, 16, -4, -2, 0, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5.5, 8, -2, -1, 0, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -2312,7 +2311,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-17, 13, -4, -1, 0, 0, 0, 2] as Vector<Rational>,
+                        vector: [-17, 13, -4, -1, 0, 0, 0, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8.5, 6.5, -2, -0.5, 0, 0, 0, 1] as Vector<Irrational>,
@@ -2321,7 +2320,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-12, 5, -1, 2, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-12, 5, -1, 2, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6, 2.5, -0.5, 1, -0.5, 0, 0, 0.5] as Vector<Irrational>,
@@ -2330,7 +2329,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-10, 1, 0, 3] as Vector<Rational>,
+                        vector: [-10, 1, 0, 3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5, 0.5, 0, 1.5] as Vector<Irrational>,
@@ -2339,7 +2338,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-2, -4, 1, 1, 2, -1] as Vector<Rational>,
+                        vector: [-2, -4, 1, 1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-1, -2, 0.5, 0.5, 1, -0.5] as Vector<Irrational>,
@@ -2348,7 +2347,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-6, 3, 0, 0, 0, -1, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-6, 3, 0, 0, 0, -1, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3, 1.5, 0, 0, 0, -0.5, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2357,7 +2356,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-1, 0, 1, -1, -1, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-1, 0, 1, -1, -1, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-0.5, 0, 0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2366,7 +2365,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [15, -13, 0, 2] as Vector<Rational>,
+                        vector: [15, -13, 0, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [7.5, -6.5, 0, 1] as Vector<Irrational>,
@@ -2375,7 +2374,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [13, -8, -2, 3, 0, 0, -1] as Vector<Rational>,
+                        vector: [13, -8, -2, 3, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [6.5, -4, -1, 1.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -2384,7 +2383,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [4, 8, -3, -2, 0, 0, -1] as Vector<Rational>,
+                        vector: [4, 8, -3, -2, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [2, 4, -1.5, -1, 0, 0, -0.5] as Vector<Irrational>,
@@ -2393,7 +2392,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 11, 0, -3] as Vector<Rational>,
+                        vector: [-9, 11, 0, -3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 5.5, 0, -1.5] as Vector<Irrational>,
@@ -2402,7 +2401,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-15, 3, 2, 2] as Vector<Rational>,
+                        vector: [-15, 3, 2, 2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-7.5, 1.5, 1, 1] as Vector<Irrational>,
@@ -2411,7 +2410,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-17, 8, 0, 3, 0, 0, -1] as Vector<Rational>,
+                        vector: [-17, 8, 0, 3, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8.5, 4, 0, 1.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -2420,7 +2419,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-24, 9, 0, 0, 4, 0, -1] as Vector<Rational>,
+                        vector: [-24, 9, 0, 0, 4, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-12, 4.5, 0, 0, 2, 0, -0.5] as Vector<Irrational>,
@@ -2429,7 +2428,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-10, -2, 0, 1, 3] as Vector<Rational>,
+                        vector: [-10, -2, 0, 1, 3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5, -1, 0, 0.5, 1.5] as Vector<Irrational>,
@@ -2438,7 +2437,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [10, -11, 2, 1] as Vector<Rational>,
+                        vector: [10, -11, 2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5, -5.5, 1, 0.5] as Vector<Irrational>,
@@ -2447,7 +2446,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-10, 0, 2, 2, 1, -1] as Vector<Rational>,
+                        vector: [-10, 0, 2, 2, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5, 0, 1, 1, 0.5, -0.5] as Vector<Irrational>,
@@ -2456,7 +2455,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [8, 2, -2, -1, 0, -1] as Vector<Rational>,
+                        vector: [8, 2, -2, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [4, 1, -1, -0.5, 0, -0.5] as Vector<Irrational>,
@@ -2465,7 +2464,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [13, -1, -1, -2, -1] as Vector<Rational>,
+                        vector: [13, -1, -1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [6.5, -0.5, -0.5, -1, -0.5] as Vector<Irrational>,
@@ -2474,7 +2473,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-4, 6, 1, 1, -2, -1] as Vector<Rational>,
+                        vector: [-4, 6, 1, 1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2, 3, 0.5, 0.5, -1, -0.5] as Vector<Irrational>,
@@ -2483,7 +2482,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [7, -1, -1, 0, -1, -1, 1] as Vector<Rational>,
+                        vector: [7, -1, -1, 0, -1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3.5, -0.5, -0.5, 0, -0.5, -0.5, 0.5] as Vector<Irrational>,
@@ -2492,7 +2491,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [12, -8, -1, 0, 1, 0, 1, 0, -1] as Vector<Rational>,
+                        vector: [12, -8, -1, 0, 1, 0, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [6, -4, -0.5, 0, 0.5, 0, 0.5, 0, -0.5] as Vector<Irrational>,
@@ -2501,7 +2500,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [10, -3, -3, 1, 1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [10, -3, -3, 1, 1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5, -1.5, -1.5, 0.5, 0.5, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -2510,7 +2509,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [1, -3, -2, 3] as Vector<Rational>,
+                        vector: [1, -3, -2, 3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0.5, -1.5, -1, 1.5] as Vector<Irrational>,
@@ -2519,7 +2518,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-12, 0, 1, 2, 0, 0, 1] as Vector<Rational>,
+                        vector: [-12, 0, 1, 2, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6, 0, 0.5, 1, 0, 0, 0.5] as Vector<Irrational>,
@@ -2528,7 +2527,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-10, 1, 0, -1, 1, 1, 1] as Vector<Rational>,
+                        vector: [-10, 1, 0, -1, 1, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5, 0.5, 0, -0.5, 0.5, 0.5, 0.5] as Vector<Irrational>,
@@ -2537,7 +2536,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-12, 6, -2, 0, 1, 1] as Vector<Rational>,
+                        vector: [-12, 6, -2, 0, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6, 3, -1, 0, 0.5, 0.5] as Vector<Irrational>,
@@ -2546,7 +2545,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-29, 13, 0, 3] as Vector<Rational>,
+                        vector: [-29, 13, 0, 3] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-14.5, 6.5, 0, 1.5] as Vector<Irrational>,
@@ -2555,7 +2554,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-10, -3, 2, 2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-10, -3, 2, 2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5, -1.5, 1, 1, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2564,7 +2563,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [14, -7, 0, 0, 0, -2, 0, 0, 1] as Vector<Rational>,
+                        vector: [14, -7, 0, 0, 0, -2, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [7, -3.5, 0, 0, 0, -1, 0, 0, 0.5] as Vector<Irrational>,
@@ -2573,7 +2572,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [8, 1, 0, -2, 1, -2] as Vector<Rational>,
+                        vector: [8, 1, 0, -2, 1, -2] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [4, 0.5, 0, -1, 0.5, -1] as Vector<Irrational>,
@@ -2582,7 +2581,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 8, 0, -2, 2, 0, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-9, 8, 0, -2, 2, 0, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 4, 0, -1, 1, 0, 0, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -2591,7 +2590,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [5, -3, 0, -1, 1, 0, 1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [5, -3, 0, -1, 1, 0, 1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [2.5, -1.5, 0, -0.5, 0.5, 0, 0.5, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -2600,7 +2599,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [12, -11, -1, 0, 0, 1, 1] as Vector<Rational>,
+                        vector: [12, -11, -1, 0, 0, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [6, -5.5, -0.5, 0, 0, 0.5, 0.5] as Vector<Irrational>,
@@ -2609,7 +2608,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [10, -6, -3, 1, 0, 1] as Vector<Rational>,
+                        vector: [10, -6, -3, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5, -3, -1.5, 0.5, 0, 0.5] as Vector<Irrational>,
@@ -2618,7 +2617,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [1, 5, -2, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [1, 5, -2, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0.5, 2.5, -1, 0, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -2627,7 +2626,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-2, 9, 0, 0, -1, 0, 0, -1, -1] as Vector<Rational>,
+                        vector: [-2, 9, 0, 0, -1, 0, 0, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-1, 4.5, 0, 0, -0.5, 0, 0, -0.5, -0.5] as Vector<Irrational>,
@@ -2636,7 +2635,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-8, 6, 0, 1, -1, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [-8, 6, 0, 1, -1, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4, 3, 0, 0.5, -0.5, 0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -2645,7 +2644,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-20, 10, -1, 1, 0, 1] as Vector<Rational>,
+                        vector: [-20, 10, -1, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-10, 5, -0.5, 0.5, 0, 0.5] as Vector<Irrational>,
@@ -2654,7 +2653,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 1, 2, 1] as Vector<Rational>,
+                        vector: [-9, 1, 2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 0.5, 1, 0.5] as Vector<Irrational>,
@@ -2663,7 +2662,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [2, -8, 5, 1, 0, -1] as Vector<Rational>,
+                        vector: [2, -8, 5, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1, -4, 2.5, 0.5, 0, -0.5] as Vector<Irrational>,
@@ -2672,7 +2671,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [9, -6, 0, 0, 0, -1, 0, 1] as Vector<Rational>,
+                        vector: [9, -6, 0, 0, 0, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [4.5, -3, 0, 0, 0, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -2681,7 +2680,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-17, 11, -2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8.5, 5.5, -1, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2690,7 +2689,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-39, 17, 4, 1] as Vector<Rational>,
+                        vector: [-39, 17, 4, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-19.5, 8.5, 2, 0.5] as Vector<Irrational>,
@@ -2699,7 +2698,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-16, 0, 3, 2, 1] as Vector<Rational>,
+                        vector: [-16, 0, 3, 2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8, 0, 1.5, 1, 0.5] as Vector<Irrational>,
@@ -2708,7 +2707,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-4, -2, 2, 1, 1, -1] as Vector<Rational>,
+                        vector: [-4, -2, 2, 1, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2, -1, 1, 0.5, 0.5, -0.5] as Vector<Irrational>,
@@ -2717,7 +2716,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-21, 10, 2, 0, 0, -1, 0, 1] as Vector<Rational>,
+                        vector: [-21, 10, 2, 0, 0, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-10.5, 5, 1, 0, 0, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -2726,7 +2725,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-4, -1, -1, 0, 0, 1, 0, 1] as Vector<Rational>,
+                        vector: [-4, -1, -1, 0, 0, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2, -0.5, -0.5, 0, 0, 0.5, 0, 0.5] as Vector<Irrational>,
@@ -2735,7 +2734,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [30, -18, -1, -1, 0, 1] as Vector<Rational>,
+                        vector: [30, -18, -1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [15, -9, -0.5, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -2744,7 +2743,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [10, -7, -1, 0, 1] as Vector<Rational>,
+                        vector: [10, -7, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5, -3.5, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -2753,7 +2752,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-10, 4, -1, 1, 2, -1] as Vector<Rational>,
+                        vector: [-10, 4, -1, 1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5, 2, -0.5, 0.5, 1, -0.5] as Vector<Irrational>,
@@ -2762,7 +2761,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-5, 1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-5, 1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2.5, 0.5, 0, 0, 0.5] as Vector<Irrational>,
@@ -2771,7 +2770,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [0, -2, 1, -1, 0, 1] as Vector<Rational>,
+                        vector: [0, -2, 1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0, -1, 0.5, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -2780,7 +2779,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [11, -11, 4, -1] as Vector<Rational>,
+                        vector: [11, -11, 4, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5.5, -5.5, 2, -0.5] as Vector<Irrational>,
@@ -2789,7 +2788,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 0, 4, 0, 1, -1] as Vector<Rational>,
+                        vector: [-9, 0, 4, 0, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 0, 2, 0, 0.5, -0.5] as Vector<Irrational>,
@@ -2798,7 +2797,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-35, 17, 2, 0, 1] as Vector<Rational>,
+                        vector: [-35, 17, 2, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-17.5, 8.5, 1, 0, 0.5] as Vector<Irrational>,
@@ -2807,7 +2806,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-30, 14, 3, -1, 0, 1] as Vector<Rational>,
+                        vector: [-30, 14, 3, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-15, 7, 1.5, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -2816,7 +2815,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-19, 5, 6, -1] as Vector<Rational>,
+                        vector: [-19, 5, 6, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-9.5, 2.5, 3, -0.5] as Vector<Irrational>,
@@ -2825,7 +2824,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-5, -6, 6, 0, -1, 0, 1] as Vector<Rational>,
+                        vector: [-5, -6, 6, 0, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2.5, -3, 3, 0, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -2834,7 +2833,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [2, -4, 1, -1, -1, 0, 1, 1] as Vector<Rational>,
+                        vector: [2, -4, 1, -1, -1, 0, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1, -2, 0.5, -0.5, -0.5, 0, 0.5, 0.5] as Vector<Irrational>,
@@ -2843,7 +2842,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [0, 1, -1, 0, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [0, 1, -1, 0, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0, 0.5, -0.5, 0, -0.5, 0, 0, 0.5] as Vector<Irrational>,
@@ -2852,7 +2851,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [2, -3, 0, 1] as Vector<Rational>,
+                        vector: [2, -3, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1, -1.5, 0, 0.5] as Vector<Irrational>,
@@ -2861,7 +2860,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [10, -8, 1, -1, 2, -1] as Vector<Rational>,
+                        vector: [10, -8, 1, -1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5, -4, 0.5, -0.5, 1, -0.5] as Vector<Irrational>,
@@ -2870,7 +2869,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [7, -4, 3, -1, 1, -1, 0, 0, -1] as Vector<Rational>,
+                        vector: [7, -4, 3, -1, 1, -1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3.5, -2, 1.5, -0.5, 0.5, -0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -2879,7 +2878,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-16, 9, 3, 1, -1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-16, 9, 3, 1, -1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8, 4.5, 1.5, 0.5, -0.5, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -2888,7 +2887,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-10, 7, 0, 1, -1, 1, -1] as Vector<Rational>,
+                        vector: [-10, 7, 0, 1, -1, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-5, 3.5, 0, 0.5, -0.5, 0.5, -0.5] as Vector<Irrational>,
@@ -2897,7 +2896,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [1, 0, -2, 0, 0, 1] as Vector<Rational>,
+                        vector: [1, 0, -2, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0.5, 0, -1, 0, 0, 0.5] as Vector<Irrational>,
@@ -2906,7 +2905,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [1, 3, -2, 1, 0, -1, 1, -1] as Vector<Rational>,
+                        vector: [1, 3, -2, 1, 0, -1, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0.5, 1.5, -1, 0.5, 0, -0.5, 0.5, -0.5] as Vector<Irrational>,
@@ -2915,7 +2914,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [3, 2, 2, -1, 0, -1, 0, -1] as Vector<Rational>,
+                        vector: [3, 2, 2, -1, 0, -1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1.5, 1, 1, -0.5, 0, -0.5, 0, -0.5] as Vector<Irrational>,
@@ -2924,7 +2923,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [4, -5, 2, -2, 0, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [4, -5, 2, -2, 0, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [2, -2.5, 1, -1, 0, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2933,7 +2932,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-1, -6, 0, 2, 0, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-1, -6, 0, 2, 0, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-0.5, -3, 0, 1, 0, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2942,7 +2941,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-20, 8, -1, 2, 0, 0, 1] as Vector<Rational>,
+                        vector: [-20, 8, -1, 2, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-10, 4, -0.5, 1, 0, 0, 0.5] as Vector<Irrational>,
@@ -2951,7 +2950,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-26, 16, -1, 0, 1, 0, 1, 0, -1] as Vector<Rational>,
+                        vector: [-26, 16, -1, 0, 1, 0, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-13, 8, -0.5, 0, 0.5, 0, 0.5, 0, -0.5] as Vector<Irrational>,
@@ -2960,7 +2959,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [3, 1, 0, 0, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [3, 1, 0, 0, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1.5, 0.5, 0, 0, 0, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -2969,7 +2968,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-6, 1, 1, 2, -1] as Vector<Rational>,
+                        vector: [-6, 1, 1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3, 0.5, 0.5, 1, -0.5] as Vector<Irrational>,
@@ -2978,7 +2977,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-18, 5, 0, 2, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-9, 2.5, 0, 1, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -2987,7 +2986,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-6, 3, -1, 1, 0, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-6, 3, -1, 1, 0, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3, 1.5, -0.5, 0.5, 0, -0.5, 0, 0, 0.5] as Vector<Irrational>,
@@ -2996,7 +2995,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [0, 1, 0, 1, 1, -1, -1] as Vector<Rational>,
+                        vector: [0, 1, 0, 1, 1, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0, 0.5, 0, 0.5, 0.5, -0.5, -0.5] as Vector<Irrational>,
@@ -3005,7 +3004,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [5, -2, 1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [5, -2, 1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [2.5, -1, 0.5, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -3014,7 +3013,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [8, 2, 1, -1, -2, -1] as Vector<Rational>,
+                        vector: [8, 2, 1, -1, -2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [4, 1, 0.5, -0.5, -1, -0.5] as Vector<Irrational>,
@@ -3023,7 +3022,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-4, 6, 0, -1, -1, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-4, 6, 0, -1, -1, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2, 3, 0, -0.5, -0.5, -0.5, 0, 0, 0.5] as Vector<Irrational>,
@@ -3032,7 +3031,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-19, 8, -2, 1, 0, 1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-19, 8, -2, 1, 0, 1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-9.5, 4, -1, 0.5, 0, 0.5, 0, 0, 0.5] as Vector<Irrational>,
@@ -3041,7 +3040,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [2, 2, -5, 1, 0, 1] as Vector<Rational>,
+                        vector: [2, 2, -5, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1, 1, -2.5, 0.5, 0, 0.5] as Vector<Irrational>,
@@ -3050,7 +3049,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [13, -7, -2, 1] as Vector<Rational>,
+                        vector: [13, -7, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [6.5, -3.5, -1, 0.5] as Vector<Irrational>,
@@ -3059,7 +3058,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [0, -4, 1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [0, -4, 1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [0, -2, 0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -3068,7 +3067,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-26, 13, -1, 0, 0, 1, 1] as Vector<Rational>,
+                        vector: [-26, 13, -1, 0, 0, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-13, 6.5, -0.5, 0, 0, 0.5, 0.5] as Vector<Irrational>,
@@ -3077,7 +3076,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-28, 18, -3, 1, 0, 1] as Vector<Rational>,
+                        vector: [-28, 18, -3, 1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-14, 9, -1.5, 0.5, 0, 0.5] as Vector<Irrational>,
@@ -3086,7 +3085,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-17, 9, 0, 1] as Vector<Rational>,
+                        vector: [-17, 9, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-8.5, 4.5, 0, 0.5] as Vector<Irrational>,
@@ -3095,7 +3094,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-6, 0, 3, 1, 0, -1] as Vector<Rational>,
+                        vector: [-6, 0, 3, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3, 0, 1.5, 0.5, 0, -0.5] as Vector<Irrational>,
@@ -3104,7 +3103,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-8, 5, 1, 2, 0, -1, -1] as Vector<Rational>,
+                        vector: [-8, 5, 1, 2, 0, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4, 2.5, 0.5, 1, 0, -0.5, -0.5] as Vector<Irrational>,
@@ -3113,7 +3112,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-12, 7, 0, 2, 0, 1, -1, -1] as Vector<Rational>,
+                        vector: [-12, 7, 0, 2, 0, 1, -1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6, 3.5, 0, 1, 0, 0.5, -0.5, -0.5] as Vector<Irrational>,
@@ -3122,7 +3121,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-1, 0, -2, 1, 1, 1, 0, -1] as Vector<Rational>,
+                        vector: [-1, 0, -2, 1, 1, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-0.5, 0, -1, 0.5, 0.5, 0.5, 0, -0.5] as Vector<Irrational>,
@@ -3131,7 +3130,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-12, 6, 0, 1, 1, -1] as Vector<Rational>,
+                        vector: [-12, 6, 0, 1, 1, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6, 3, 0, 0.5, 0.5, -0.5] as Vector<Irrational>,
@@ -3140,7 +3139,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-7, 3, 1] as Vector<Rational>,
+                        vector: [-7, 3, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3.5, 1.5, 0.5] as Vector<Irrational>,
@@ -3149,7 +3148,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [22, -10, -3, -1, 0, 1] as Vector<Rational>,
+                        vector: [22, -10, -3, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [11, -5, -1.5, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -3158,7 +3157,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [15, -8, -2, -1, 0, 0, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [15, -8, -2, -1, 0, 0, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [7.5, -4, -1, -0.5, 0, 0, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -3167,7 +3166,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-5, 3, -2, 0, 1, -1, 0, 0, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-5, 3, -2, 0, 1, -1, 0, 0, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2.5, 1.5, -1, 0, 0.5, -0.5, 0, 0, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -3176,7 +3175,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-13, 9, -2, 0, 1] as Vector<Rational>,
+                        vector: [-13, 9, -2, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-6.5, 4.5, -1, 0, 0.5] as Vector<Irrational>,
@@ -3185,7 +3184,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-8, 6, -1, -1, 0, 1] as Vector<Rational>,
+                        vector: [-8, 6, -1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4, 3, -0.5, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -3194,7 +3193,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [3, -3, 2, -1] as Vector<Rational>,
+                        vector: [3, -3, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [1.5, -1.5, 1, -0.5] as Vector<Irrational>,
@@ -3203,7 +3202,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [5, -7, 3, 0, 1, 0, 0, -1] as Vector<Rational>,
+                        vector: [5, -7, 3, 0, 1, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [2.5, -3.5, 1.5, 0, 0.5, 0, 0, -0.5] as Vector<Irrational>,
@@ -3212,7 +3211,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-21, 10, 1, 0, 1, 1, 0, -1] as Vector<Rational>,
+                        vector: [-21, 10, 1, 0, 1, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-10.5, 5, 0.5, 0, 0.5, 0.5, 0, -0.5] as Vector<Irrational>,
@@ -3221,7 +3220,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-38, 22, 1, -1, 0, 1] as Vector<Rational>,
+                        vector: [-38, 22, 1, -1, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-19, 11, 0.5, -0.5, 0, 0.5] as Vector<Irrational>,
@@ -3230,7 +3229,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-27, 13, 4, -1] as Vector<Rational>,
+                        vector: [-27, 13, 4, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-13.5, 6.5, 2, -0.5] as Vector<Irrational>,
@@ -3239,7 +3238,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-4, -4, 3, 0, 1] as Vector<Rational>,
+                        vector: [-4, -4, 3, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-2, -2, 1.5, 0, 0.5] as Vector<Irrational>,
@@ -3248,7 +3247,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [11, -8, -1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [11, -8, -1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [5.5, -4, -0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -3257,7 +3256,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [8, -4, 1, 0, -1, 0, 1, 0, -1] as Vector<Rational>,
+                        vector: [8, -4, 1, 0, -1, 0, 1, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [4, -2, 0.5, 0, -0.5, 0, 0.5, 0, -0.5] as Vector<Irrational>,
@@ -3266,7 +3265,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [6, 1, -1, 1, -1, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [6, 1, -1, 1, -1, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [3, 0.5, -0.5, 0.5, -0.5, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -3275,7 +3274,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-6, 5, -2, 1] as Vector<Rational>,
+                        vector: [-6, 5, -2, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-3, 2.5, -1, 0.5] as Vector<Irrational>,
@@ -3284,7 +3283,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-19, 8, 1, 0, 0, 0, 1] as Vector<Rational>,
+                        vector: [-19, 8, 1, 0, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-9.5, 4, 0.5, 0, 0, 0, 0.5] as Vector<Irrational>,
@@ -3293,7 +3292,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-14, 5, 2, -1, -1, 1, 1] as Vector<Rational>,
+                        vector: [-14, 5, 2, -1, -1, 1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-7, 2.5, 1, -0.5, -0.5, 0.5, 0.5] as Vector<Irrational>,
@@ -3302,7 +3301,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [12, -6, 1, -3, 0, 1] as Vector<Rational>,
+                        vector: [12, -6, 1, -3, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [6, -3, 0.5, -1.5, 0, 0.5] as Vector<Irrational>,
@@ -3311,7 +3310,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [17, -4, 0, -2, 0, 0, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [17, -4, 0, -2, 0, 0, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [8.5, -2, 0, -1, 0, 0, 0, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -3320,7 +3319,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-15, 9, 1, 0, 1, 0, 0, 0, 0, 0, -1] as Vector<Rational>,
+                        vector: [-15, 9, 1, 0, 1, 0, 0, 0, 0, 0, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-7.5, 4.5, 0.5, 0, 0.5, 0, 0, 0, 0, 0, -0.5] as Vector<Irrational>,
@@ -3329,7 +3328,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-28, 16, 1, -1, 2, -1] as Vector<Rational>,
+                        vector: [-28, 16, 1, -1, 2, -1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-14, 8, 0.5, -0.5, 1, -0.5] as Vector<Irrational>,
@@ -3338,7 +3337,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-14, 5, 1, 0, 1, -1, 1] as Vector<Rational>,
+                        vector: [-14, 5, 1, 0, 1, -1, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-7, 2.5, 0.5, 0, 0.5, -0.5, 0.5] as Vector<Irrational>,
@@ -3347,7 +3346,7 @@ describe("computeJiNotationLevelCommaMeans", (): void => {
                 },
                 {
                     pitch: {
-                        vector: [-9, 2, 2, -1, 0, 0, 1] as Vector<Rational>,
+                        vector: [-9, 2, 2, -1, 0, 0, 1] as Vector,
                         scaler: HALF_SCALER,
                     } as ScaledVector<Irrational>,
                     vector: [-4.5, 1, 1, -0.5, 0, 0, 0.5] as Vector<Irrational>,

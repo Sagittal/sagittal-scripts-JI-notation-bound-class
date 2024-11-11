@@ -7,9 +7,10 @@ import { formatRankAnalysis } from "./rankAnalysis"
 const formatRankAnalyses = (): Io => {
     const formattedRankAnalyses: Io[] = [] as Io[]
 
-    const rankCountsEntries = Object.entries(rankCounts) as unknown[] as Array<
-        [Decimal<Integer> & Rank<BoundType>, Count<Decimal<Integer> & Rank<BoundType>>]
-    >
+    const rankCountsEntries = Object.entries(rankCounts) as unknown[] as [
+        Decimal<Integer> & Rank<BoundType>,
+        Count<Decimal<Integer> & Rank<BoundType>>,
+    ][]
 
     rankCountsEntries.forEach(
         ([rank, rankCount]: [

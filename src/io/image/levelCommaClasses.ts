@@ -23,9 +23,11 @@ import { computeX } from "./x"
 const visualizeJiNotationLevelCommaClasses = (): Io[] => {
     const jiNotationLevelCommaClassElements: Io[] = [] as Io[]
 
-    const jiNotationLevelsCommaClassIdsEntries = Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as Array<
-        [JiNotationLevelId, CommaClassId[]]
-    >
+    const jiNotationLevelsCommaClassIdsEntries = Object.entries(JI_NOTATION_LEVELS_COMMA_CLASS_IDS) as [
+        JiNotationLevelId,
+        CommaClassId[],
+    ][]
+
     jiNotationLevelsCommaClassIdsEntries.forEach(
         ([jiNotationLevel, jiNotationLevelCommaClassIds]: [JiNotationLevelId, CommaClassId[]]): void => {
             if (jiNotationLevel === JiNotationLevelId.INSANE) {

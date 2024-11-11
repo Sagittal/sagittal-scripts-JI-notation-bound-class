@@ -116,9 +116,10 @@ describe("consolidateBoundHistories", (): void => {
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.SIZE_CATEGORY_BOUND],
                     rankOfBestRankedMemberHistory: RANKS[BoundType.SIZE_CATEGORY_BOUND],
-                    nextBoundEvents: [boundEventAnalysisC.name, boundEventAnalysisD.name] as Array<
-                        Name<JiNotationBound>
-                    >,
+                    nextBoundEvents: [
+                        boundEventAnalysisC.name,
+                        boundEventAnalysisD.name,
+                    ] as Name<JiNotationBound>[],
                 },
                 {
                     boundType: boundEventAnalysisBGoesToEventC.boundType,
@@ -130,7 +131,7 @@ describe("consolidateBoundHistories", (): void => {
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.COMMA_MEAN],
                     rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                    nextBoundEvents: [boundEventAnalysisC.name] as Array<Name<JiNotationBound>>,
+                    nextBoundEvents: [boundEventAnalysisC.name] as Name<JiNotationBound>[],
                 },
             ],
             [JiNotationLevelId.EXTREME]: [
@@ -144,7 +145,7 @@ describe("consolidateBoundHistories", (): void => {
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.COMMA_MEAN],
                     rankOfBestRankedMemberHistory: RANKS[BoundType.COMMA_MEAN],
-                    nextBoundEvents: [] as Array<Name<JiNotationBound>>,
+                    nextBoundEvents: [] as Name<JiNotationBound>[],
                 },
                 {
                     boundType: boundEventAnalysisD.boundType,
@@ -156,7 +157,7 @@ describe("consolidateBoundHistories", (): void => {
                     exact: false,
                     rankOfBestRankedEventInAnyMemberHistory: RANKS[BoundType.COMMA_MEAN],
                     rankOfBestRankedMemberHistory: RANKS[BoundType.SIZE_CATEGORY_BOUND],
-                    nextBoundEvents: [] as Array<Name<JiNotationBound>>,
+                    nextBoundEvents: [] as Name<JiNotationBound>[],
                 },
             ],
         }

@@ -9,7 +9,7 @@ import { NeighborPositions } from "./types"
 
 const computeNeighborPositions = (
     position: ScaledVector<Irrational>,
-    targetPositions: Array<ScaledVector<Rational>>,
+    targetPositions: ScaledVector<Rational>[],
 ): NeighborPositions => {
     const [lesserNeighborPositionIndex, greaterNeighborPositionIndex] = computeNeighborPositionIndices(
         computeIrrationalDecimalFromScaledVector(position),

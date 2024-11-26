@@ -1,10 +1,10 @@
 import {
     Abs,
     addScaledVectors,
+    Apotome,
     APOTOME,
     Cents,
     computePitchFromCents,
-    Ed,
     Irrational,
     IRRATIONAL_SCALED_VECTOR_BASE_VECTOR,
     Multiplier,
@@ -35,8 +35,8 @@ import {
 describe("analyzeHistory", (): void => {
     const actualJiNotationBoundPitch = {
         vector: APOTOME.vector,
-        scaler: [25.5, EXTREME_EDA as Ed],
-    } as ScaledVector<Irrational>
+        scaler: [25.5, EXTREME_EDA],
+    } as ScaledVector<Irrational, { of: Apotome }>
     let boundHistory: BoundHistory
     let pitch: ScaledVector<Irrational>
     let jiNotationBoundClass: JiNotationBoundClass

@@ -7,7 +7,7 @@ import {
     Name,
     ScaledVector,
     Irrational,
-    Ed,
+    Apotome,
 } from "@sagittal/general"
 import { BoundType, HIGH_EDA, JiNotationBound, JiNotationLevelId, ULTRA_EDA } from "@sagittal/system"
 import { BoundEvent, BoundHistory } from "../../../src/histories"
@@ -21,7 +21,10 @@ describe("computeExtendedHistories", (): void => {
         jiNotationLevel: JiNotationLevelId.HIGH,
         boundType: BoundType.INA_MIDPOINT,
         name: "16.5°47" as Name<JiNotationBound>,
-        pitch: { vector: APOTOME.vector, scaler: [16.5, HIGH_EDA as Ed] } as ScaledVector<Irrational>,
+        pitch: { vector: APOTOME.vector, scaler: [16.5, HIGH_EDA] } as ScaledVector<
+            Irrational,
+            { of: Apotome }
+        >,
     }
 
     beforeEach((): void => {
@@ -46,8 +49,8 @@ describe("computeExtendedHistories", (): void => {
                     name: "23.5°58" as Name<JiNotationBound>,
                     pitch: {
                         vector: APOTOME.vector,
-                        scaler: [23.5, ULTRA_EDA as Ed],
-                    } as ScaledVector<Irrational>,
+                        scaler: [23.5, ULTRA_EDA],
+                    } as ScaledVector<Irrational, { of: Apotome }>,
                 },
             ],
             [

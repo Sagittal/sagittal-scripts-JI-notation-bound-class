@@ -6,7 +6,7 @@ import {
     Name,
     ScaledVector,
     Irrational,
-    Ed,
+    Apotome,
 } from "@sagittal/general"
 import {
     BoundClassId,
@@ -25,8 +25,8 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
                 vector: APOTOME.vector,
-                scaler: [175.5, INSANE_EDA as Ed],
-            } as ScaledVector<Irrational>,
+                scaler: [175.5, INSANE_EDA],
+            } as ScaledVector<Irrational, { of: Apotome }>,
             jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "175.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
@@ -48,8 +48,8 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
                 vector: APOTOME.vector,
-                scaler: [404.5, INSANE_EDA as Ed],
-            } as ScaledVector<Irrational>,
+                scaler: [404.5, INSANE_EDA],
+            } as ScaledVector<Irrational, { of: Apotome }>,
             jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "404.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,
@@ -71,8 +71,8 @@ describe("computeJiNotationLevelBoundedCommaClassIds", (): void => {
         const jiNotationBoundClass: JiNotationBoundClass = {
             pitch: {
                 vector: APOTOME.vector,
-                scaler: [1.5, INSANE_EDA as Ed],
-            } as ScaledVector<Irrational>,
+                scaler: [1.5, INSANE_EDA],
+            } as ScaledVector<Irrational, { of: Apotome }>,
             jiNotationLevels: [JiNotationLevelId.EXTREME, JiNotationLevelId.INSANE],
             name: "1.5°809" as Name<InaMidpoint>,
             boundType: BoundType.INA_MIDPOINT,

@@ -1,4 +1,4 @@
-import { APOTOME, Ed, HALF_SCALER, Irrational, Multiplier, Name, ScaledVector } from "@sagittal/general"
+import { Apotome, APOTOME, HALF_SCALER, Irrational, Multiplier, Name, ScaledVector } from "@sagittal/general"
 import {
     BoundType,
     EXTREME_EDA,
@@ -30,8 +30,8 @@ describe("consolidateBoundHistories", (): void => {
             name: "12.5°58" as Name<JiNotationBound>,
             pitch: {
                 vector: APOTOME.vector,
-                scaler: [12.5, ULTRA_EDA as Ed],
-            } as ScaledVector<Irrational>,
+                scaler: [12.5, ULTRA_EDA],
+            } as ScaledVector<Irrational, { of: Apotome }>,
             rank: RANKS[BoundType.COMMA_MEAN],
             exact: false,
         }
@@ -51,8 +51,8 @@ describe("consolidateBoundHistories", (): void => {
             name: "50.5°233" as Name<JiNotationBound>,
             pitch: {
                 vector: APOTOME.vector,
-                scaler: [50.5, EXTREME_EDA as Ed],
-            } as ScaledVector<Irrational>,
+                scaler: [50.5, EXTREME_EDA],
+            } as ScaledVector<Irrational, { of: Apotome }>,
             rank: RANKS[BoundType.COMMA_MEAN],
             exact: false,
         }

@@ -1,5 +1,4 @@
-import { APOTOME, HALF_SCALER, Irrational, Name, ScaledVector } from "@sagittal/general"
-import { Ed } from "@sagittal/general/dist/cjs/types"
+import { Apotome, APOTOME, HALF_SCALER, Irrational, Name, ScaledVector } from "@sagittal/general"
 import {
     BoundType,
     EXTREME_EDA,
@@ -21,8 +20,8 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
             name: "1.5°21" as Name<JiNotationBound>,
             pitch: {
                 vector: APOTOME.vector,
-                scaler: [1.5, MEDIUM_EDA as Ed],
-            } as ScaledVector<Irrational>,
+                scaler: [1.5, MEDIUM_EDA],
+            } as ScaledVector<Irrational, { of: Apotome }>,
         }
         const historyPriorEventB: BoundEvent = {
             jiNotationLevel: JiNotationLevelId.MEDIUM,
@@ -39,8 +38,8 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
             ...jiNotationBoundClassFixture,
             pitch: {
                 vector: APOTOME.vector,
-                scaler: [16.5, EXTREME_EDA as Ed],
-            } as ScaledVector<Irrational>,
+                scaler: [16.5, EXTREME_EDA],
+            } as ScaledVector<Irrational, { of: Apotome }>,
             jiNotationLevels: [JiNotationLevelId.MEDIUM, JiNotationLevelId.HIGH, JiNotationLevelId.ULTRA],
         }
 
@@ -59,8 +58,8 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     name: "2.5°47" as Name<JiNotationBound>,
                     pitch: {
                         vector: APOTOME.vector,
-                        scaler: [2.5, HIGH_EDA as Ed],
-                    } as ScaledVector<Irrational>,
+                        scaler: [2.5, HIGH_EDA],
+                    } as ScaledVector<Irrational, { of: Apotome }>,
                 },
             ],
             [
@@ -71,8 +70,8 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     name: "3.5°47" as Name<JiNotationBound>,
                     pitch: {
                         vector: APOTOME.vector,
-                        scaler: [3.5, HIGH_EDA as Ed],
-                    } as ScaledVector<Irrational>,
+                        scaler: [3.5, HIGH_EDA],
+                    } as ScaledVector<Irrational, { of: Apotome }>,
                 },
             ],
             [
@@ -95,8 +94,8 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     name: "2.5°47" as Name<JiNotationBound>,
                     pitch: {
                         vector: APOTOME.vector,
-                        scaler: [2.5, HIGH_EDA as Ed],
-                    } as ScaledVector<Irrational>,
+                        scaler: [2.5, HIGH_EDA],
+                    } as ScaledVector<Irrational, { of: Apotome }>,
                 },
             ],
             [
@@ -107,8 +106,8 @@ describe("computeExtendedJiNotationLevelBoundHistories", (): void => {
                     name: "3.5°47" as Name<JiNotationBound>,
                     pitch: {
                         vector: APOTOME.vector,
-                        scaler: [3.5, HIGH_EDA as Ed],
-                    } as ScaledVector<Irrational>,
+                        scaler: [3.5, HIGH_EDA],
+                    } as ScaledVector<Irrational, { of: Apotome }>,
                 },
             ],
             [

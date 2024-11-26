@@ -1,4 +1,4 @@
-import { APOTOME, Ed, Irrational, Name, ScaledVector } from "@sagittal/general"
+import { Apotome, APOTOME, Irrational, Name, ScaledVector } from "@sagittal/general"
 import { BoundType, JiNotationBound, ULTRA_EDA } from "@sagittal/system"
 import { computeInitialEventConsolidation } from "../../../src/consolidateHistories/initialEventConsolidation"
 import { BoundEventConsolidation } from "../../../src/consolidateHistories/types"
@@ -14,7 +14,10 @@ describe("computeInitialEventConsolidation", (): void => {
         boundType: BoundType.INA_MIDPOINT,
         name: "12.5°58" as Name<JiNotationBound>,
         rank: RANKS[BoundType.COMMA_MEAN],
-        pitch: { vector: APOTOME.vector, scaler: [12.5, ULTRA_EDA as Ed] } as ScaledVector<Irrational>,
+        pitch: { vector: APOTOME.vector, scaler: [12.5, ULTRA_EDA] } as ScaledVector<
+            Irrational,
+            { of: Apotome }
+        >,
     }
 
     beforeEach((): void => {

@@ -7,7 +7,7 @@ import {
     Name,
     ScaledVector,
     Irrational,
-    Ed,
+    Apotome,
 } from "@sagittal/general"
 import { BoundType, HIGH_EDA, JiNotationBound, JiNotationLevelId, ULTRA_EDA } from "@sagittal/system"
 import { BoundedCommaClassPositions, computeBoundedCommaClassPositions } from "../../../src/boundedPositions"
@@ -45,8 +45,8 @@ describe("computeBoundEvents", (): void => {
                         name: "2.5°58" as Name<JiNotationBound>,
                         pitch: {
                             vector: APOTOME.vector,
-                            scaler: [2.5, ULTRA_EDA as Ed],
-                        } as ScaledVector<Irrational>,
+                            scaler: [2.5, ULTRA_EDA],
+                        } as ScaledVector<Irrational, { of: Apotome }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -72,8 +72,8 @@ describe("computeBoundEvents", (): void => {
                         name: "2.5°58" as Name<JiNotationBound>,
                         pitch: {
                             vector: APOTOME.vector,
-                            scaler: [2.5, ULTRA_EDA as Ed],
-                        } as ScaledVector<Irrational>,
+                            scaler: [2.5, ULTRA_EDA],
+                        } as ScaledVector<Irrational, { of: Apotome }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
@@ -95,8 +95,8 @@ describe("computeBoundEvents", (): void => {
                         name: "11.5°47" as Name<JiNotationBound>,
                         pitch: {
                             vector: APOTOME.vector,
-                            scaler: [11.5, HIGH_EDA as Ed],
-                        } as ScaledVector<Irrational>,
+                            scaler: [11.5, HIGH_EDA],
+                        } as ScaledVector<Irrational, { of: Apotome }>,
                     },
                     {
                         jiNotationLevel: JiNotationLevelId.HIGH,
@@ -104,8 +104,8 @@ describe("computeBoundEvents", (): void => {
                         name: "12.5°47" as Name<JiNotationBound>,
                         pitch: {
                             vector: APOTOME.vector,
-                            scaler: [12.5, HIGH_EDA as Ed],
-                        } as ScaledVector<Irrational>,
+                            scaler: [12.5, HIGH_EDA],
+                        } as ScaledVector<Irrational, { of: Apotome }>,
                     },
                 ]
                 expect(actual).toEqual(expected)
